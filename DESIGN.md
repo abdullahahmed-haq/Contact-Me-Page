@@ -143,7 +143,7 @@ The palette pairs warm cream and dark botanical ink with gentle colored surfaces
 The hierarchy uses heavy friendly headings, compact labels, and subdued supporting text. Base body copy uses the frontmatter body role without a global line-height override.
 
 - **Display:** the profile name follows the fluid display role. At the mobile breakpoint it becomes (42px), then (35px) below the narrow breakpoint. Arabic uses untracked text, a looser line height, and mobile sizes of (38px) and (33px).
-- **Section headings:** featured website heading (25px, weight 800), sheet heading (24px, weight 800), and QR/save headings (20px/19px). Their mobile counterparts are (20px), (21px), and (15px/14px).
+- **Section headings:** featured website heading (32px, weight 800), sheet heading (24px, weight 800), and QR/save headings (20px/19px). Their mobile counterparts are (25–32px), (21px), and (15px/14px).
 - **Contact title:** the title role becomes (14px) on mobile and (12px) at narrow widths. Arabic uses (17px), then (13px), then (11px), without negative tracking.
 - **Supporting copy:** introductory text (19px, line-height 1.45); contact subtitles (12px, line-height 1.45). Mobile values are (15px) and (10px), with script-specific reductions.
 - **Labels:** dark actions use the label role; quick-message chips use (11px), then (10px) on mobile. Textarea text is (15px, line-height 1.6), increasing to (16px) on mobile.
@@ -194,7 +194,7 @@ Quick-message chips wrap within the composer. They use a fine pale border and tr
 
 Contact tiles have a light gradient, rounded icon block, title/subtitle stack, and dark circular directional arrow. Default minimum height is (109px), becoming (90px) on mobile and (85px) at narrow widths. The entire tile is an anchor for a configured URL or a button for a sheet action.
 
-The blue featured card pairs an icon and copy with an illustrative website preview and a dark action. The preview is decorative interface imagery rather than evidence of a configured website. QR uses the dark inverse surface; add-to-contacts uses a blue gradient and a dark download action.
+The blue featured card follows the approved second reference: title and subtitle align at the logical start without a globe icon, the larger dark CTA sits below, and an enlarged website illustration fills the lower logical end without a floating arrow badge. It has a 280px desktop minimum height and a 212–260px mobile minimum height. The preview is decorative interface imagery rather than evidence of a configured website. QR uses the dark inverse surface; add-to-contacts uses a blue gradient and a dark download action.
 
 The QR module renders an explicit empty state until the canonical public URL is configured. It must not display a made-up QR destination. Other unconfigured destinations use the shared explanatory sheet.
 

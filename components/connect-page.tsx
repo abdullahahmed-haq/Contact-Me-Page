@@ -213,9 +213,6 @@ export function ConnectPage({ config }: { config: SiteConfig }) {
           {config.featured.enabled && (
             <section className="featured-card reveal">
               <div className="featured-content">
-                <span className="globe-icon">
-                  <Globe size={31} />
-                </span>
                 <div>
                   <h2>{config.featured.title[locale]}</h2>
                   <p>{config.featured.subtitle[locale]}</p>
@@ -247,9 +244,6 @@ export function ConnectPage({ config }: { config: SiteConfig }) {
                 height={270}
                 alt={t.preview}
               />
-              <span className="preview-arrow" aria-hidden="true">
-                <ArrowUpRight size={25} />
-              </span>
             </section>
           )}
           <div className="contact-grid reveal">

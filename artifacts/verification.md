@@ -9,3 +9,7 @@
 - Real WhatsApp delivery was not attempted. Deep-link opening is captured in tests; the visitor sends in WhatsApp.
 - A public canonical URL has not been supplied. The production QR card therefore remains in its explanatory state; QR generation and decoding were verified using a test HTTPS URL, not a fabricated owner destination.
 - Physical iOS Safari / Android Chrome keyboards have not been tested. Chromium mobile touch emulation is covered separately in the browser suite.
+
+## Featured website card update
+
+The owner requested the second supplied card reference: no globe icon or floating preview arrow, larger title and CTA, taller card, and enlarged illustration at the lower logical end. Production build passes. A focused Chromium check covered English and Arabic at 320, 360, 390, 430, 512, 768, 1024 and 1440px with no horizontal overflow or page errors; both featured CTA actions opened and dismissed the existing sheet. Card crops are stored in `artifacts/featured-card/`. Unrelated contact interactions were unchanged.
