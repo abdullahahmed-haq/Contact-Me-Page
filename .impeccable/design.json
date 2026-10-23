@@ -1,0 +1,419 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-23T15:06:45.599699+00:00",
+  "title": "Design System: Personal Connect Hub",
+  "extensions": {
+    "colorMeta": {
+      "surface": {
+        "role": "neutral",
+        "displayName": "Surface",
+        "tonalRamp": [
+          "oklch(15.0% 0.0073 80.72)",
+          "oklch(26.43% 0.0073 80.72)",
+          "oklch(37.86% 0.0073 80.72)",
+          "oklch(49.29% 0.0073 80.72)",
+          "oklch(60.71% 0.0073 80.72)",
+          "oklch(72.14% 0.0073 80.72)",
+          "oklch(83.57% 0.0073 80.72)",
+          "oklch(95.0% 0.0073 80.72)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "tonalRamp": [
+          "oklch(15.0% 0.0049 145.40)",
+          "oklch(26.43% 0.0049 145.40)",
+          "oklch(37.86% 0.0049 145.40)",
+          "oklch(49.29% 0.0049 145.40)",
+          "oklch(60.71% 0.0049 145.40)",
+          "oklch(72.14% 0.0049 145.40)",
+          "oklch(83.57% 0.0049 145.40)",
+          "oklch(95.0% 0.0049 145.40)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted",
+        "tonalRamp": [
+          "oklch(15.0% 0.0125 136.60)",
+          "oklch(26.43% 0.0125 136.60)",
+          "oklch(37.86% 0.0125 136.60)",
+          "oklch(49.29% 0.0125 136.60)",
+          "oklch(60.71% 0.0125 136.60)",
+          "oklch(72.14% 0.0125 136.60)",
+          "oklch(83.57% 0.0125 136.60)",
+          "oklch(95.0% 0.0125 136.60)"
+        ]
+      },
+      "blue": {
+        "role": "secondary",
+        "displayName": "Blue",
+        "tonalRamp": [
+          "oklch(15.0% 0.0330 261.03)",
+          "oklch(26.43% 0.0330 261.03)",
+          "oklch(37.86% 0.0330 261.03)",
+          "oklch(49.29% 0.0330 261.03)",
+          "oklch(60.71% 0.0330 261.03)",
+          "oklch(72.14% 0.0330 261.03)",
+          "oklch(83.57% 0.0330 261.03)",
+          "oklch(95.0% 0.0330 261.03)"
+        ]
+      },
+      "mint": {
+        "role": "secondary",
+        "displayName": "Mint",
+        "tonalRamp": [
+          "oklch(15.0% 0.0448 135.07)",
+          "oklch(26.43% 0.0448 135.07)",
+          "oklch(37.86% 0.0448 135.07)",
+          "oklch(49.29% 0.0448 135.07)",
+          "oklch(60.71% 0.0448 135.07)",
+          "oklch(72.14% 0.0448 135.07)",
+          "oklch(83.57% 0.0448 135.07)",
+          "oklch(95.0% 0.0448 135.07)"
+        ]
+      },
+      "purple": {
+        "role": "secondary",
+        "displayName": "Purple",
+        "tonalRamp": [
+          "oklch(15.0% 0.0480 304.11)",
+          "oklch(26.43% 0.0480 304.11)",
+          "oklch(37.86% 0.0480 304.11)",
+          "oklch(49.29% 0.0480 304.11)",
+          "oklch(60.71% 0.0480 304.11)",
+          "oklch(72.14% 0.0480 304.11)",
+          "oklch(83.57% 0.0480 304.11)",
+          "oklch(95.0% 0.0480 304.11)"
+        ]
+      },
+      "peach": {
+        "role": "secondary",
+        "displayName": "Peach",
+        "tonalRamp": [
+          "oklch(15.0% 0.0389 82.35)",
+          "oklch(26.43% 0.0389 82.35)",
+          "oklch(37.86% 0.0389 82.35)",
+          "oklch(49.29% 0.0389 82.35)",
+          "oklch(60.71% 0.0389 82.35)",
+          "oklch(72.14% 0.0389 82.35)",
+          "oklch(83.57% 0.0389 82.35)",
+          "oklch(95.0% 0.0389 82.35)"
+        ]
+      },
+      "green": {
+        "role": "primary",
+        "displayName": "Green",
+        "tonalRamp": [
+          "oklch(15.0% 0.1805 148.00)",
+          "oklch(26.43% 0.1805 148.00)",
+          "oklch(37.86% 0.1805 148.00)",
+          "oklch(49.29% 0.1805 148.00)",
+          "oklch(60.71% 0.1805 148.00)",
+          "oklch(72.14% 0.1805 148.00)",
+          "oklch(83.57% 0.1805 148.00)",
+          "oklch(95.0% 0.1805 148.00)"
+        ]
+      },
+      "send": {
+        "role": "primary",
+        "displayName": "Send",
+        "tonalRamp": [
+          "oklch(15.0% 0.1472 147.26)",
+          "oklch(26.43% 0.1472 147.26)",
+          "oklch(37.86% 0.1472 147.26)",
+          "oklch(49.29% 0.1472 147.26)",
+          "oklch(60.71% 0.1472 147.26)",
+          "oklch(72.14% 0.1472 147.26)",
+          "oklch(83.57% 0.1472 147.26)",
+          "oklch(95.0% 0.1472 147.26)"
+        ]
+      },
+      "send-hover": {
+        "role": "primary",
+        "displayName": "Send Hover",
+        "tonalRamp": [
+          "oklch(15.0% 0.1306 147.40)",
+          "oklch(26.43% 0.1306 147.40)",
+          "oklch(37.86% 0.1306 147.40)",
+          "oklch(49.29% 0.1306 147.40)",
+          "oklch(60.71% 0.1306 147.40)",
+          "oklch(72.14% 0.1306 147.40)",
+          "oklch(83.57% 0.1306 147.40)",
+          "oklch(95.0% 0.1306 147.40)"
+        ]
+      },
+      "white": {
+        "role": "neutral",
+        "displayName": "White",
+        "tonalRamp": [
+          "oklch(15.0% 0.0000 89.88)",
+          "oklch(26.43% 0.0000 89.88)",
+          "oklch(37.86% 0.0000 89.88)",
+          "oklch(49.29% 0.0000 89.88)",
+          "oklch(60.71% 0.0000 89.88)",
+          "oklch(72.14% 0.0000 89.88)",
+          "oklch(83.57% 0.0000 89.88)",
+          "oklch(95.0% 0.0000 89.88)"
+        ]
+      },
+      "focus": {
+        "role": "neutral",
+        "displayName": "Focus",
+        "tonalRamp": [
+          "oklch(15.0% 0.1311 258.44)",
+          "oklch(26.43% 0.1311 258.44)",
+          "oklch(37.86% 0.1311 258.44)",
+          "oklch(49.29% 0.1311 258.44)",
+          "oklch(60.71% 0.1311 258.44)",
+          "oklch(72.14% 0.1311 258.44)",
+          "oklch(83.57% 0.1311 258.44)",
+          "oklch(95.0% 0.1311 258.44)"
+        ]
+      },
+      "dark-hover": {
+        "role": "neutral",
+        "displayName": "Dark Hover",
+        "tonalRamp": [
+          "oklch(15.0% 0.0147 141.18)",
+          "oklch(26.43% 0.0147 141.18)",
+          "oklch(37.86% 0.0147 141.18)",
+          "oklch(49.29% 0.0147 141.18)",
+          "oklch(60.71% 0.0147 141.18)",
+          "oklch(72.14% 0.0147 141.18)",
+          "oklch(83.57% 0.0147 141.18)",
+          "oklch(95.0% 0.0147 141.18)"
+        ]
+      },
+      "chip-selected": {
+        "role": "secondary",
+        "displayName": "Chip Selected",
+        "tonalRamp": [
+          "oklch(15.0% 0.0371 141.57)",
+          "oklch(26.43% 0.0371 141.57)",
+          "oklch(37.86% 0.0371 141.57)",
+          "oklch(49.29% 0.0371 141.57)",
+          "oklch(60.71% 0.0371 141.57)",
+          "oklch(72.14% 0.0371 141.57)",
+          "oklch(83.57% 0.0371 141.57)",
+          "oklch(95.0% 0.0371 141.57)"
+        ]
+      },
+      "chip-selected-ink": {
+        "role": "secondary",
+        "displayName": "Chip Selected Ink",
+        "tonalRamp": [
+          "oklch(15.0% 0.0777 146.33)",
+          "oklch(26.43% 0.0777 146.33)",
+          "oklch(37.86% 0.0777 146.33)",
+          "oklch(49.29% 0.0777 146.33)",
+          "oklch(60.71% 0.0777 146.33)",
+          "oklch(72.14% 0.0777 146.33)",
+          "oklch(83.57% 0.0777 146.33)",
+          "oklch(95.0% 0.0777 146.33)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Profile name",
+        "purpose": "Large Latin profile name with responsive reductions."
+      },
+      "display-arabic": {
+        "displayName": "Arabic profile name",
+        "purpose": "Arabic name with untracked text and looser line-height."
+      },
+      "title": {
+        "displayName": "Contact title",
+        "purpose": "Heavy contact tile label, reduced on mobile."
+      },
+      "body": {
+        "displayName": "Latin body",
+        "purpose": "Default Latin text."
+      },
+      "body-arabic": {
+        "displayName": "Arabic body",
+        "purpose": "Default Arabic text."
+      },
+      "label": {
+        "displayName": "Action label",
+        "purpose": "Dark pill action label."
+      }
+    },
+    "shadows": [
+      {
+        "name": "surface",
+        "value": "0 8px 24px -14px #33432a38",
+        "purpose": "Ambient surface and control depth."
+      },
+      {
+        "name": "contact-hover",
+        "value": "0 12px 26px -14px #30402750",
+        "purpose": "Contact tile hover lift."
+      },
+      {
+        "name": "language-menu",
+        "value": "0 12px 40px #1e2e2530",
+        "purpose": "Floating language menu."
+      },
+      {
+        "name": "sheet",
+        "value": "0 -10px 70px #0000001c",
+        "purpose": "Upward sheet elevation."
+      },
+      {
+        "name": "field-focus",
+        "value": "0 0 0 3px #49a25919",
+        "purpose": "Message field focus halo."
+      }
+    ],
+    "motion": [
+      {
+        "name": "state-duration",
+        "value": "220ms",
+        "purpose": "Shared CSS state transitions."
+      },
+      {
+        "name": "reveal",
+        "value": "500ms cubic-bezier(0.16, 1, 0.3, 1); translateY(12px) to 0",
+        "purpose": "Initial section entrance; delays 0/40/70/100/130ms."
+      },
+      {
+        "name": "sheet-spring",
+        "value": "spring(stiffness: 330, damping: 34)",
+        "purpose": "Sheet entrance and exit; y 100% to 0."
+      },
+      {
+        "name": "scrim-fade",
+        "value": "200ms",
+        "purpose": "Overlay fade."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "0ms",
+        "purpose": "Remove CSS animations/transitions and use immediate sheet/scrim changes."
+      },
+      {
+        "name": "sheet-dismiss",
+        "value": "offsetY > 85px or velocityY > 650px/s",
+        "purpose": "Handle-only downward drag dismissal."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "narrow",
+        "value": "max-width: 359px"
+      },
+      {
+        "name": "mobile",
+        "value": "max-width: 650px"
+      },
+      {
+        "name": "wide",
+        "value": "min-width: 1100px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Dark action",
+      "kind": "button",
+      "refersTo": "button-dark",
+      "description": "Pill action used for website and contact download.",
+      "html": "<button class=\"ds-dark\">Visit Website <svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"m9 5 7 7-7 7\"/></svg></button>",
+      "css": ".ds-dark{font-family:var(--font-body,\"Manrope Variable\",sans-serif);display:inline-flex;align-items:center;justify-content:center;gap:18px;min-height:44px;padding:10px 23px;border:0;border-radius:30px;background:var(--ink,#171917);color:#fff;font-size:14px;font-weight:650;cursor:pointer;transition:transform var(--duration,220ms),background var(--duration,220ms)}.ds-dark:hover{background:#30362f}.ds-dark:active{transform:scale(.97)}.ds-dark:focus-visible{outline:3px solid var(--focus,#3264af);outline-offset:4px;}@media(prefers-reduced-motion:reduce){button,a{transition:none!important;animation:none!important}}"
+    },
+    {
+      "name": "WhatsApp handoff",
+      "kind": "button",
+      "refersTo": "button-send",
+      "description": "Full-width green handoff action, with its darker hover and muted disabled state.",
+      "html": "<button class=\"ds-send\">Send via WhatsApp <svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"m9 5 7 7-7 7\"/></svg></button>",
+      "css": ".ds-send{font-family:var(--font-body,\"Manrope Variable\",sans-serif);width:100%;min-height:57px;border:0;border-radius:22px;background:#21883a;color:white;display:flex;align-items:center;justify-content:center;gap:13px;font-size:17px;font-weight:750;cursor:pointer;transition:background var(--duration,220ms),transform var(--duration,220ms)}.ds-send:hover{background:#1b7431}.ds-send:active{transform:scale(.985)}.ds-send:focus-visible{outline:3px solid var(--focus,#3264af);outline-offset:4px;}.ds-send:disabled{background:#d6e5d2;color:#52644c;cursor:not-allowed}@media(prefers-reduced-motion:reduce){button,a{transition:none!important;animation:none!important}}"
+    },
+    {
+      "name": "Quick-message chip",
+      "kind": "chip",
+      "refersTo": "quick-chip",
+      "description": "Wrapped composer suggestion, using mint for hover and selected state.",
+      "html": "<button class=\"ds-chip\" aria-pressed=\"true\">Hi! 👋</button>",
+      "css": ".ds-chip{font-family:var(--font-body,\"Manrope Variable\",sans-serif);border:1px solid #dfe3d9;background:transparent;min-height:40px;border-radius:30px;padding:8px 12px;font-size:11px;color:#394936;cursor:pointer;transition:background var(--duration,220ms),border-color var(--duration,220ms)}.ds-chip:hover,.ds-chip[aria-pressed=\"true\"]{background:#dff3dc;border-color:#c7e8bf;color:#234d28}.ds-chip:focus-visible{outline:3px solid var(--focus,#3264af);outline-offset:4px;}@media(prefers-reduced-motion:reduce){button,a{transition:none!important;animation:none!important}}"
+    },
+    {
+      "name": "Contact tile",
+      "kind": "card",
+      "refersTo": "contact-card",
+      "description": "Horizontal icon, text and dark arrow; the implementation keeps two columns.",
+      "html": "<button class=\"ds-contact\"><span class=\"ds-contact-icon\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"M12 5v14M5 12h14\"/></svg></span><span class=\"ds-contact-copy\"><strong>Portfolio</strong><small>My work &amp; projects</small></span><span class=\"ds-contact-arrow\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"m9 5 7 7-7 7\"/></svg></span></button>",
+      "css": ".ds-contact{font-family:var(--font-body,\"Manrope Variable\",sans-serif);width:100%;min-height:109px;border:0;border-radius:var(--card-radius,28px);display:flex;align-items:center;gap:15px;padding:19px;text-align:start;background:linear-gradient(110deg,#e1f6ca,#ecf9dd);color:var(--ink,#171917);box-shadow:var(--shadow,0 8px 24px -14px #33432a38);cursor:pointer;transition:transform var(--duration,220ms),box-shadow var(--duration,220ms)}.ds-contact-icon{width:58px;height:58px;border-radius:19px;background:#c3e9a8;display:grid;place-items:center;flex-shrink:0}.ds-contact-copy{flex:1;min-width:0;display:flex;flex-direction:column;gap:4px}.ds-contact-copy strong{font-size:18px;font-weight:800;letter-spacing:-.025em}.ds-contact-copy small{font-size:12px;line-height:1.45;color:#566250}.ds-contact-arrow{width:32px;height:32px;border-radius:50%;background:#161916;color:white;display:grid;place-items:center;flex-shrink:0}.ds-contact:hover{transform:translateY(-3px);box-shadow:0 12px 26px -14px #30402750}.ds-contact:active{transform:scale(.98)}.ds-contact:focus-visible{outline:3px solid var(--focus,#3264af);outline-offset:4px;}[dir=\"rtl\"] .ds-contact-arrow svg{transform:rotate(180deg)}@media(prefers-reduced-motion:reduce){button,a{transition:none!important;animation:none!important}}"
+    },
+    {
+      "name": "Message field",
+      "kind": "input",
+      "refersTo": "message-field",
+      "description": "Textarea and compact character-count toolbar share a focus ring.",
+      "html": "<div class=\"ds-field\"><textarea aria-label=\"Your message\" placeholder=\"Write your message…\"></textarea><div class=\"ds-field-tools\"><span aria-hidden=\"true\">☺</span><span>0</span></div></div>",
+      "css": ".ds-field{font-family:var(--font-body,\"Manrope Variable\",sans-serif);border:1px solid #d9ddd4;border-radius:21px;overflow:hidden;transition:border-color var(--duration,220ms),box-shadow var(--duration,220ms)}.ds-field:focus-within{border-color:#419752;box-shadow:0 0 0 3px #49a25919}.ds-field textarea{font-family:var(--font-body,\"Manrope Variable\",sans-serif);display:block;box-sizing:border-box;width:100%;background:transparent;border:0;outline:none;padding:17px 18px 5px;resize:vertical;min-height:91px;max-height:200px;color:var(--ink,#171917);line-height:1.6;font-size:15px}.ds-field textarea::placeholder{color:#70786f}.ds-field-tools{display:flex;justify-content:space-between;align-items:center;padding:2px 13px 7px;color:#5b6659;font-size:12px;font-variant-numeric:tabular-nums}@media(prefers-reduced-motion:reduce){button,a{transition:none!important;animation:none!important}}"
+    },
+    {
+      "name": "Category badge",
+      "kind": "chip",
+      "description": "Informational pastel pill; no selection or hover behavior.",
+      "html": "<span class=\"ds-badge\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"M12 5v14M5 12h14\"/></svg> Student</span>",
+      "css": ".ds-badge{font-family:var(--font-body,\"Manrope Variable\",sans-serif);display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 20px;border-radius:30px;font-weight:650;font-size:13px;white-space:nowrap;background:#deebff;color:var(--ink,#171917)}@media(prefers-reduced-motion:reduce){button,a{transition:none!important;animation:none!important}}"
+    },
+    {
+      "name": "Language menu",
+      "kind": "nav",
+      "description": "Cream compact menu with blue highlighted language and current-language check.",
+      "html": "<nav class=\"ds-languages\" aria-label=\"Language\"><span class=\"ds-language-label\">Language</span><button class=\"ds-language\" aria-current=\"true\">English <span>✓</span></button><button class=\"ds-language\" lang=\"ar\">العربية</button></nav>",
+      "css": ".ds-languages{font-family:var(--font-body,\"Manrope Variable\",sans-serif);min-width:170px;padding:8px;background:var(--surface,#fffcf7);border-radius:18px;box-shadow:0 12px 40px #1e2e2530}.ds-language-label{display:block;padding:8px 12px;color:var(--muted,#626760);font-size:12px}.ds-language{font-family:var(--font-body,\"Manrope Variable\",sans-serif);width:100%;border:0;background:transparent;color:var(--ink,#171917);padding:10px 12px;min-height:44px;border-radius:10px;display:flex;align-items:center;justify-content:space-between;font-size:14px;cursor:pointer}.ds-language:hover,.ds-language:focus-visible{background:var(--blue,#dce9ff);outline:none}@media(prefers-reduced-motion:reduce){button,a{transition:none!important;animation:none!important}}"
+    },
+    {
+      "name": "Content-driven sheet",
+      "kind": "custom",
+      "refersTo": "bottom-sheet",
+      "description": "Static preview of the reusable cream sheet shell; runtime adds dialog, spring and handle-only drag.",
+      "html": "<section class=\"ds-sheet\"><div class=\"ds-handle\" aria-hidden=\"true\"></div><header class=\"ds-sheet-header\"><span class=\"ds-sheet-icon\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"M12 5v14M5 12h14\"/></svg></span><div><h2>WhatsApp</h2><p>Let’s start a conversation</p></div><button class=\"ds-close\" aria-label=\"Close\">×</button></header><p class=\"ds-sheet-copy\">Message content sets the sheet height.</p></section>",
+      "css": ".ds-sheet{font-family:var(--font-body,\"Manrope Variable\",sans-serif);position:relative;max-width:600px;border-radius:36px 36px 0 0;background:var(--surface,#fffcf7);padding:12px 26px 22px;box-shadow:0 -10px 70px #0000001c;color:var(--ink,#171917)}.ds-handle{width:46px;height:5px;background:#b2b3b1;border-radius:10px;margin:0 auto 20px}.ds-sheet-header{display:flex;align-items:center;gap:17px;padding:6px 0 24px}.ds-sheet-icon{width:70px;height:70px;border-radius:23px;display:grid;place-items:center;background:var(--green,#2db653);color:white;box-shadow:0 0 0 11px #eaf5e5;flex-shrink:0}.ds-sheet-header>div{flex:1;min-width:0}.ds-sheet h2{font-size:24px;letter-spacing:-.025em;font-weight:800;margin:0}.ds-sheet-header p{font-size:13px;color:#687268;line-height:1.5;margin:3px 0 0}.ds-close{font-family:var(--font-body,\"Manrope Variable\",sans-serif);width:44px;height:44px;display:grid;place-items:center;background:white;box-shadow:var(--shadow,0 8px 24px -14px #33432a38);border:0;border-radius:50%;font-size:24px;cursor:pointer}.ds-close:focus-visible{outline:3px solid var(--focus,#3264af);outline-offset:4px;}.ds-sheet-copy{font-size:15px;line-height:1.6;margin:0}@media(prefers-reduced-motion:reduce){button,a{transition:none!important;animation:none!important}}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Pastel Contact Bento",
+    "overview": "A warm personal introduction made from cream paper, pastel bento cards, and a fictional illustrated avatar. Large friendly names and small tactile controls give the page a personable, compact character. The self-hosted Latin and Arabic typefaces share the same hierarchy while respecting each script.\n\nSoft tonal layers carry the layout; dark action controls and the green WhatsApp handoff provide clear points of action. Rounded cards, circular arrows, quiet organic shapes, and brief spring motion form the recurring visual language.",
+    "keyCharacteristics": [
+      "Cream canvas with blue, mint, lavender, and peach surfaces.",
+      "Rounded horizontal contact tiles with icon blocks and dark circular arrows.",
+      "Self-hosted bilingual typography and logical RTL composition.",
+      "A content-driven bottom sheet shared by contact actions."
+    ],
+    "rules": [
+      {
+        "name": "The Green Roles Rule",
+        "body": "Keep the bright icon green separate from the darker white-text handoff green.",
+        "section": "colors"
+      },
+      {
+        "name": "The Two-Column Rule",
+        "body": "Preserve two contact columns and horizontal tile composition across the implemented viewport sizes.",
+        "section": "layout"
+      }
+    ],
+    "dos": [
+      "Do preserve the cream, pastel, rounded bento world and illustrated avatar.",
+      "Do keep contact tiles horizontal in a two-column grid on mobile and desktop.",
+      "Do use self-hosted Manrope for Latin and Noto Sans Arabic for Arabic.",
+      "Do use the darker send color for white-text WhatsApp actions; reserve the brighter green for icon surfaces.",
+      "Do preserve visible focus, reduced-motion behavior, and RTL-aware directional arrows.",
+      "Do show the configured empty QR state until a canonical public URL is supplied."
+    ],
+    "donts": [
+      "Don't present the fictional avatar as a verified portrait.",
+      "Don't invent contact destinations or replace unavailable states with fabricated links.",
+      "Don't mirror brand logos when changing reading direction.",
+      "Don't force the bottom sheet to a fixed content height or attach dragging to its scrollable body.",
+      "Don't replace the soft tonal layers with heavy borders or sharp rectangular cards."
+    ]
+  }
+}
