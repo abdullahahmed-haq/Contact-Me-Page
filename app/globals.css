@@ -1043,33 +1043,37 @@ a svg {
     height: 16px;
   }
   .featured-card {
-    min-height: clamp(212px, 46vw, 260px);
-    padding: 26px 24px;
+    container-type: inline-size;
+    min-height: 0;
+    aspect-ratio: 2.15 / 1;
+    padding: 5.2%;
     border-radius: 30px;
   }
   .featured-card h2 {
-    font-size: clamp(25px, 6.2vw, 32px);
-    margin-block: 2px 5px;
+    font-size: clamp(18px, 6.2cqw, 32px);
+    line-height: 1.25;
+    margin-block: 2px 4px;
     white-space: nowrap;
   }
   .featured-card p {
-    font-size: clamp(11px, 2.9vw, 15px);
+    font-size: clamp(9px, 3.5cqw, 20px);
+    line-height: 1.4;
   }
   .featured-card .black-button {
-    margin-top: 24px;
-    min-height: clamp(46px, 10.6vw, 54px);
-    padding-inline: clamp(20px, 4.9vw, 25px);
-    font-size: clamp(14px, 3.2vw, 16px);
-    gap: clamp(18px, 4.7vw, 24px);
+    margin-top: 6.7cqw;
+    min-height: clamp(40px, 12.6cqw, 64px);
+    padding: 8px 5.8cqw;
+    font-size: clamp(12px, 4cqw, 20px);
+    gap: 5cqw;
   }
   .featured-card .black-button svg {
-    width: 24px;
-    height: 24px;
+    width: 6.6cqw;
+    height: 6.6cqw;
   }
   .website-preview {
-    width: 62%;
+    width: 56%;
     inset-inline-end: -9px;
-    bottom: -20px;
+    bottom: -12px;
   }
   .contact-grid {
     gap: 10px;
@@ -1251,7 +1255,7 @@ a svg {
     font-size: 9px;
   }
   [dir="rtl"] .featured-card h2 {
-    font-size: clamp(23px, 5.8vw, 30px);
+    font-size: clamp(18px, 5.8cqw, 28px);
   }
   [dir="rtl"] .save-card h2 {
     font-size: 12px;
@@ -1309,21 +1313,6 @@ a svg {
   .arrow-circle {
     width: 23px;
     height: 23px;
-  }
-  .featured-card {
-    padding-inline: 20px;
-  }
-  .featured-card h2 {
-    font-size: 24px;
-  }
-  .featured-card p {
-    font-size: 10px;
-  }
-  .featured-card .black-button {
-    min-height: 44px;
-    font-size: 12px;
-    gap: 15px;
-    padding-inline: 18px;
   }
   .qr-card {
     padding: 13px 10px;

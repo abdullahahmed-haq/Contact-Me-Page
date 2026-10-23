@@ -17,3 +17,7 @@ The owner requested the second supplied card reference: no globe icon or floatin
 ## Desktop height correction
 
 Restored the featured card to exactly 210px on desktop. A focused production-browser check measured 210px in English and Arabic at 768, 1024 and 1440px, and confirmed the mobile card remains 212px at a 390px viewport. No horizontal overflow was observed. The desktop illustration was scaled to fit the shorter card. Production build and TypeScript validation passed.
+
+## Mobile reference proportions
+
+Adjusted mobile to the owner's lower reference: 2.15:1 card proportions, smaller fluid title and CTA, and a separate illustration at the lower end. Desktop remains exactly 210px. A production Chromium check covers both locales at 320, 390, 430, 512, 604, 768, 1024 and 1440px, asserting the requested aspect ratio / height and no overflow. Screenshots at 604px use a 568px-wide card to compare directly with the supplied mobile reference.

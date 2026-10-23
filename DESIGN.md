@@ -194,7 +194,7 @@ Quick-message chips wrap within the composer. They use a fine pale border and tr
 
 Contact tiles have a light gradient, rounded icon block, title/subtitle stack, and dark circular directional arrow. Default minimum height is (109px), becoming (90px) on mobile and (85px) at narrow widths. The entire tile is an anchor for a configured URL or a button for a sheet action.
 
-The blue featured card follows the approved second reference: title and subtitle align at the logical start without a globe icon, the larger dark CTA sits below, and an enlarged website illustration fills the lower logical end without a floating arrow badge. It has a 210px desktop minimum height and a 212–260px mobile minimum height. The preview is decorative interface imagery rather than evidence of a configured website. QR uses the dark inverse surface; add-to-contacts uses a blue gradient and a dark download action.
+The blue featured card follows the approved second reference: title and subtitle align at the logical start without a globe icon, the larger dark CTA sits below, and a website illustration fills the lower logical end without a floating arrow badge. It has a 210px desktop minimum height and a 2.15:1 mobile aspect ratio with fluid type and controls scaled from the card width. The preview is decorative interface imagery rather than evidence of a configured website. QR uses the dark inverse surface; add-to-contacts uses a blue gradient and a dark download action.
 
 The QR module renders an explicit empty state until the canonical public URL is configured. It must not display a made-up QR destination. Other unconfigured destinations use the shared explanatory sheet.
 
