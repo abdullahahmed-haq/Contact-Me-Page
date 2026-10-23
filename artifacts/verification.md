@@ -21,3 +21,7 @@ Restored the featured card to exactly 210px on desktop. A focused production-bro
 ## Mobile reference proportions
 
 Adjusted mobile to the owner's lower reference: 2.15:1 card proportions, smaller fluid title and CTA, and a separate illustration at the lower end. Desktop remains exactly 210px. A production Chromium check covers both locales at 320, 390, 430, 512, 604, 768, 1024 and 1440px, asserting the requested aspect ratio / height and no overflow. Screenshots at 604px use a 568px-wide card to compare directly with the supplied mobile reference.
+
+## Compact mobile contact cards
+
+All six mobile contact tiles now measure 80px, with 40px icon blocks, compact text gaps and fluid labels. Desktop tiles remain 109px. Supporting copy is limited to two visible lines on mobile; accessible names retain the full copy. Production browser verification covers 320, 360, 390, 430, 768, 1024 and 1440px in English and Arabic, including measured tile heights, label fit, overflow and WhatsApp opening. Production build and strict TypeScript checks pass. Screenshots are in `artifacts/contact-cards/`.
