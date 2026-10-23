@@ -119,7 +119,7 @@ export function MessageComposer({
       )}
       <button
         type="submit"
-        className={`send-button ${kind === "email" ? "email-send" : ""}`}
+        className="send-button sheet-primary"
         disabled={!available || !message.trim()}
       >
         <Send size={23} />

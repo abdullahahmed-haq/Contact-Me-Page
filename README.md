@@ -21,7 +21,7 @@ Configured from the owner’s supplied details:
 - GitHub: https://github.com/abdullahahmed-haq
 - Instagram: https://www.instagram.com/abdobug_1/ (vCard profile; the six public card categories are preserved)
 
-Website, portfolio, Telegram, email, LinkedIn and canonical public URL are intentionally empty. Missing links open an honest explanation with a working WhatsApp alternative. The email composer remains unavailable until a real address is configured. No destinations were fabricated.
+Website, portfolio, Telegram, email, LinkedIn and canonical public URL are intentionally empty. Missing links open their own themed sheet with an honest explanation and a disabled destination action. The email composer remains unavailable until a real address is configured. No destinations were fabricated.
 
 Profile text, avatar, badges, featured link, cards, display order, enabled sections, theme values, vCard details and localized quick messages are typed settings. Quick-message `order` controls chip ordering. Public UI copy lives in `lib/i18n.ts`. Visual tokens are centralized in `app/globals.css`, with configuration overrides for the core theme.
 
@@ -35,9 +35,11 @@ Use the three-dot menu to switch between English and العربية. The selecti
 
 ### Contact actions
 
-The WhatsApp card opens a reusable, content-height bottom sheet. It supports quick messages, selection feedback, editing, emoji insertion at the cursor, 500-character limit, accessible focus management, Escape / outside / close-button dismissal, handle-only downward dragging, scroll locking, short-screen internal scrolling and visual-viewport keyboard accommodation. The send action opens the configured WhatsApp conversation with URL-encoded text. Sending is completed in WhatsApp; the website never claims delivery. Email reuses the composer with a configured `mailto:` action.
+Every actionable card opens a reusable, content-height bottom sheet first, including the website, all six contacts, QR, and Add to Contacts. External destinations open only from the sheet action. The sheet icon, decoration, selected chips, enabled CTA and disabled CTA follow the source card’s palette: mint, green, blue, cream, lavender, pink or dark.
 
-Add to Contacts downloads a real vCard with configured phone and social profiles. UTF-8 text, escaping, CRLF line endings and octet-aware line folding are supported.
+The WhatsApp sheet uses the same shared component. It supports quick messages, selection feedback, editing, emoji insertion at the cursor, 500-character limit, accessible focus management, Escape / outside / close-button dismissal, handle-only downward dragging, scroll locking, short-screen internal scrolling and visual-viewport keyboard accommodation. The send action opens the configured WhatsApp conversation with URL-encoded text. Sending is completed in WhatsApp; the website never claims delivery. Email reuses the composer with a configured `mailto:` action.
+
+Add to Contacts first shows the configured details in a blue sheet; its Download vCard action downloads the real vCard with configured phone and social profiles. UTF-8 text, escaping, CRLF line endings and octet-aware line folding are supported.
 
 ## Assets
 
@@ -57,7 +59,7 @@ npm run test:e2e
 npm run build
 ```
 
-All 8 unit tests and 6 browser tests pass. The browser suite also exercises a real touch drag in mobile Chromium emulation. Detailed results are in `artifacts/verification.md`.
+All 8 unit tests and 7 browser tests pass. The browser suite checks all nine card entry points and matching action colors in both locales, and also exercises a real touch drag in mobile Chromium emulation. Detailed results are in `artifacts/verification.md`.
 
 Unit tests cover deep-link encoding / validation, safe configuration, vCard escaping / UTF-8 folding, QR target validation, and actual QR decode. Browser tests cover English / Arabic across 320, 360, 390, 430, 768, 1024 and 1440px, language persistence, overflow, sheet focus / dismissal, scrolling, composer controls, deep-link handoff, vCard download and reduced motion. Screenshots and sample downloads are in `artifacts/`.
 

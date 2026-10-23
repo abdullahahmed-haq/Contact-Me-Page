@@ -1,1 +1,1850 @@
-[]
+[
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 74,
+    "snippet": "Undocumented color #d1dfbd is outside DESIGN.md colors",
+    "ignoreValue": "#d1dfbd",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-radius",
+    "name": "Radius outside DESIGN.md",
+    "description": "A border-radius value is outside the DESIGN.md rounded scale. Use a documented radius token or update the design system if the new shape is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 139,
+    "snippet": "border-radius: 18px is outside the DESIGN.md rounded scale",
+    "ignoreValue": "18px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-radius",
+    "name": "Radius outside DESIGN.md",
+    "description": "A border-radius value is outside the DESIGN.md rounded scale. Use a documented radius token or update the design system if the new shape is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 146,
+    "snippet": "border-radius: 10px is outside the DESIGN.md rounded scale",
+    "ignoreValue": "10px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 166,
+    "snippet": "font-size: 12px is off the DESIGN.md type ramp",
+    "ignoreValue": "12px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-radius",
+    "name": "Radius outside DESIGN.md",
+    "description": "A border-radius value is outside the DESIGN.md rounded scale. Use a documented radius token or update the design system if the new shape is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 175,
+    "snippet": "border-radius: 12px is outside the DESIGN.md rounded scale",
+    "ignoreValue": "12px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 193,
+    "snippet": "font-size: 23px is off the DESIGN.md type ramp",
+    "ignoreValue": "23px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 205,
+    "snippet": "Undocumented color #545c55 is outside DESIGN.md colors",
+    "ignoreValue": "#545c55",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 210,
+    "snippet": "font-size: 19px is off the DESIGN.md type ramp",
+    "ignoreValue": "19px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 236,
+    "snippet": "Undocumented color #d2f2e9 is outside DESIGN.md colors",
+    "ignoreValue": "#d2f2e9",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 247,
+    "snippet": "Undocumented color #6d96ed is outside DESIGN.md colors",
+    "ignoreValue": "#6d96ed",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 264,
+    "snippet": "font-size: 13px is off the DESIGN.md type ramp",
+    "ignoreValue": "13px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 275,
+    "snippet": "Undocumented color #7850a6 is outside DESIGN.md colors",
+    "ignoreValue": "#7850a6",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 311,
+    "snippet": "Undocumented color #bdd2fc88 is outside DESIGN.md colors",
+    "ignoreValue": "#bdd2fc88",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 326,
+    "snippet": "font-size: 32px is off the DESIGN.md type ramp",
+    "ignoreValue": "32px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 333,
+    "snippet": "Undocumented color #505f77 is outside DESIGN.md colors",
+    "ignoreValue": "#505f77",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 362,
+    "snippet": "font-size: 16px is off the DESIGN.md type ramp",
+    "ignoreValue": "16px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 410,
+    "snippet": "Undocumented color #e1f6ca is outside DESIGN.md colors",
+    "ignoreValue": "#e1f6ca",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 410,
+    "snippet": "Undocumented color #ecf9dd is outside DESIGN.md colors",
+    "ignoreValue": "#ecf9dd",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 413,
+    "snippet": "Undocumented color #edf9dd is outside DESIGN.md colors",
+    "ignoreValue": "#edf9dd",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 419,
+    "snippet": "Undocumented color #fff4e3 is outside DESIGN.md colors",
+    "ignoreValue": "#fff4e3",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-radius",
+    "name": "Radius outside DESIGN.md",
+    "description": "A border-radius value is outside the DESIGN.md rounded scale. Use a documented radius token or update the design system if the new shape is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 430,
+    "snippet": "border-radius: 19px is outside the DESIGN.md rounded scale",
+    "ignoreValue": "19px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 434,
+    "snippet": "Undocumented color #c3e9a8 is outside DESIGN.md colors",
+    "ignoreValue": "#c3e9a8",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 441,
+    "snippet": "Undocumented color #33c956 is outside DESIGN.md colors",
+    "ignoreValue": "#33c956",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 441,
+    "snippet": "Undocumented color #23b64b is outside DESIGN.md colors",
+    "ignoreValue": "#23b64b",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 445,
+    "snippet": "Undocumented color #26b9ef is outside DESIGN.md colors",
+    "ignoreValue": "#26b9ef",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 445,
+    "snippet": "Undocumented color #18a2e5 is outside DESIGN.md colors",
+    "ignoreValue": "#18a2e5",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 449,
+    "snippet": "Undocumented color #ffda91 is outside DESIGN.md colors",
+    "ignoreValue": "#ffda91",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 452,
+    "snippet": "Undocumented color #cda8f5 is outside DESIGN.md colors",
+    "ignoreValue": "#cda8f5",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 455,
+    "snippet": "Undocumented color #187cee is outside DESIGN.md colors",
+    "ignoreValue": "#187cee",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 455,
+    "snippet": "Undocumented color #0861ca is outside DESIGN.md colors",
+    "ignoreValue": "#0861ca",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 471,
+    "snippet": "font-size: 12px is off the DESIGN.md type ramp",
+    "ignoreValue": "12px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 476,
+    "snippet": "Undocumented color #52617b is outside DESIGN.md colors",
+    "ignoreValue": "#52617b",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 483,
+    "snippet": "Undocumented color #645475 is outside DESIGN.md colors",
+    "ignoreValue": "#645475",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 546,
+    "snippet": "font-size: 20px is off the DESIGN.md type ramp",
+    "ignoreValue": "20px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 551,
+    "snippet": "font-size: 12px is off the DESIGN.md type ramp",
+    "ignoreValue": "12px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 553,
+    "snippet": "Undocumented color #d5d9d2 is outside DESIGN.md colors",
+    "ignoreValue": "#d5d9d2",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-radius",
+    "name": "Radius outside DESIGN.md",
+    "description": "A border-radius value is outside the DESIGN.md rounded scale. Use a documented radius token or update the design system if the new shape is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 562,
+    "snippet": "border-radius: 18px is outside the DESIGN.md rounded scale",
+    "ignoreValue": "18px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 574,
+    "snippet": "Undocumented color #d7e6c8 is outside DESIGN.md colors",
+    "ignoreValue": "#d7e6c8",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 581,
+    "snippet": "font-size: 10px is off the DESIGN.md type ramp",
+    "ignoreValue": "10px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-radius",
+    "name": "Radius outside DESIGN.md",
+    "description": "A border-radius value is outside the DESIGN.md rounded scale. Use a documented radius token or update the design system if the new shape is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 592,
+    "snippet": "border-radius: 8px is outside the DESIGN.md rounded scale",
+    "ignoreValue": "8px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 595,
+    "snippet": "font-size: 11px is off the DESIGN.md type ramp",
+    "ignoreValue": "11px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 620,
+    "snippet": "Undocumented color #bed2fb is outside DESIGN.md colors",
+    "ignoreValue": "#bed2fb",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 625,
+    "snippet": "Undocumented color #bed6ff is outside DESIGN.md colors",
+    "ignoreValue": "#bed6ff",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-radius",
+    "name": "Radius outside DESIGN.md",
+    "description": "A border-radius value is outside the DESIGN.md rounded scale. Use a documented radius token or update the design system if the new shape is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 630,
+    "snippet": "border-radius: 16px is outside the DESIGN.md rounded scale",
+    "ignoreValue": "16px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 633,
+    "snippet": "font-size: 19px is off the DESIGN.md type ramp",
+    "ignoreValue": "19px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 638,
+    "snippet": "font-size: 11px is off the DESIGN.md type ramp",
+    "ignoreValue": "11px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 639,
+    "snippet": "Undocumented color #52617b is outside DESIGN.md colors",
+    "ignoreValue": "#52617b",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 645,
+    "snippet": "font-size: 12px is off the DESIGN.md type ramp",
+    "ignoreValue": "12px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 651,
+    "snippet": "Undocumented color #10141088 is outside DESIGN.md colors",
+    "ignoreValue": "#10141088",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-radius",
+    "name": "Radius outside DESIGN.md",
+    "description": "A border-radius value is outside the DESIGN.md rounded scale. Use a documented radius token or update the design system if the new shape is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 670,
+    "snippet": "border-radius: 36px is outside the DESIGN.md rounded scale",
+    "ignoreValue": "36px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 758,
+    "snippet": "Undocumented color #b2b3b1 is outside DESIGN.md colors",
+    "ignoreValue": "#b2b3b1",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-radius",
+    "name": "Radius outside DESIGN.md",
+    "description": "A border-radius value is outside the DESIGN.md rounded scale. Use a documented radius token or update the design system if the new shape is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 759,
+    "snippet": "border-radius: 10px is outside the DESIGN.md rounded scale",
+    "ignoreValue": "10px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-radius",
+    "name": "Radius outside DESIGN.md",
+    "description": "A border-radius value is outside the DESIGN.md rounded scale. Use a documented radius token or update the design system if the new shape is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 774,
+    "snippet": "border-radius: 23px is outside the DESIGN.md rounded scale",
+    "ignoreValue": "23px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 787,
+    "snippet": "font-size: 24px is off the DESIGN.md type ramp",
+    "ignoreValue": "24px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 792,
+    "snippet": "font-size: 13px is off the DESIGN.md type ramp",
+    "ignoreValue": "13px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 793,
+    "snippet": "Undocumented color #687268 is outside DESIGN.md colors",
+    "ignoreValue": "#687268",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 815,
+    "snippet": "Undocumented color #d9ddd4 is outside DESIGN.md colors",
+    "ignoreValue": "#d9ddd4",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 841,
+    "snippet": "Undocumented color #70786f is outside DESIGN.md colors",
+    "ignoreValue": "#70786f",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 850,
+    "snippet": "font-size: 12px is off the DESIGN.md type ramp",
+    "ignoreValue": "12px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 860,
+    "snippet": "Undocumented color #687566 is outside DESIGN.md colors",
+    "ignoreValue": "#687566",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 872,
+    "snippet": "font-size: 12px is off the DESIGN.md type ramp",
+    "ignoreValue": "12px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 883,
+    "snippet": "Undocumented color #dfe3d9 is outside DESIGN.md colors",
+    "ignoreValue": "#dfe3d9",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 888,
+    "snippet": "font-size: 11px is off the DESIGN.md type ramp",
+    "ignoreValue": "11px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 910,
+    "snippet": "font-size: 17px is off the DESIGN.md type ramp",
+    "ignoreValue": "17px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 935,
+    "snippet": "font-size: 10px is off the DESIGN.md type ramp",
+    "ignoreValue": "10px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 938,
+    "snippet": "Undocumented color #636e5e is outside DESIGN.md colors",
+    "ignoreValue": "#636e5e",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 943,
+    "snippet": "font-size: 12px is off the DESIGN.md type ramp",
+    "ignoreValue": "12px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 948,
+    "snippet": "Undocumented color #655b49 is outside DESIGN.md colors",
+    "ignoreValue": "#655b49",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 951,
+    "snippet": "Undocumented color #a03d31 is outside DESIGN.md colors",
+    "ignoreValue": "#a03d31",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 954,
+    "snippet": "Undocumented color #b44a39 is outside DESIGN.md colors",
+    "ignoreValue": "#b44a39",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 998,
+    "snippet": "font-size: 12px is off the DESIGN.md type ramp",
+    "ignoreValue": "12px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 1004,
+    "snippet": "font-size: 17px is off the DESIGN.md type ramp",
+    "ignoreValue": "17px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 1008,
+    "snippet": "font-size: 30px is off the DESIGN.md type ramp",
+    "ignoreValue": "30px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 1051,
+    "snippet": "font-size: 17px is off the DESIGN.md type ramp",
+    "ignoreValue": "17px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 1055,
+    "snippet": "font-size: 42px is off the DESIGN.md type ramp",
+    "ignoreValue": "42px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 1074,
+    "snippet": "font-size: 10.5px is off the DESIGN.md type ramp",
+    "ignoreValue": "10.5px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 1092,
+    "snippet": "font-size: 10px is off the DESIGN.md type ramp",
+    "ignoreValue": "10px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 1106,
+    "snippet": "font-size: clamp(18px, 6.2cqw, 32px) has fluid endpoint 32px off the DESIGN.md type ramp",
+    "ignoreValue": "32px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 1112,
+    "snippet": "font-size: clamp(9px, 3.5cqw, 20px) has fluid endpoints 9px and 20px off the DESIGN.md type ramp",
+    "ignoreValue": "9px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 1119,
+    "snippet": "font-size: clamp(12px, 4cqw, 20px) has fluid endpoints 12px and 20px off the DESIGN.md type ramp",
+    "ignoreValue": "12px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-radius",
+    "name": "Radius outside DESIGN.md",
+    "description": "A border-radius value is outside the DESIGN.md rounded scale. Use a documented radius token or update the design system if the new shape is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 1146,
+    "snippet": "border-radius: 14px is outside the DESIGN.md rounded scale",
+    "ignoreValue": "14px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 1153,
+    "snippet": "font-size: clamp(11px, 3.2vw, 13px) has fluid endpoints 11px and 13px off the DESIGN.md type ramp",
+    "ignoreValue": "11px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 1157,
+    "snippet": "font-size: 10px is off the DESIGN.md type ramp",
+    "ignoreValue": "10px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-radius",
+    "name": "Radius outside DESIGN.md",
+    "description": "A border-radius value is outside the DESIGN.md rounded scale. Use a documented radius token or update the design system if the new shape is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 1183,
+    "snippet": "border-radius: 25px is outside the DESIGN.md rounded scale",
+    "ignoreValue": "25px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 1190,
+    "snippet": "font-size: 10px is off the DESIGN.md type ramp",
+    "ignoreValue": "10px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-radius",
+    "name": "Radius outside DESIGN.md",
+    "description": "A border-radius value is outside the DESIGN.md rounded scale. Use a documented radius token or update the design system if the new shape is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 1198,
+    "snippet": "border-radius: 12px is outside the DESIGN.md rounded scale",
+    "ignoreValue": "12px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 1210,
+    "snippet": "font-size: 8px is off the DESIGN.md type ramp",
+    "ignoreValue": "8px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 1220,
+    "snippet": "font-size: 9px is off the DESIGN.md type ramp",
+    "ignoreValue": "9px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-radius",
+    "name": "Radius outside DESIGN.md",
+    "description": "A border-radius value is outside the DESIGN.md rounded scale. Use a documented radius token or update the design system if the new shape is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 1224,
+    "snippet": "border-radius: 25px is outside the DESIGN.md rounded scale",
+    "ignoreValue": "25px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-radius",
+    "name": "Radius outside DESIGN.md",
+    "description": "A border-radius value is outside the DESIGN.md rounded scale. Use a documented radius token or update the design system if the new shape is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 1230,
+    "snippet": "border-radius: 12px is outside the DESIGN.md rounded scale",
+    "ignoreValue": "12px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 1240,
+    "snippet": "font-size: 9px is off the DESIGN.md type ramp",
+    "ignoreValue": "9px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 1245,
+    "snippet": "font-size: 9px is off the DESIGN.md type ramp",
+    "ignoreValue": "9px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-radius",
+    "name": "Radius outside DESIGN.md",
+    "description": "A border-radius value is outside the DESIGN.md rounded scale. Use a documented radius token or update the design system if the new shape is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 1253,
+    "snippet": "border-radius: 34px is outside the DESIGN.md rounded scale",
+    "ignoreValue": "34px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-radius",
+    "name": "Radius outside DESIGN.md",
+    "description": "A border-radius value is outside the DESIGN.md rounded scale. Use a documented radius token or update the design system if the new shape is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 1262,
+    "snippet": "border-radius: 18px is outside the DESIGN.md rounded scale",
+    "ignoreValue": "18px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 1270,
+    "snippet": "font-size: 21px is off the DESIGN.md type ramp",
+    "ignoreValue": "21px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 1273,
+    "snippet": "font-size: 11px is off the DESIGN.md type ramp",
+    "ignoreValue": "11px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 1281,
+    "snippet": "font-size: 16px is off the DESIGN.md type ramp",
+    "ignoreValue": "16px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 1287,
+    "snippet": "font-size: 10px is off the DESIGN.md type ramp",
+    "ignoreValue": "10px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 1291,
+    "snippet": "font-size: 16px is off the DESIGN.md type ramp",
+    "ignoreValue": "16px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-radius",
+    "name": "Radius outside DESIGN.md",
+    "description": "A border-radius value is outside the DESIGN.md rounded scale. Use a documented radius token or update the design system if the new shape is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 1293,
+    "snippet": "border-radius: 20px is outside the DESIGN.md rounded scale",
+    "ignoreValue": "20px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 1296,
+    "snippet": "font-size: 9px is off the DESIGN.md type ramp",
+    "ignoreValue": "9px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 1299,
+    "snippet": "font-size: 38px is off the DESIGN.md type ramp",
+    "ignoreValue": "38px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 1302,
+    "snippet": "font-size: 13px is off the DESIGN.md type ramp",
+    "ignoreValue": "13px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 1306,
+    "snippet": "font-size: 9px is off the DESIGN.md type ramp",
+    "ignoreValue": "9px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 1310,
+    "snippet": "font-size: 13px is off the DESIGN.md type ramp",
+    "ignoreValue": "13px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 1313,
+    "snippet": "font-size: 9px is off the DESIGN.md type ramp",
+    "ignoreValue": "9px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 1316,
+    "snippet": "font-size: clamp(18px, 5.8cqw, 28px) has fluid endpoint 28px off the DESIGN.md type ramp",
+    "ignoreValue": "28px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 1319,
+    "snippet": "font-size: 12px is off the DESIGN.md type ramp",
+    "ignoreValue": "12px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 1327,
+    "snippet": "font-size: 35px is off the DESIGN.md type ramp",
+    "ignoreValue": "35px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 1336,
+    "snippet": "font-size: 9px is off the DESIGN.md type ramp",
+    "ignoreValue": "9px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 1343,
+    "snippet": "font-size: 8.5px is off the DESIGN.md type ramp",
+    "ignoreValue": "8.5px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-radius",
+    "name": "Radius outside DESIGN.md",
+    "description": "A border-radius value is outside the DESIGN.md rounded scale. Use a documented radius token or update the design system if the new shape is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 1358,
+    "snippet": "border-radius: 12px is outside the DESIGN.md rounded scale",
+    "ignoreValue": "12px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 1365,
+    "snippet": "font-size: 11px is off the DESIGN.md type ramp",
+    "ignoreValue": "11px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 1368,
+    "snippet": "font-size: 9px is off the DESIGN.md type ramp",
+    "ignoreValue": "9px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 1382,
+    "snippet": "font-size: 13px is off the DESIGN.md type ramp",
+    "ignoreValue": "13px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 1385,
+    "snippet": "font-size: 9px is off the DESIGN.md type ramp",
+    "ignoreValue": "9px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 1388,
+    "snippet": "font-size: 7px is off the DESIGN.md type ramp",
+    "ignoreValue": "7px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 1394,
+    "snippet": "font-size: 12px is off the DESIGN.md type ramp",
+    "ignoreValue": "12px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 1397,
+    "snippet": "font-size: 8px is off the DESIGN.md type ramp",
+    "ignoreValue": "8px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 1400,
+    "snippet": "font-size: 8px is off the DESIGN.md type ramp",
+    "ignoreValue": "8px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 1406,
+    "snippet": "font-size: 19px is off the DESIGN.md type ramp",
+    "ignoreValue": "19px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 1409,
+    "snippet": "font-size: 10px is off the DESIGN.md type ramp",
+    "ignoreValue": "10px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-radius",
+    "name": "Radius outside DESIGN.md",
+    "description": "A border-radius value is outside the DESIGN.md rounded scale. Use a documented radius token or update the design system if the new shape is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 1414,
+    "snippet": "border-radius: 16px is outside the DESIGN.md rounded scale",
+    "ignoreValue": "16px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 1421,
+    "snippet": "font-size: 33px is off the DESIGN.md type ramp",
+    "ignoreValue": "33px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 1424,
+    "snippet": "font-size: 8px is off the DESIGN.md type ramp",
+    "ignoreValue": "8px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 1427,
+    "snippet": "font-size: 11px is off the DESIGN.md type ramp",
+    "ignoreValue": "11px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-radius",
+    "name": "Radius outside DESIGN.md",
+    "description": "A border-radius value is outside the DESIGN.md rounded scale. Use a documented radius token or update the design system if the new shape is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 1469,
+    "snippet": "border-radius: 16px is outside the DESIGN.md rounded scale",
+    "ignoreValue": "16px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 1500,
+    "snippet": "font-size: 12px is off the DESIGN.md type ramp",
+    "ignoreValue": "12px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-radius",
+    "name": "Radius outside DESIGN.md",
+    "description": "A border-radius value is outside the DESIGN.md rounded scale. Use a documented radius token or update the design system if the new shape is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 1507,
+    "snippet": "border-radius: 20px is outside the DESIGN.md rounded scale",
+    "ignoreValue": "20px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 1517,
+    "snippet": "font-size: 12px is off the DESIGN.md type ramp",
+    "ignoreValue": "12px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-color",
+    "name": "Color outside DESIGN.md",
+    "description": "A literal color is outside the DESIGN.md palette and sidecar tonal ramps. This may be legitimate, but it should be an intentional design-system addition rather than drift.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 1537,
+    "snippet": "Undocumented color #4c5545 is outside DESIGN.md colors",
+    "ignoreValue": "#4c5545",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  },
+  {
+    "antipattern": "design-system-radius",
+    "name": "Radius outside DESIGN.md",
+    "description": "A border-radius value is outside the DESIGN.md rounded scale. Use a documented radius token or update the design system if the new shape is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/abdullahahmed/Documents/03 Work/01 المشاريع | Projects/شخصية/نشطة | Active/My Profile™/Contact Me/app/globals.css",
+    "line": 1550,
+    "snippet": "border-radius: 20px is outside the DESIGN.md rounded scale",
+    "ignoreValue": "20px",
+    "importedBy": [
+      "layout.tsx"
+    ]
+  }
+]

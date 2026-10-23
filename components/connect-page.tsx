@@ -4,10 +4,10 @@ import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import { MotionConfig } from "motion/react";
 import {
   ArrowRight,
-  ArrowUpRight,
   ChevronRight,
   MoreHorizontal,
   Globe,
+  QrCode,
   GraduationCap,
   Sparkles,
   ShieldCheck,
@@ -15,15 +15,23 @@ import {
   UserRoundPlus,
   Check,
   Languages,
-  BriefcaseBusiness,
 } from "lucide-react";
-import type { ContactConfig, Locale, SiteConfig } from "@/lib/config";
+import type {
+  ContactConfig,
+  ContactId,
+  Locale,
+  SheetTone,
+  SiteConfig,
+} from "@/lib/config";
 import { messages } from "@/lib/i18n";
-import { buildVCard, downloadBlob } from "@/lib/contact";
 import { BrandIcon } from "./icons";
 import { BottomSheet } from "./bottom-sheet";
 import { MessageComposer } from "./message-composer";
-import { QRCodeCard } from "./qr-card";
+import { QRCodeCard, QRCodeSheetContent } from "./qr-card";
+import {
+  LinkSheetContent,
+  SaveContactSheetContent,
+} from "./action-sheet-content";
 function DecorativeShapes() {
   return (
     <svg
@@ -68,21 +76,12 @@ function ContactCard({
       </span>
     </>
   );
-  return card.url ? (
-    <a
-      data-contact={card.id}
-      className={`contact-card ${card.tone}`}
-      href={card.url}
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      {content}
-    </a>
-  ) : (
+  return (
     <button
       data-contact={card.id}
       className={`contact-card ${card.tone}`}
       onClick={onAction}
+      aria-haspopup="dialog"
     >
       {content}
     </button>
@@ -92,9 +91,13 @@ export function ConnectPage({ config }: { config: SiteConfig }) {
   const [ready, setReady] = useState(false);
   const [locale, setLocale] = useState<Locale>("en");
   const [sheet, setSheet] = useState<
-    "whatsapp" | "email" | "unavailable" | null
+    ContactId | "website" | "qr" | "save" | null
   >(null);
-  const [downloadError, setDownloadError] = useState("");
+  const [sheetOpen, setSheetOpen] = useState(false);
+  const openSheet = (id: ContactId | "website" | "qr" | "save") => {
+    setSheet(id);
+    setSheetOpen(true);
+  };
   const t = messages[locale];
   useEffect(() => {
     setReady(true);
@@ -118,24 +121,47 @@ export function ConnectPage({ config }: { config: SiteConfig }) {
     "--gap": config.theme.gap,
     "--duration": config.theme.duration,
   } as CSSProperties;
-  const close = () => setSheet(null);
+  const close = () => setSheetOpen(false);
   const icons = {
     student: GraduationCap,
     automation: Sparkles,
     security: ShieldCheck,
   };
-  function saveContact() {
-    try {
-      downloadBlob(
-        new Blob([buildVCard(config.vcard)], {
-          type: "text/vcard;charset=utf-8",
-        }),
-        "abdullah-ahmed.vcf",
-      );
-    } catch {
-      setDownloadError(t.downloadError);
-    }
-  }
+  const activeCard = config.contacts.find((card) => card.id === sheet);
+  const activeTitle = activeCard
+    ? activeCard.title[locale]
+    : sheet === "qr"
+      ? t.scan
+      : sheet === "save"
+        ? t.save
+        : config.featured.title[locale];
+  const activeSubtitle =
+    sheet === "whatsapp"
+      ? t.whatsappSubtitle
+      : sheet === "email"
+        ? t.emailSubtitle
+        : activeCard
+          ? activeCard.subtitle[locale]
+          : sheet === "qr"
+            ? t.scanSub
+            : sheet === "save"
+              ? t.saveDescription
+              : config.featured.subtitle[locale];
+  const activeTone: SheetTone =
+    activeCard?.tone ?? (sheet === "qr" ? "dark" : "blue");
+  const activeIcon = activeCard ? (
+    activeCard.id === "email" ? (
+      <Mail />
+    ) : (
+      <BrandIcon id={activeCard.id} />
+    )
+  ) : sheet === "qr" ? (
+    <QrCode />
+  ) : sheet === "save" ? (
+    <UserRoundPlus />
+  ) : (
+    <Globe />
+  );
   return (
     <MotionConfig reducedMotion="user">
       <main
@@ -212,29 +238,21 @@ export function ConnectPage({ config }: { config: SiteConfig }) {
         <div id="links" className="links-content">
           {config.featured.enabled && (
             <section className="featured-card reveal">
+              <button
+                className="card-trigger"
+                data-action="website"
+                aria-label={t.visit}
+                aria-haspopup="dialog"
+                onClick={() => openSheet("website")}
+              />
               <div className="featured-content">
                 <div>
                   <h2>{config.featured.title[locale]}</h2>
                   <p>{config.featured.subtitle[locale]}</p>
-                  {config.featured.url ? (
-                    <a
-                      href={config.featured.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="black-button"
-                    >
-                      {t.visit}
-                      <ArrowRight size={21} />
-                    </a>
-                  ) : (
-                    <button
-                      className="black-button"
-                      onClick={() => setSheet("unavailable")}
-                    >
-                      {t.visit}
-                      <ArrowRight size={21} />
-                    </button>
-                  )}
+                  <span className="black-button">
+                    {t.visit}
+                    <ArrowRight size={21} />
+                  </span>
                 </div>
               </div>
               <img
@@ -255,24 +273,27 @@ export function ConnectPage({ config }: { config: SiteConfig }) {
                   card={c}
                   key={c.id}
                   locale={locale}
-                  onAction={() =>
-                    setSheet(
-                      c.id === "whatsapp"
-                        ? "whatsapp"
-                        : c.id === "email"
-                          ? "email"
-                          : "unavailable",
-                    )
-                  }
+                  onAction={() => openSheet(c.id)}
                 />
               ))}
           </div>
           <div className="closing-grid reveal">
             {config.sections.qr && (
-              <QRCodeCard url={config.canonicalUrl} t={t} />
+              <QRCodeCard
+                url={config.canonicalUrl}
+                t={t}
+                onOpen={() => openSheet("qr")}
+              />
             )}{" "}
             {config.sections.saveContact && (
               <section className="save-card">
+                <button
+                  className="card-trigger"
+                  data-action="save"
+                  aria-label={t.save}
+                  aria-haspopup="dialog"
+                  onClick={() => openSheet("save")}
+                />
                 <span className="save-icon">
                   <UserRoundPlus size={28} />
                 </span>
@@ -280,49 +301,24 @@ export function ConnectPage({ config }: { config: SiteConfig }) {
                   <h2>{t.save}</h2>
                   <p>{t.saveSub}</p>
                 </div>
-                <button
-                  className="black-button"
-                  onClick={saveContact}
-                  aria-label={t.vcard}
-                >
+                <span className="black-button">
                   <UserRoundPlus size={20} />
                   {t.saveAction}
-                </button>
-                {downloadError && <p role="alert">{downloadError}</p>}
+                </span>
               </section>
             )}
           </div>
         </div>
       </main>
       <BottomSheet
-        open={sheet !== null}
+        open={sheetOpen}
         onClose={close}
-        title={
-          sheet === "whatsapp"
-            ? t.whatsapp
-            : sheet === "email"
-              ? t.email
-              : t.unavailableTitle
-        }
-        subtitle={
-          sheet === "whatsapp"
-            ? t.whatsappSubtitle
-            : sheet === "email"
-              ? t.emailSubtitle
-              : t.unconfigured
-        }
-        icon={
-          sheet === "whatsapp" ? (
-            <BrandIcon id="whatsapp" />
-          ) : sheet === "email" ? (
-            <Mail />
-          ) : (
-            <Globe />
-          )
-        }
+        title={sheet === "email" ? t.email : activeTitle}
+        subtitle={activeSubtitle}
+        icon={activeIcon}
         locale={locale}
         t={t}
-        accent={sheet === "whatsapp" ? "green" : "blue"}
+        accent={activeTone}
       >
         {sheet === "whatsapp" || sheet === "email" ? (
           <MessageComposer
@@ -332,18 +328,24 @@ export function ConnectPage({ config }: { config: SiteConfig }) {
             locale={locale}
             t={t}
           />
+        ) : sheet === "qr" ? (
+          <QRCodeSheetContent key={locale} url={config.canonicalUrl} t={t} />
+        ) : sheet === "save" ? (
+          <SaveContactSheetContent contact={config.vcard} t={t} />
         ) : (
-          <div className="unavailable-content">
-            <p>{t.unconfiguredDetail}</p>
-            <button
-              className="send-button"
-              onClick={() => setSheet("whatsapp")}
-            >
-              <BrandIcon id="whatsapp" />
-              {t.whatsapp}
-              <ArrowUpRight size={20} />
-            </button>
-          </div>
+          <LinkSheetContent
+            url={
+              sheet === "website"
+                ? config.featured.url
+                : (activeCard?.url ?? "")
+            }
+            action={
+              sheet === "website"
+                ? t.visit
+                : t.openOn.replace("{name}", activeTitle)
+            }
+            t={t}
+          />
         )}
       </BottomSheet>
     </MotionConfig>

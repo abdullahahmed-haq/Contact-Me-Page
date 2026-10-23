@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-23T15:06:45.599699+00:00",
+  "generatedAt": "2026-10-23T16:03:02.916190+00:00",
   "title": "Design System: Personal Connect Hub",
   "extensions": {
     "colorMeta": {
@@ -118,30 +118,30 @@
       },
       "send": {
         "role": "primary",
-        "displayName": "Send",
+        "displayName": "Sheet action green",
         "tonalRamp": [
-          "oklch(15.0% 0.1472 147.26)",
-          "oklch(26.43% 0.1472 147.26)",
-          "oklch(37.86% 0.1472 147.26)",
-          "oklch(49.29% 0.1472 147.26)",
-          "oklch(60.71% 0.1472 147.26)",
-          "oklch(72.14% 0.1472 147.26)",
-          "oklch(83.57% 0.1472 147.26)",
-          "oklch(95.0% 0.1472 147.26)"
+          "oklch(15.0% 0.0448 135.07)",
+          "oklch(26.43% 0.0448 135.07)",
+          "oklch(37.86% 0.0448 135.07)",
+          "oklch(49.29% 0.0448 135.07)",
+          "oklch(60.71% 0.0448 135.07)",
+          "oklch(72.14% 0.0448 135.07)",
+          "oklch(83.57% 0.0448 135.07)",
+          "oklch(95.0% 0.0448 135.07)"
         ]
       },
       "send-hover": {
         "role": "primary",
-        "displayName": "Send Hover",
+        "displayName": "Sheet action green hover",
         "tonalRamp": [
-          "oklch(15.0% 0.1306 147.40)",
-          "oklch(26.43% 0.1306 147.40)",
-          "oklch(37.86% 0.1306 147.40)",
-          "oklch(49.29% 0.1306 147.40)",
-          "oklch(60.71% 0.1306 147.40)",
-          "oklch(72.14% 0.1306 147.40)",
-          "oklch(83.57% 0.1306 147.40)",
-          "oklch(95.0% 0.1306 147.40)"
+          "oklch(15.0% 0.0448 135.07)",
+          "oklch(26.43% 0.0448 135.07)",
+          "oklch(37.86% 0.0448 135.07)",
+          "oklch(49.29% 0.0448 135.07)",
+          "oklch(60.71% 0.0448 135.07)",
+          "oklch(72.14% 0.0448 135.07)",
+          "oklch(83.57% 0.0448 135.07)",
+          "oklch(95.0% 0.0448 135.07)"
         ]
       },
       "white": {
@@ -328,15 +328,15 @@
       "name": "WhatsApp handoff",
       "kind": "button",
       "refersTo": "button-send",
-      "description": "Full-width green handoff action, with its darker hover and muted disabled state.",
+      "description": "Full-width action inherits its source card palette in enabled, hover and disabled states.",
       "html": "<button class=\"ds-send\">Send via WhatsApp <svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"m9 5 7 7-7 7\"/></svg></button>",
-      "css": ".ds-send{font-family:var(--font-body,\"Manrope Variable\",sans-serif);width:100%;min-height:57px;border:0;border-radius:22px;background:#21883a;color:white;display:flex;align-items:center;justify-content:center;gap:13px;font-size:17px;font-weight:750;cursor:pointer;transition:background var(--duration,220ms),transform var(--duration,220ms)}.ds-send:hover{background:#1b7431}.ds-send:active{transform:scale(.985)}.ds-send:focus-visible{outline:3px solid var(--focus,#3264af);outline-offset:4px;}.ds-send:disabled{background:#d6e5d2;color:#52644c;cursor:not-allowed}@media(prefers-reduced-motion:reduce){button,a{transition:none!important;animation:none!important}}"
+      "css": ".ds-send{font-family:var(--font-body,\"Manrope Variable\",sans-serif);width:100%;min-height:57px;border:0;border-radius:22px;background:var(--sheet-accent,#e4f8da);color:var(--sheet-ink,#24462b);display:flex;align-items:center;justify-content:center;gap:13px;font-size:17px;font-weight:750;cursor:pointer;transition:background var(--duration,220ms),transform var(--duration,220ms)}.ds-send:hover{background:var(--sheet-hover,#d3eec6)}.ds-send:active{transform:scale(.985)}.ds-send:focus-visible{outline:3px solid var(--focus,#3264af);outline-offset:4px;}.ds-send:disabled{background:var(--sheet-accent,#e4f8da);color:var(--sheet-ink,#24462b);opacity:.62;cursor:not-allowed}@media(prefers-reduced-motion:reduce){button,a{transition:none!important;animation:none!important}}"
     },
     {
       "name": "Quick-message chip",
       "kind": "chip",
       "refersTo": "quick-chip",
-      "description": "Wrapped composer suggestion, using mint for hover and selected state.",
+      "description": "Wrapped composer suggestion; selected and hover colors follow the active sheet palette.",
       "html": "<button class=\"ds-chip\" aria-pressed=\"true\">Hi! 👋</button>",
       "css": ".ds-chip{font-family:var(--font-body,\"Manrope Variable\",sans-serif);border:1px solid #dfe3d9;background:transparent;min-height:40px;border-radius:30px;padding:8px 12px;font-size:11px;color:#394936;cursor:pointer;transition:background var(--duration,220ms),border-color var(--duration,220ms)}.ds-chip:hover,.ds-chip[aria-pressed=\"true\"]{background:#dff3dc;border-color:#c7e8bf;color:#234d28}.ds-chip:focus-visible{outline:3px solid var(--focus,#3264af);outline-offset:4px;}@media(prefers-reduced-motion:reduce){button,a{transition:none!important;animation:none!important}}"
     },

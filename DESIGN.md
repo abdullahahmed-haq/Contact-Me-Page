@@ -10,8 +10,9 @@ colors:
   purple: "#ebddff"
   peach: "#fff0d5"
   green: "#2db653"
-  send: "#21883a"
-  send-hover: "#1b7431"
+  send: "#e4f8da"
+  send-hover: "#d3eec6"
+  send-ink: "#24462b"
   white: "#ffffff"
   focus: "#3264af"
   dark-hover: "#30362f"
@@ -72,7 +73,7 @@ components:
     backgroundColor: "{colors.dark-hover}"
   button-send:
     backgroundColor: "{colors.send}"
-    textColor: "{colors.white}"
+    textColor: "{colors.send-ink}"
     rounded: "{rounded.send}"
     width: "100%"
   button-send-hover:
@@ -103,7 +104,7 @@ components:
 
 A warm personal introduction made from cream paper, pastel bento cards, and a fictional illustrated avatar. Large friendly names and small tactile controls give the page a personable, compact character. The self-hosted Latin and Arabic typefaces share the same hierarchy while respecting each script.
 
-Soft tonal layers carry the layout; dark action controls and the green WhatsApp handoff provide clear points of action. Rounded cards, circular arrows, quiet organic shapes, and brief spring motion form the recurring visual language.
+Soft tonal layers carry the layout; dark page controls and card-matched pastel sheet actions provide clear points of action. Rounded cards, circular arrows, quiet organic shapes, and brief spring motion form the recurring visual language.
 
 **Key Characteristics:**
 
@@ -118,8 +119,8 @@ The palette pairs warm cream and dark botanical ink with gentle colored surfaces
 
 ### Primary
 
-- **WhatsApp action green** (`send`, `send-hover`): white-text handoff button and its hover state.
-- **Bright icon green** (`green`): the WhatsApp sheet icon, separate from the darker action button.
+- **Default sheet green** (`send`, `send-hover`, `send-ink`): pastel action fill, tonal hover and dark text for WhatsApp. Other sheets replace these roles with their source card’s palette.
+- **Bright icon green** (`green`): the WhatsApp contact-card icon. Sheet header icons use a stronger tint from their own palette.
 
 ### Secondary
 
@@ -134,7 +135,7 @@ The palette pairs warm cream and dark botanical ink with gentle colored surfaces
 - **White** (`white`): icon circles, close controls, and reversed action labels.
 - **Focus blue** (`focus`): keyboard outlines.
 
-**The Green Roles Rule.** Keep the bright icon green separate from the darker white-text handoff green.
+**The Card Palette Rule.** Every sheet follows its source card. Enabled actions, disabled actions, header icon, decoration, chip selection and form focus all stay in that palette. Email is cream, GitHub lavender, LinkedIn pink, QR dark, website/save blue, and Portfolio mint.
 
 ## Typography
 
@@ -182,25 +183,25 @@ The bottom sheet has rounded top corners and square bottom corners. Its drag han
 
 Dark pill actions use ink and white with a minimum height of (44px), darken on hover, and compress slightly on press. The featured and save-contact contexts use smaller mobile variants. Global keyboard focus is a visible (3px) blue outline with (4px) offset.
 
-The full-width WhatsApp handoff uses the darker action green, white text, a rounded rectangular shape, and a minimum height of (57px), reduced to (53px) on mobile. Hover uses the dedicated darker green; press scales to (0.985). Disabled actions use a muted green fill and gray-green text. An email variant has a blue base fill; its current shared hover rule remains the send button's green hover.
+Full-width sheet actions use the source card’s pastel fill with contrasting dark text, except the dark QR action which uses white text. Minimum height is (57px), reduced to (53px) on mobile. Hover uses a stronger tint of the same hue; press scales to (0.985). Disabled actions retain the same palette at reduced opacity. No email state falls back to green or blue.
 
 ### Chips and badges
 
 Three informational category badges use equal-width pastel pills with a small icon and centered label. They are informational, without selected states.
 
-Quick-message chips wrap within the composer. They use a fine pale border and transparent fill; hover and `aria-pressed="true"` share a mint fill, green border, and dark green text. Their minimum height is (40px).
+Quick-message chips wrap within the composer. They use a fine pale border and transparent fill; hover and `aria-pressed="true"` use the active sheet’s palette. Their minimum height is (40px).
 
 ### Cards / Containers
 
-Contact tiles have a light gradient, rounded icon block, title/subtitle stack, and dark circular directional arrow. Default minimum height is (109px), becoming (80px) on mobile, with 40px icon blocks (34×36px below 359px), fluid 11–13px labels, and compact 3px text gaps. Supporting copy wraps to at most two lines. The entire tile is an anchor for a configured URL or a button for a sheet action.
+Contact tiles have a light gradient, rounded icon block, title/subtitle stack, and dark circular directional arrow. Default minimum height is (109px), becoming (80px) on mobile, with 40px icon blocks (34×36px below 359px), fluid 11–13px labels, and compact 3px text gaps. Supporting copy wraps to at most two lines. The entire tile is a button opening its own sheet; configured destinations become links only inside the sheet.
 
 The blue featured card follows the approved second reference: title and subtitle align at the logical start without a globe icon, the larger dark CTA sits below, and a website illustration fills the lower logical end without a floating arrow badge. It has a 210px desktop minimum height and a 2.15:1 mobile aspect ratio with fluid type and controls scaled from the card width. The preview is decorative interface imagery rather than evidence of a configured website. QR uses the dark inverse surface; add-to-contacts uses a blue gradient and a dark download action.
 
-The QR module renders an explicit empty state until the canonical public URL is configured. It must not display a made-up QR destination. Other unconfigured destinations use the shared explanatory sheet.
+The QR module renders an explicit empty state until the canonical public URL is configured. It must not display a made-up QR destination. Other unconfigured destinations retain their own title, icon and palette in the explanatory sheet.
 
 ### Inputs / Fields
 
-The message composer wraps a resizable textarea and toolbar in a pale bordered container. Focus changes its border to green and adds a subtle green ring. A character counter uses tabular numerals, and an emoji control occupies its own circular target. Errors use a red border and red supporting text. The textarea remains internally scrollable and resizable within its height limits.
+The message composer wraps a resizable textarea and toolbar in a pale bordered container. Focus changes its border and ring to the active sheet’s palette. A character counter uses tabular numerals, and an emoji control occupies its own circular target. Errors use a red border and red supporting text. The textarea remains internally scrollable and resizable within its height limits.
 
 ### Navigation
 
@@ -208,7 +209,7 @@ A circular ellipsis trigger opens the compact cream language menu. Menu items ha
 
 ### Shared bottom sheet
 
-One content-driven sheet hosts WhatsApp, email, and unavailable-destination content. It uses a cream surface, green or blue icon accent, close control, drag handle, localized title and description, and internally scrolling content. Inline padding is (26px), reducing to (19px) on mobile, with safe-area-aware bottom padding.
+One content-driven sheet hosts every card action: WhatsApp/email composers, external links, QR preview with PNG/SVG downloads, and vCard details/download. It uses a cream surface and the source card’s palette for the icon, decoration and all action states, plus a close control, drag handle, localized title/description and internally scrolling content. The selected content stays mounted with its own palette during exit, avoiding closing-animation color changes. Inline padding is (26px), reducing to (19px) on mobile, with safe-area-aware bottom padding.
 
 The scrim fades over (200ms). The sheet enters from below using a spring (stiffness 330, damping 34), and exit returns below the viewport. Dragging starts only from the handle; a downward displacement above (85px) or velocity above (650px/s) dismisses it. Dialog focus moves to close on open and returns to the opening control on close. Escape, backdrop interaction, and close use the dialog dismissal behavior. Reduced motion removes the spring movement and fade duration.
 
@@ -219,7 +220,7 @@ The scrim fades over (200ms). The sheet enters from below using a spring (stiffn
 - **Do** preserve the cream, pastel, rounded bento world and illustrated avatar.
 - **Do** keep contact tiles horizontal in a two-column grid on mobile and desktop.
 - **Do** use self-hosted Manrope for Latin and Noto Sans Arabic for Arabic.
-- **Do** use the darker send color for white-text WhatsApp actions; reserve the brighter green for icon surfaces.
+- **Do** keep every sheet and all action states in its source card’s color family with readable contrast.
 - **Do** preserve visible focus, reduced-motion behavior, and RTL-aware directional arrows.
 - **Do** show the configured empty QR state until a canonical public URL is supplied.
 

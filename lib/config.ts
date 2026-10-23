@@ -72,6 +72,7 @@ export const siteConfigSchema = z.object({
 });
 export type SiteConfig = z.infer<typeof siteConfigSchema>;
 export type ContactConfig = SiteConfig["contacts"][number];
+export type SheetTone = ContactConfig["tone"] | "dark";
 const L = (en: string, ar: string): Localized => ({ en, ar });
 const defaults: SiteConfig = {
   profile: {

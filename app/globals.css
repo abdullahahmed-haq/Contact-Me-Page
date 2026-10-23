@@ -652,7 +652,15 @@ a svg {
   z-index: 50;
   backdrop-filter: blur(2px);
 }
+/* Shared palette follows each source card, including disabled actions. */
 .bottom-sheet {
+  --sheet-accent: #e4f8da;
+  --sheet-ink: #24462b;
+  --sheet-hover: #d3eec6;
+  --sheet-soft: #eef8e8;
+  --sheet-line: #c7dfbb;
+  --sheet-focus: #347544;
+  --sheet-icon: #c8eab9;
   position: fixed;
   inset-inline: 0;
   bottom: 0;
@@ -673,7 +681,7 @@ a svg {
   content: "";
   position: absolute;
   inset: 0 15px auto auto;
-  background: #dff2d9;
+  background: var(--sheet-soft);
   width: 90px;
   height: 90px;
   border-radius: 32% 65% 35% 70%;
@@ -681,8 +689,59 @@ a svg {
   z-index: -1;
   pointer-events: none;
 }
-.bottom-sheet.accent-blue:before {
-  background: #dce9ff;
+.accent-mint {
+  --sheet-accent: #e1f6ca;
+  --sheet-ink: #304823;
+  --sheet-hover: #d2edb7;
+  --sheet-soft: #eff8e6;
+  --sheet-line: #cfdfbf;
+  --sheet-focus: #4f7331;
+  --sheet-icon: #c3e9a8;
+}
+.accent-blue {
+  --sheet-accent: #dce9ff;
+  --sheet-ink: #233e65;
+  --sheet-hover: #c9dcfa;
+  --sheet-soft: #eaf0fc;
+  --sheet-line: #c8d6eb;
+  --sheet-focus: #365f9b;
+  --sheet-icon: #bed6ff;
+}
+.accent-cream {
+  --sheet-accent: #fff0d5;
+  --sheet-ink: #5d421b;
+  --sheet-hover: #f9e2b5;
+  --sheet-soft: #fff5e5;
+  --sheet-line: #e9d9bd;
+  --sheet-focus: #94601f;
+  --sheet-icon: #ffda91;
+}
+.accent-lavender {
+  --sheet-accent: #ebddff;
+  --sheet-ink: #493064;
+  --sheet-hover: #ddc7f7;
+  --sheet-soft: #f2eafa;
+  --sheet-line: #ddceea;
+  --sheet-focus: #77519a;
+  --sheet-icon: #cda8f5;
+}
+.accent-pink {
+  --sheet-accent: #f1dcfc;
+  --sheet-ink: #58345f;
+  --sheet-hover: #e8c8f6;
+  --sheet-soft: #f8eefa;
+  --sheet-line: #e6cfeb;
+  --sheet-focus: #82518e;
+  --sheet-icon: #e7c1f4;
+}
+.accent-dark {
+  --sheet-accent: #191b18;
+  --sheet-ink: #ffffff;
+  --sheet-hover: #343b30;
+  --sheet-soft: #ecefe8;
+  --sheet-line: #d3d9cc;
+  --sheet-focus: #4e6040;
+  --sheet-icon: #191b18;
 }
 .drag-zone {
   height: 31px;
@@ -715,18 +774,14 @@ a svg {
   border-radius: 23px;
   display: grid;
   place-items: center;
-  background: var(--green);
-  color: #fff;
-  box-shadow: 0 0 0 11px #eaf5e5;
+  background: var(--sheet-icon);
+  color: var(--sheet-ink);
+  box-shadow: 0 0 0 11px var(--sheet-soft);
   flex-shrink: 0;
 }
 .sheet-icon svg {
   width: 40px;
   height: 40px;
-}
-.accent-blue .sheet-icon {
-  background: #85a9e9;
-  box-shadow: 0 0 0 9px #eaf0fc;
 }
 .sheet-header h2 {
   font-size: 24px;
@@ -765,8 +820,8 @@ a svg {
     box-shadow var(--duration);
 }
 .message-field:focus-within {
-  border-color: #419752;
-  box-shadow: 0 0 0 3px #49a25919;
+  border-color: var(--sheet-focus);
+  box-shadow: 0 0 0 3px var(--sheet-soft);
 }
 .message-field textarea {
   width: 100%;
@@ -805,7 +860,7 @@ a svg {
   color: #687566;
 }
 .emoji-button:hover {
-  background: #e7efdf;
+  background: var(--sheet-soft);
 }
 .quick-messages {
   border: 0;
@@ -838,16 +893,16 @@ a svg {
 }
 .quick-chips button:hover,
 .quick-chips button[aria-pressed="true"] {
-  background: #dff3dc;
-  border-color: #c7e8bf;
-  color: #234d28;
+  background: var(--sheet-accent);
+  border-color: var(--sheet-line);
+  color: var(--sheet-ink);
 }
 .send-button {
   width: 100%;
   min-height: 57px;
   border-radius: 22px;
-  background: #21883a;
-  color: white;
+  background: var(--sheet-accent);
+  color: var(--sheet-ink);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -863,20 +918,18 @@ a svg {
   height: 23px;
 }
 .send-button:hover {
-  background: #1b7431;
+  background: var(--sheet-hover);
 }
 .send-button:active {
   transform: scale(0.985);
 }
 .send-button:disabled {
-  background: #d6e5d2;
-  color: #52644c;
+  background: var(--sheet-accent);
+  color: var(--sheet-ink);
+  opacity: 0.62;
 }
 .send-arrow {
   display: none;
-}
-.email-send {
-  background: #4e77b7;
 }
 .handoff-note {
   font-size: 10px;
@@ -1207,7 +1260,7 @@ a svg {
     width: 57px;
     height: 57px;
     border-radius: 18px;
-    box-shadow: 0 0 0 8px #eaf5e5;
+    box-shadow: 0 0 0 8px var(--sheet-soft);
   }
   .sheet-icon svg {
     width: 33px;
@@ -1388,4 +1441,121 @@ a svg {
 /* Keep soft hero artwork within the document at narrow widths. */
 .connect-page {
   overflow-x: clip;
+}
+
+/* The entire feature, QR and contact-saving cards open their action sheet. */
+.card-trigger {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 4;
+  background: transparent;
+  border-radius: inherit;
+}
+.card-trigger:focus-visible {
+  outline-offset: -4px;
+}
+.bottom-sheet button:focus-visible,
+.bottom-sheet a:focus-visible {
+  outline-color: var(--sheet-focus);
+}
+.action-content {
+  padding-bottom: 4px;
+}
+.destination-preview {
+  padding: 16px;
+  margin-bottom: 22px;
+  border-radius: 16px;
+  background: var(--sheet-soft);
+  color: #42483e;
+  font-size: 14px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+.contact-details {
+  margin: 0 0 14px;
+}
+.contact-details > div {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  padding-block: 12px;
+  border-bottom: 1px solid var(--sheet-line);
+  font-size: 14px;
+}
+.contact-details dt {
+  color: #646b5e;
+}
+.contact-details dd {
+  margin: 0;
+  font-weight: 650;
+  text-align: end;
+  overflow-wrap: anywhere;
+}
+.profile-inclusions {
+  margin-block: 12px 24px;
+  color: #646b5e;
+  font-size: 12px;
+  line-height: 1.6;
+}
+.sheet-qr {
+  width: min(100%, 280px);
+  margin-inline: auto;
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.sheet-qr img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.qr-target {
+  color: #646b5e;
+  font-size: 12px;
+  line-height: 1.6;
+  text-align: center;
+  overflow-wrap: anywhere;
+  margin-block: 12px 22px;
+}
+.qr-pending {
+  padding: 26px 20px;
+  background: var(--sheet-soft);
+  border-radius: 22px;
+  text-align: center;
+  margin-bottom: 22px;
+}
+.qr-pending svg {
+  color: #58664b;
+  margin-bottom: 12px;
+}
+.qr-pending p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #4c5545;
+}
+.qr-sheet-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.sheet-secondary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 53px;
+  border-radius: 20px;
+  border: 1px solid var(--sheet-line);
+  background: var(--surface);
+  color: #35422d;
+  font-weight: 700;
+}
+.sheet-secondary:hover {
+  background: var(--sheet-soft);
+}
+.sheet-secondary:disabled {
+  opacity: 0.55;
 }

@@ -134,16 +134,23 @@ test("Arabic sheet and close by scrim, close button, handle drag", async ({
 test("real GitHub URL, honest missing links, vCard download and QR empty state", async ({
   page,
 }) => {
-  await expect(page.locator("[data-contact=github]")).toHaveAttribute(
-    "href",
-    "https://github.com/abdullahahmed-haq",
-  );
+  await page.locator("[data-contact=github]").click();
+  await expect(page.getByRole("dialog")).toBeVisible();
+  await expect(
+    page.getByRole("link", { name: "Open GitHub", exact: true }),
+  ).toHaveAttribute("href", "https://github.com/abdullahahmed-haq");
+  await page.keyboard.press("Escape");
   await page.locator("[data-contact=portfolio]").click();
   await expect(page.getByRole("dialog")).toContainText(
     "This contact link isn’t available yet.",
   );
   await page.keyboard.press("Escape");
   await expect(page.locator(".qr-card")).toContainText("public page URL");
+  let earlyDownloads = 0;
+  page.on("download", () => earlyDownloads++);
+  await page.locator('[data-action="save"]').click();
+  await expect(page.getByRole("dialog")).toContainText("+201034243496");
+  expect(earlyDownloads).toBe(0);
   const promise = page.waitForEvent("download");
   await page.getByRole("button", { name: "Download vCard" }).click();
   const download = await promise;
@@ -180,7 +187,9 @@ test("handle dismisses with real touch events in mobile Chromium", async ({
     hasTouch: true,
   });
   const page = await context.newPage();
-  await page.goto("http://localhost:3000/connect/");
+  await page.goto(
+    (process.env.PLAYWRIGHT_BASE_URL || "http://localhost:3000") + "/connect/",
+  );
   await expect(page.locator("main")).toHaveAttribute("data-ready", "true");
   await page.locator("[data-contact=whatsapp]").tap();
   await expect(page.getByRole("dialog")).toBeVisible();
@@ -205,4 +214,125 @@ test("handle dismisses with real touch events in mobile Chromium", async ({
   });
   await expect(page.getByRole("dialog")).not.toBeVisible();
   await context.close();
+});
+
+test("every actionable card opens its own matching-color sheet before acting", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await mkdir("artifacts/sheets", { recursive: true });
+  const entries = [
+    {
+      selector: '[data-action="website"]',
+      tone: "blue",
+      color: "rgb(220, 233, 255)",
+      id: "website",
+    },
+    {
+      selector: '[data-contact="portfolio"]',
+      tone: "mint",
+      color: "rgb(225, 246, 202)",
+      id: "portfolio",
+    },
+    {
+      selector: '[data-contact="whatsapp"]',
+      tone: "green",
+      color: "rgb(228, 248, 218)",
+      id: "whatsapp",
+    },
+    {
+      selector: '[data-contact="telegram"]',
+      tone: "blue",
+      color: "rgb(220, 233, 255)",
+      id: "telegram",
+    },
+    {
+      selector: '[data-contact="email"]',
+      tone: "cream",
+      color: "rgb(255, 240, 213)",
+      id: "email",
+    },
+    {
+      selector: '[data-contact="github"]',
+      tone: "lavender",
+      color: "rgb(235, 221, 255)",
+      id: "github",
+    },
+    {
+      selector: '[data-contact="linkedin"]',
+      tone: "pink",
+      color: "rgb(241, 220, 252)",
+      id: "linkedin",
+    },
+    {
+      selector: '[data-action="qr"]',
+      tone: "dark",
+      color: "rgb(25, 27, 24)",
+      id: "qr",
+    },
+    {
+      selector: '[data-action="save"]',
+      tone: "blue",
+      color: "rgb(220, 233, 255)",
+      id: "save",
+    },
+  ];
+  for (const locale of ["en", "ar"]) {
+    if (locale === "ar") {
+      await page.getByRole("button", { name: "Page options" }).click();
+      await page.getByRole("menuitem", { name: "العربية" }).click();
+    }
+    for (const entry of entries) {
+      const trigger = page.locator(entry.selector);
+      await expect(trigger).toHaveAttribute("aria-haspopup", "dialog");
+      await trigger.click();
+      const dialog = page.getByRole("dialog");
+      await expect(dialog).toBeVisible();
+      await expect(dialog).toHaveClass(new RegExp("accent-" + entry.tone));
+      await expect(dialog.locator(".sheet-primary")).toHaveCSS(
+        "background-color",
+        entry.color,
+      );
+      await expect(page.locator("body")).toHaveAttribute(
+        "data-scroll-locked",
+        "1",
+      );
+      await expect
+        .poll(() =>
+          page.evaluate(
+            () => document.documentElement.scrollWidth <= innerWidth,
+          ),
+        )
+        .toBeTruthy();
+      if (entry.id === "github") {
+        await expect(dialog.getByRole("link")).toHaveAttribute(
+          "href",
+          "https://github.com/abdullahahmed-haq",
+        );
+        expect(page.context().pages()).toHaveLength(1);
+      }
+      if (entry.id === "qr") {
+        await expect(dialog.locator(".qr-sheet-actions button")).toHaveCount(2);
+        await expect(
+          dialog.locator(".qr-sheet-actions button").first(),
+        ).toBeDisabled();
+      }
+      if (entry.id === "email") {
+        await expect(dialog.locator(".sheet-primary")).toBeDisabled();
+        await expect(dialog.locator(".sheet-icon")).toHaveCSS(
+          "background-color",
+          "rgb(255, 218, 145)",
+        );
+      }
+      await page.screenshot({
+        path: `artifacts/sheets/${entry.id}-${locale}.png`,
+        fullPage: false,
+        animations: "disabled",
+      });
+      await page.keyboard.press("Escape");
+      await expect(dialog).not.toBeVisible();
+      await expect(trigger).toBeFocused();
+    }
+  }
 });

@@ -9,7 +9,7 @@ import {
 import { X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import type { Dictionary } from "@/lib/i18n";
-import type { Locale } from "@/lib/config";
+import type { Locale, SheetTone } from "@/lib/config";
 export function BottomSheet({
   open,
   onClose,
@@ -29,7 +29,7 @@ export function BottomSheet({
   children: React.ReactNode;
   locale: Locale;
   t: Dictionary;
-  accent?: string;
+  accent?: SheetTone;
 }) {
   const contentRef = useRef<HTMLElement>(null);
   const controls = useDragControls();
