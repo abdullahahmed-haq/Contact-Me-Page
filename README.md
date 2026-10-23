@@ -31,7 +31,7 @@ Set `NEXT_PUBLIC_CONNECT_URL` in `.env.local` to the final public HTTPS `/connec
 
 ### Language
 
-Use the three-dot menu to switch between English and العربية. The selection persists in localStorage. The document language, direction, copy and sheet layout update together. Logos and QR images remain unmirrored.
+Use the three-dot menu to switch between English and العربية. The selection persists in localStorage. The document language, direction, copy and sheet layout update together. The website illustration and decorative shapes reflect with Arabic, including the save-contact card and the sheet’s flowing corner accent. Logos and QR images remain unmirrored.
 
 ### Contact actions
 

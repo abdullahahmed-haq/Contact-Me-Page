@@ -232,7 +232,8 @@ a svg {
 }
 .avatar-blob {
   position: absolute;
-  inset: 28% -13% -8% 35%;
+  inset-block: 28% -8%;
+  inset-inline: 35% -13%;
   background: #d2f2e9;
   border-radius: 48% 52% 51% 49% / 44% 46% 54% 56%;
   transform: rotate(-22deg);
@@ -295,7 +296,8 @@ a svg {
 .featured-card:before {
   content: "";
   position: absolute;
-  inset: auto auto -120px -50px;
+  inset-block-end: -120px;
+  inset-inline-start: -50px;
   width: 240px;
   height: 200px;
   background: #ffffff36;
@@ -305,7 +307,8 @@ a svg {
 .featured-card:after {
   content: "";
   position: absolute;
-  inset: auto -15px -90px auto;
+  inset-block-end: -90px;
+  inset-inline-end: -15px;
   width: 210px;
   height: 165px;
   background: #bdd2fc88;
@@ -378,6 +381,16 @@ a svg {
   width: min(48%, 300px);
   height: auto;
   pointer-events: none;
+}
+/* Reflect directional artwork, keeping text, brand marks and QR data intact. */
+[dir="rtl"] .website-preview {
+  transform: scaleX(-1);
+}
+[dir="rtl"] .avatar-blob {
+  transform: scaleX(-1) rotate(-22deg);
+}
+[dir="rtl"] .hero-strokes {
+  transform: scaleX(-1) rotate(-12deg);
 }
 .contact-grid {
   display: grid;
@@ -528,7 +541,8 @@ a svg {
   position: absolute;
   width: 120px;
   height: 120px;
-  inset: auto auto -80px -40px;
+  inset-block-end: -80px;
+  inset-inline-start: -40px;
   border-radius: 50%;
   background: #ffffff12;
   box-shadow: 0 0 0 15px #ffffff08;
@@ -616,10 +630,14 @@ a svg {
   width: 100px;
   height: 100px;
   border-radius: 30% 70% 39% 61%;
-  inset: 0 -70px auto auto;
+  inset-block-start: 0;
+  inset-inline-end: -70px;
   background: #bed2fb;
   z-index: -1;
   transform: rotate(30deg);
+}
+[dir="rtl"] .save-card:after {
+  transform: scaleX(-1) rotate(30deg);
 }
 .save-icon {
   background: #bed6ff;
@@ -680,14 +698,18 @@ a svg {
 .bottom-sheet:before {
   content: "";
   position: absolute;
-  inset: 0 15px auto auto;
+  inset-block-start: -20px;
+  inset-inline-end: -18px;
   background: var(--sheet-soft);
-  width: 90px;
-  height: 90px;
-  border-radius: 32% 65% 35% 70%;
-  transform: rotate(35deg);
+  width: 154px;
+  height: 136px;
+  /* A tapered sweep flows out of the corner instead of enclosing Close. */
+  clip-path: path("M 154 0 H 85 C 75 23 44 36 33 61 C 20 88 27 113 49 120 C 75 129 86 105 105 94 C 123 84 143 88 154 69 Z");
   z-index: -1;
   pointer-events: none;
+}
+[dir="rtl"] .bottom-sheet:before {
+  transform: scaleX(-1);
 }
 .accent-mint {
   --sheet-accent: #e1f6ca;

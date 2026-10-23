@@ -157,7 +157,7 @@ The hero is horizontal on larger screens, with a circular avatar (220px) beside 
 
 The featured website spans the content width. Contact cards stay in two equal columns at every breakpoint, and each tile retains its horizontal icon–copy–arrow composition. The closing row pairs QR and save-contact cards at (1.5fr / 1fr), changing to (1.4fr / 1fr) on large screens. Shared content gaps follow the frontmatter gap roles.
 
-Logical margins, padding, and positioning support RTL. Directional arrow controls reverse; brand marks remain unmirrored. The page clips horizontal decorative overflow. The bottom sheet is centered, at most (600px) wide and (85dvh) high, and adapts its bottom offset and maximum height to the visual viewport.
+Logical margins, padding, and positioning support RTL. Directional arrows, the website illustration and asymmetric decorative shapes reflect in Arabic. Brand marks and QR images remain unmirrored. Card ornaments follow their logical corner, and the sheet uses a tapered, smooth corner accent behind its close control. The page clips horizontal decorative overflow. The bottom sheet is centered, at most (600px) wide and (85dvh) high, and adapts its bottom offset and maximum height to the visual viewport.
 
 **The Two-Column Rule.** Preserve two contact columns and horizontal tile composition across the implemented viewport sizes.
 
