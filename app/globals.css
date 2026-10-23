@@ -286,10 +286,10 @@ a svg {
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  min-height: 280px;
+  min-height: 210px;
   border-radius: var(--card-radius);
   background: linear-gradient(115deg, #d6e5ff, #dce8ff 68%, #e7efff);
-  padding: 32px;
+  padding: 26px 32px;
   box-shadow: var(--shadow);
 }
 .featured-card:before {
@@ -374,8 +374,8 @@ a svg {
 .website-preview {
   position: absolute;
   inset-inline-end: -6px;
-  bottom: -20px;
-  width: min(62%, 360px);
+  bottom: -14px;
+  width: min(48%, 300px);
   height: auto;
   pointer-events: none;
 }
@@ -953,6 +953,14 @@ a svg {
 }
 [dir="rtl"] .featured-card h2 {
   font-size: 30px;
+}
+@media (min-width: 651px) {
+  .featured-card h2 {
+    line-height: 1.25;
+  }
+  .featured-card .black-button {
+    margin-top: 20px;
+  }
 }
 @media (min-width: 1100px) {
   .connect-page {

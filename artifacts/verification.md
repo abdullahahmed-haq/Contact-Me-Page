@@ -13,3 +13,7 @@
 ## Featured website card update
 
 The owner requested the second supplied card reference: no globe icon or floating preview arrow, larger title and CTA, taller card, and enlarged illustration at the lower logical end. Production build passes. A focused Chromium check covered English and Arabic at 320, 360, 390, 430, 512, 768, 1024 and 1440px with no horizontal overflow or page errors; both featured CTA actions opened and dismissed the existing sheet. Card crops are stored in `artifacts/featured-card/`. Unrelated contact interactions were unchanged.
+
+## Desktop height correction
+
+Restored the featured card to exactly 210px on desktop. A focused production-browser check measured 210px in English and Arabic at 768, 1024 and 1440px, and confirmed the mobile card remains 212px at a 390px viewport. No horizontal overflow was observed. The desktop illustration was scaled to fit the shorter card. Production build and TypeScript validation passed.
