@@ -9,7 +9,8 @@ Created on 2026-10-24 at the owner's request, using free plans only.
 - GitHub source: [abdullahahmed-haq/Contact-Me-Page](https://github.com/abdullahahmed-haq/Contact-Me-Page), connected to Vercel; production branch `main`.
 - Database: independent Neon `abdo-connect-db`, plan `free_v3`, Frankfurt; existing Supabase projects were not modified.
 - Images: public Vercel Blob store `abdo-connect-images`, Frankfurt. Only processed public images enter this store; database records and secrets stay on the server.
-- Verified application deployment: `dpl_B96TFkgstxr7QC7RSnYpXJVVsp4w`.
+- Current application deployment: `dpl_DvoURipXU1mFPpPpknZ2mm5SBeXB`.
+- Initial authenticated smoke-verified deployment: `dpl_B96TFkgstxr7QC7RSnYpXJVVsp4w`.
 
 Cloudflare DNS in the existing `Odd Andesaurus` account has a CNAME named `connect` pointing to `df85d956cb559482.vercel-dns-017.com`, DNS only, TTL Auto. Vercel confirmed the domain is configured correctly. The other domain records and nameservers were preserved.
 
@@ -22,6 +23,26 @@ Dia also rendered the published site at the custom domain. The terminal retained
 Run `node scripts/production-smoke.mjs` after DNS propagation to check the actual custom-domain connection. Use an echo-disabled terminal for the password input; the script never logs credentials. Results are saved to `artifacts/admin/production-smoke-results.json`.
 
 Pushing code to `main` triggers Vercel's native GitHub deployment integration. Secrets stay in Vercel; runtime database files, local environment files and generated CMS verification artifacts are excluded from Git. Published CMS content updates need no code release. The CLI command `npx vercel deploy --prod` remains available for deliberate manual releases. Run migrations deliberately against the Production database before schema-dependent releases. Preview environments need their own database/storage configuration before use; production secrets are not copied to them automatically.
+
+## Performance release — 24 October 2026
+
+The performance changes on `perf/mobile-loading` were deployed deliberately through the Vercel CLI to Production. Deployment `dpl_6cjEg1Dye7e2pdJa4LoQ8vw2Vxrw` reached `READY`; its immutable URL is <https://abdo-connect-c1b462p5n-abdullahahmedhaq-9716s-projects.vercel.app>. The public custom domain serves the new deferred bundles and responsive image optimization.
+
+Twenty-six post-release checks passed against <https://connect.abdo-ahmed.online/>: unchanged public-content fingerprint; public API; protected administration and noindex login; favicon; English/Arabic headings, direction, mobile layout, optimized-image delivery and preview priority; absence of Motion/QR rendering in initial scripts; QR decoding to the configured canonical URL; deferred contact dialog opening, focus restoration, PNG/SVG downloads under production CSP; and no browser runtime errors. Checks did not sign in, edit or publish CMS content, send messages, or change credentials. No schema migration was needed.
+
+See [the release verification](../artifacts/performance/production-release.json) and [the pre-release lab report](PERFORMANCE.md). The lab scores are not asserted as production performance measurements.
+
+## Arabic contact icon fix — 24 October 2026
+
+Deployment `dpl_6kP3APAs2jYGFsMDXSUpToDR7v1x` reached `READY` on Production from source commit `f03a565`. Arrow rotation and hover movement now target only the directional arrow, keeping the save-contact person icon upright in Arabic. The release retains the preceding mobile performance changes and adds no dependencies or JavaScript.
+
+TypeScript, all 11 unit tests, all 8 public browser tests, and the production build passed. Checks on the custom domain confirmed upright contact icons, correct arrow direction, no horizontal overflow, working vCard downloads, and no browser runtime errors in both languages at 390px and 1440px. Public Connect and login routes returned 200; unauthenticated administration returned 401. The published content matched its pre-release snapshot exactly. Screenshots and verification results are saved locally under `artifacts/admin/rtl-icon/`.
+
+## Bilingual typography release — 24 October 2026
+
+Deployment `dpl_DvoURipXU1mFPpPpknZ2mm5SBeXB` reached `READY` on Production from source commit `fb658b1`. English headings/contact titles use Bricolage Grotesque and supporting text uses Figtree. Arabic headings use Alexandria, paired with Noto Sans Arabic body text and English stacks for mixed-script content. Public pages, dialogs, previews and the admin workspace share these roles. All fonts are self-hosted variable WOFF2 assets with Unicode ranges; English stacks have metric-adjusted fallbacks. Existing saved theme values remain compatible, including the system-font override. Contact-card gaps tighten at 360–389px to retain readable title sizes without overflow.
+
+TypeScript, all 11 unit tests, the production build, and all 12 isolated browser tests passed. The initial browser run hit a publication-toast timing failure; the complete rerun passed. Thirty additional typography checks passed locally and on the custom domain across ten widths, including English → Arabic → English switching, dialog typography, font loading and label/page overflow. Production checks confirmed all page images loaded, font requests stayed on the site's origin, no browser runtime errors occurred, protected administration remained unauthorized, and published content exactly matched its pre-release snapshot. The preceding icon and mobile-loading fixes remain included. Local evidence is under `artifacts/admin/typography/`.
 
 ## Free-plan boundaries
 

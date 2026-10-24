@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getPublished } from "@/lib/server/repository";
 import { ConnectPage } from "@/components/connect-page";
 import { notFound } from "next/navigation";
+import { initialQRCode } from "@/lib/server/qr";
 export const dynamic = "force-dynamic";
 export async function generateMetadata({
   searchParams,
@@ -49,6 +50,7 @@ export default async function Page({
   return (
     <ConnectPage
       config={c}
+      initialQR={await initialQRCode(c)}
       initialLocale={lang === "ar" || lang === "en" ? lang : undefined}
     />
   );

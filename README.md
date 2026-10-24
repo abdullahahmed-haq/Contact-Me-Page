@@ -99,6 +99,8 @@ The isolated browser runner copies the application into a temporary workspace, p
 
 Unit tests cover URL/message safety, vCard Unicode escaping/folding, validated defaults and QR decoding. Database integration tests exercise actual Better Auth credentials/cookies, owner enforcement, expiry/logout, CSRF, stale-write conflicts, draft privacy, publication/revisions, upload inspection/reference protection, analytics and limits. Browser tests exercise the actual editors and public flows. Actual run results are recorded in [verification](docs/VERIFICATION.md).
 
+Run `npm run perf -- http://localhost:3000/ .data/performance` against a production build (`npm run build` then `npm run start`) to collect three fresh-browser Lighthouse runs per device, HTML/JSON reports, traces and median metrics. The runner uses Lighthouse 13.5.0 and Playwright's Chromium with fixed 412×823 mobile and 1440×900 desktop viewports; it warms the server without warming the browser cache. Performance changes and measured limits are recorded in [the performance report](docs/PERFORMANCE.md).
+
 ## Architecture
 
 - `lib/config.ts`: public, strict Zod content schema and approved first-run defaults; no server secrets. `getSiteConfig()` is a pure defaults helper for old unit tests; the live site uses `getPublished()`.

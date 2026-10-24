@@ -32,7 +32,7 @@ import type {
   RevisionRecord,
 } from "@/lib/admin-types";
 import { buildVCard, downloadBlob } from "@/lib/contact";
-import { QRCodeSheetContent } from "../qr-card";
+import { QRCodeSheetContent } from "../qr-sheet-content";
 import { useCMS, useField, Field, Bi, Panel, valueAt } from "./context";
 import { AssetLibrary } from "./library";
 function Collection({

@@ -1,4 +1,3 @@
-import QRCode from "qrcode";
 import { isPublicUrl } from "./contact";
 export async function createQR(
   url: string,
@@ -7,6 +6,7 @@ export async function createQR(
 ) {
   if (!isPublicUrl(url))
     throw new Error("A public HTTPS Connect URL is required");
+  const QRCode = (await import("qrcode")).default;
   const options = {
     margin: 4,
     errorCorrectionLevel: "M" as const,
