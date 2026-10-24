@@ -20,29 +20,29 @@ colors:
   chip-selected-ink: "#234d28"
 typography:
   display:
-    fontFamily: '"Manrope Variable", sans-serif'
+    fontFamily: '"Bricolage Grotesque", "Bricolage Grotesque Fallback", ui-sans-serif, system-ui, sans-serif'
     fontSize: "clamp(40px, 5.4vw, 64px)"
     fontWeight: 800
     lineHeight: 1.06
     letterSpacing: "-0.04em"
   display-arabic:
-    fontFamily: '"Noto Sans Arabic Variable", sans-serif'
+    fontFamily: 'Alexandria, "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif'
     fontWeight: 750
     lineHeight: 1.3
     letterSpacing: "0"
   title:
-    fontFamily: '"Manrope Variable", sans-serif'
+    fontFamily: '"Bricolage Grotesque", "Bricolage Grotesque Fallback", ui-sans-serif, system-ui, sans-serif'
     fontSize: "18px"
     fontWeight: 800
     letterSpacing: "-0.025em"
   body:
-    fontFamily: '"Manrope Variable", sans-serif'
+    fontFamily: 'Figtree, "Figtree Fallback", ui-sans-serif, system-ui, sans-serif'
     fontSize: "15px"
   body-arabic:
-    fontFamily: '"Noto Sans Arabic Variable", sans-serif'
+    fontFamily: '"Noto Sans Arabic", Figtree, ui-sans-serif, system-ui, sans-serif'
     fontSize: "15px"
   label:
-    fontFamily: '"Manrope Variable", sans-serif'
+    fontFamily: 'Figtree, "Figtree Fallback", ui-sans-serif, system-ui, sans-serif'
     fontSize: "14px"
     fontWeight: 650
 rounded:
@@ -139,7 +139,7 @@ The palette pairs warm cream and dark botanical ink with gentle colored surfaces
 
 ## Typography
 
-**Display and body fonts:** self-hosted Manrope Variable for Latin; self-hosted Noto Sans Arabic Variable when the document language is Arabic. Both use a sans-serif fallback. The implementation imports the font packages locally; it does not request a hosted font service.
+**Display and body fonts:** self-hosted Bricolage Grotesque for English headings and contact titles, paired with Figtree for supporting text, labels, buttons and fields. Arabic uses Alexandria for headings and Noto Sans Arabic for supporting text, with the matching English stacks for mixed-script content. Variable WOFF2 files use script-specific Unicode ranges and `font-display: swap`; the English stacks include metric-adjusted Arial fallbacks. Font files come from the same origin, without a hosted font service. The saved `manrope` theme value remains a compatibility key for this brand pairing; `system` overrides both heading and body fonts. Locale changes update portal typography as well as the page.
 
 The hierarchy uses heavy friendly headings, compact labels, and subdued supporting text. Base body copy uses the frontmatter body role without a global line-height override.
 
@@ -151,7 +151,7 @@ The hierarchy uses heavy friendly headings, compact labels, and subdued supporti
 
 ## Layout
 
-The centered page has a maximum canvas width of (860px), including its padding. Default page padding is (45px 30px 40px). At widths up to (650px), padding becomes (30px 18px 24px); below (359px), horizontal padding becomes (14px). At widths from (1100px), top padding grows to (55px).
+The centered page has a maximum canvas width of (860px), including its padding. Default page padding is (45px 30px 40px). At widths from (360px) through (389px), contact-card gaps tighten to (4px) so both scripts retain their title sizes. At widths up to (650px), page padding becomes (30px 18px 24px); below (359px), horizontal padding becomes (14px). At widths from (1100px), top padding grows to (55px).
 
 The hero is horizontal on larger screens, with a circular avatar (220px) beside the text. Mobile places a smaller avatar (132px; 112px at narrow widths) at the logical end of the hero. Three pill badges occupy a single equal-width row.
 
@@ -219,7 +219,7 @@ The scrim fades over (200ms). The sheet enters from below using a spring (stiffn
 
 - **Do** preserve the cream, pastel, rounded bento world and illustrated avatar.
 - **Do** keep contact tiles horizontal in a two-column grid on mobile and desktop.
-- **Do** use self-hosted Manrope for Latin and Noto Sans Arabic for Arabic.
+- **Do** use Bricolage Grotesque/Figtree for English and Alexandria/Noto Sans Arabic for Arabic, with self-hosted variable fonts.
 - **Do** keep every sheet and all action states in its source card’s color family with readable contrast.
 - **Do** preserve visible focus, reduced-motion behavior, and RTL-aware directional arrows.
 - **Do** show the configured empty QR state until a canonical public URL is supplied.
@@ -247,7 +247,7 @@ Warm paper frames the sidebar, top bar and panels against a cooler pale canvas. 
 
 ### Typography
 
-The self-hosted Manrope/Noto Sans Arabic pairing continues at a denser scale: body (14px, line-height 1.5), page heading (30px/25px mobile, weight 800), panel heading (18px/17px mobile, weight 750), and form labels/inputs/buttons (12px). Supporting labels use (10–11px). Activity timestamps are (10px) on desktop and (11px) on mobile; mobile activity names become (12px). Arabic headings remove Latin negative tracking.
+The same heading/body pairings continue in the admin workspace at a denser scale: body (14px, line-height 1.5), page heading (30px/25px mobile, weight 800), panel heading (18px/17px mobile, weight 750), and form labels/inputs/buttons (12px). Supporting labels use (10–11px). Activity timestamps are (10px) on desktop and (11px) on mobile; mobile activity names become (12px). Arabic headings remove Latin negative tracking.
 
 ### Layout
 

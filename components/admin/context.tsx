@@ -83,7 +83,7 @@ export function Field({
           {options.map((o) => (
             <option key={o} value={o}>
               {tr(
-                o,
+                o === "manrope" ? "Brand fonts" : o,
                 (
                   {
                     mint: "نعناعي",
@@ -101,6 +101,7 @@ export function Field({
                     soft: "خفيف",
                     medium: "متوسط",
                     system: "خط الجهاز",
+                    manrope: "خطوط الهوية",
                     center: "المنتصف",
                     top: "الأعلى",
                     bottom: "الأسفل",

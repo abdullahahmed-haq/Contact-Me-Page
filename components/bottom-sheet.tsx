@@ -92,6 +92,7 @@ export function BottomSheet({
             >
               <motion.section
                 ref={contentRef}
+                lang={locale}
                 dir={locale === "ar" ? "rtl" : "ltr"}
                 className={`bottom-sheet accent-${accent}`}
                 style={

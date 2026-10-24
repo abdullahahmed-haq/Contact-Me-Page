@@ -8,14 +8,21 @@
   --admin-shadow: 0 8px 26px -20px #34412b55;
   color: var(--admin-ink);
   background: #f8f9f4;
-  font-family: "Manrope Variable", sans-serif;
+  --admin-font-display: var(--font-display-en);
+  --admin-font-body: var(--font-body-en);
+  font-family: var(--admin-font-body);
   font-size: 14px;
   min-height: 100dvh;
   line-height: 1.5;
 }
 .admin-app[dir="rtl"],
 .admin-login[dir="rtl"] {
-  font-family: "Noto Sans Arabic Variable", sans-serif;
+  --admin-font-display: var(--font-display-ar);
+  --admin-font-body: var(--font-body-ar);
+}
+.admin-app :is(h1, h2, h3),
+.admin-login :is(h1, h2, h3) {
+  font-family: var(--admin-font-display);
 }
 .admin-app button,
 .admin-app a,

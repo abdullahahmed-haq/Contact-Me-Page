@@ -218,10 +218,16 @@ export function ConnectPage({
     "--reveal-duration": config.theme.duration === "0ms" ? "0ms" : "500ms",
     "--font-body":
       config.theme.font === "system"
-        ? "system-ui,sans-serif"
+        ? "ui-sans-serif,system-ui,sans-serif"
         : locale === "ar"
-          ? '"Noto Sans Arabic Variable",sans-serif'
-          : '"Manrope Variable",sans-serif',
+          ? "var(--font-body-ar)"
+          : "var(--font-body-en)",
+    "--font-display":
+      config.theme.font === "system"
+        ? "ui-sans-serif,system-ui,sans-serif"
+        : locale === "ar"
+          ? "var(--font-display-ar)"
+          : "var(--font-display-en)",
     ...Object.fromEntries(
       Object.entries(config.theme.accents)
         .filter(
@@ -264,7 +270,7 @@ export function ConnectPage({
     };
     // Public analytics fires once per mounted page; preview updates never emit events.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [config, preview]);
+  }, [config, preview, locale]);
   const close = () => setSheetOpen(false);
   const icons = {
     student: GraduationCap,

@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import "@fontsource-variable/manrope";
-import "@fontsource-variable/noto-sans-arabic";
+import "./fonts.css";
 import "./globals.css";
 export const metadata: Metadata = {
   title: "Abdullah Ahmed — Let’s connect",
