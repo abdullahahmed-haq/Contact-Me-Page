@@ -9,7 +9,7 @@ Created on 2026-10-24 at the owner's request, using free plans only.
 - GitHub source: [abdullahahmed-haq/Contact-Me-Page](https://github.com/abdullahahmed-haq/Contact-Me-Page), connected to Vercel; production branch `main`.
 - Database: independent Neon `abdo-connect-db`, plan `free_v3`, Frankfurt; existing Supabase projects were not modified.
 - Images: public Vercel Blob store `abdo-connect-images`, Frankfurt. Only processed public images enter this store; database records and secrets stay on the server.
-- Current application deployment: `dpl_6cjEg1Dye7e2pdJa4LoQ8vw2Vxrw`.
+- Current application deployment: `dpl_6kP3APAs2jYGFsMDXSUpToDR7v1x`.
 - Initial authenticated smoke-verified deployment: `dpl_B96TFkgstxr7QC7RSnYpXJVVsp4w`.
 
 Cloudflare DNS in the existing `Odd Andesaurus` account has a CNAME named `connect` pointing to `df85d956cb559482.vercel-dns-017.com`, DNS only, TTL Auto. Vercel confirmed the domain is configured correctly. The other domain records and nameservers were preserved.
@@ -31,6 +31,12 @@ The performance changes on `perf/mobile-loading` were deployed deliberately thro
 Twenty-six post-release checks passed against <https://connect.abdo-ahmed.online/>: unchanged public-content fingerprint; public API; protected administration and noindex login; favicon; English/Arabic headings, direction, mobile layout, optimized-image delivery and preview priority; absence of Motion/QR rendering in initial scripts; QR decoding to the configured canonical URL; deferred contact dialog opening, focus restoration, PNG/SVG downloads under production CSP; and no browser runtime errors. Checks did not sign in, edit or publish CMS content, send messages, or change credentials. No schema migration was needed.
 
 See [the release verification](../artifacts/performance/production-release.json) and [the pre-release lab report](PERFORMANCE.md). The lab scores are not asserted as production performance measurements.
+
+## Arabic contact icon fix — 24 October 2026
+
+Deployment `dpl_6kP3APAs2jYGFsMDXSUpToDR7v1x` reached `READY` on Production from source commit `f03a565`. Arrow rotation and hover movement now target only the directional arrow, keeping the save-contact person icon upright in Arabic. The release retains the preceding mobile performance changes and adds no dependencies or JavaScript.
+
+TypeScript, all 11 unit tests, all 8 public browser tests, and the production build passed. Checks on the custom domain confirmed upright contact icons, correct arrow direction, no horizontal overflow, working vCard downloads, and no browser runtime errors in both languages at 390px and 1440px. Public Connect and login routes returned 200; unauthenticated administration returned 401. The published content matched its pre-release snapshot exactly. Screenshots and verification results are saved locally under `artifacts/admin/rtl-icon/`.
 
 ## Free-plan boundaries
 
