@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState, type CSSProperties } from "react";
+import { useEffect, useRef, useState, type CSSProperties } from "react";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import { MotionConfig } from "motion/react";
 import {
@@ -23,7 +23,7 @@ import type {
   SheetTone,
   SiteConfig,
 } from "@/lib/config";
-import { messages } from "@/lib/i18n";
+import { trackEvent } from "@/lib/analytics";
 import { BrandIcon } from "./icons";
 import { BottomSheet } from "./bottom-sheet";
 import { MessageComposer } from "./message-composer";
@@ -60,11 +60,11 @@ function ContactCard({
 }) {
   const content = (
     <>
-      <span className={`contact-icon ${card.id}`}>
-        {card.id === "email" ? (
+      <span className={`contact-icon ${card.icon}`}>
+        {card.icon === "email" ? (
           <Mail aria-hidden="true" />
         ) : (
-          <BrandIcon id={card.id} />
+          <BrandIcon id={card.icon} />
         )}
       </span>
       <span className="contact-copy">
@@ -87,25 +87,42 @@ function ContactCard({
     </button>
   );
 }
-export function ConnectPage({ config }: { config: SiteConfig }) {
+export function ConnectPage({
+  config,
+  preview = false,
+  initialLocale,
+}: {
+  config: SiteConfig;
+  preview?: boolean;
+  initialLocale?: Locale;
+}) {
+  const viewed = useRef(false);
   const [ready, setReady] = useState(false);
-  const [locale, setLocale] = useState<Locale>("en");
+  const [locale, setLocale] = useState<Locale>(
+    initialLocale || config.settings.defaultLocale,
+  );
   const [sheet, setSheet] = useState<
     ContactId | "website" | "qr" | "save" | null
   >(null);
   const [sheetOpen, setSheetOpen] = useState(false);
   const openSheet = (id: ContactId | "website" | "qr" | "save") => {
+    trackEvent(`${id === "website" ? "website_open" : id + "_open"}`);
     setSheet(id);
     setSheetOpen(true);
   };
-  const t = messages[locale];
+  const t = config.copy[locale];
   useEffect(() => {
     setReady(true);
     try {
       const saved = localStorage.getItem("connect-locale");
-      if (saved === "en" || saved === "ar") setLocale(saved);
+      if (
+        !initialLocale &&
+        (saved === "en" || saved === "ar") &&
+        config.settings.locales.includes(saved)
+      )
+        setLocale(saved);
     } catch {}
-  }, []);
+  }, [initialLocale, config.settings.locales]);
   useEffect(() => {
     if (!ready) return;
     document.documentElement.lang = locale;
@@ -120,7 +137,65 @@ export function ConnectPage({ config }: { config: SiteConfig }) {
     "--card-radius": config.theme.radius,
     "--gap": config.theme.gap,
     "--duration": config.theme.duration,
+    "--muted": config.theme.muted,
+    "--shadow":
+      config.theme.shadow === "none"
+        ? "none"
+        : config.theme.shadow === "medium"
+          ? "0 12px 28px -10px #33432a48"
+          : "0 8px 24px -14px #33432a38",
+    "--button-radius": config.theme.buttonRadius,
+    "--avatar-bg": config.profile.avatarBackground,
+    "--reveal-duration": config.theme.duration === "0ms" ? "0ms" : "500ms",
+    "--font-body":
+      config.theme.font === "system"
+        ? "system-ui,sans-serif"
+        : locale === "ar"
+          ? '"Noto Sans Arabic Variable",sans-serif'
+          : '"Manrope Variable",sans-serif',
+    ...Object.fromEntries(
+      Object.entries(config.theme.accents)
+        .filter(
+          ([k, v]) =>
+            v !==
+            (
+              {
+                mint: "#e4f8da",
+                green: "#e9f6dc",
+                blue: "#dce9ff",
+                cream: "#fff0d5",
+                lavender: "#ebddff",
+                pink: "#fce2eb",
+              } as Record<string, string>
+            )[k],
+        )
+        .map(([k, v]) => [`--custom-${k}`, v]),
+    ),
   } as CSSProperties;
+  useEffect(() => {
+    const root = document.documentElement;
+    for (const key of Object.keys(config.theme.accents))
+      root.style.removeProperty(`--custom-${key}`);
+    for (const [k, v] of Object.entries(theme))
+      root.style.setProperty(k, String(v));
+    root.style.background = config.theme.surface;
+    root.style.setProperty("--sheet-surface", config.theme.sheet);
+    root.style.setProperty("--wa-accent", config.whatsapp.accent);
+    root.dataset.customButtons = String(config.theme.buttonRadius !== "999px");
+    root.dataset.analytics =
+      !preview && config.settings.analytics ? "enabled" : "disabled";
+    if (!preview && !viewed.current) {
+      viewed.current = true;
+      trackEvent("page_view");
+      if (new URLSearchParams(location.search).get("source") === "qr")
+        trackEvent("qr_referral");
+    }
+    return () => {
+      root.dataset.analytics = "disabled";
+    };
+    // Public analytics fires once per mounted page; preview updates never emit events.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [config, preview]);
   const close = () => setSheetOpen(false);
   const icons = {
     student: GraduationCap,
@@ -136,9 +211,9 @@ export function ConnectPage({ config }: { config: SiteConfig }) {
         ? t.save
         : config.featured.title[locale];
   const activeSubtitle =
-    sheet === "whatsapp"
+    activeCard?.type === "whatsapp"
       ? t.whatsappSubtitle
-      : sheet === "email"
+      : activeCard?.type === "email"
         ? t.emailSubtitle
         : activeCard
           ? activeCard.subtitle[locale]
@@ -150,10 +225,10 @@ export function ConnectPage({ config }: { config: SiteConfig }) {
   const activeTone: SheetTone =
     activeCard?.tone ?? (sheet === "qr" ? "dark" : "blue");
   const activeIcon = activeCard ? (
-    activeCard.id === "email" ? (
+    activeCard.icon === "email" ? (
       <Mail />
     ) : (
-      <BrandIcon id={activeCard.id} />
+      <BrandIcon id={activeCard.icon} />
     )
   ) : sheet === "qr" ? (
     <QrCode />
@@ -163,9 +238,13 @@ export function ConnectPage({ config }: { config: SiteConfig }) {
     <Globe />
   );
   return (
-    <MotionConfig reducedMotion="user">
+    <MotionConfig
+      reducedMotion={config.theme.duration === "0ms" ? "always" : "user"}
+    >
       <main
         data-ready={ready}
+        data-custom-radius={config.theme.radius !== "28px"}
+        data-custom-spacing={config.theme.gap !== "14px"}
         className="connect-page"
         style={theme}
         dir={locale === "ar" ? "rtl" : "ltr"}
@@ -188,7 +267,7 @@ export function ConnectPage({ config }: { config: SiteConfig }) {
                   <Languages size={16} />
                   {t.language}
                 </DropdownMenu.Label>
-                {(["en", "ar"] as Locale[]).map((l) => (
+                {config.settings.locales.map((l) => (
                   <DropdownMenu.Item
                     key={l}
                     onSelect={() => setLocale(l)}
@@ -211,37 +290,43 @@ export function ConnectPage({ config }: { config: SiteConfig }) {
             </p>
             <p className="intro">{config.profile.intro[locale]}</p>
           </div>
-          <div className="avatar-wrap">
-            <span className="avatar-blob" />
-            <DecorativeShapes />
-            <img
-              className="avatar"
-              src={config.profile.avatar}
-              width={230}
-              height={230}
-              alt={config.profile.avatarAlt[locale]}
-              fetchPriority="high"
-            />
-          </div>
+          {config.profile.avatar && (
+            <div className="avatar-wrap">
+              <span className="avatar-blob" />
+              <DecorativeShapes />
+              <img
+                className="avatar"
+                src={config.profile.avatar}
+                width={230}
+                height={230}
+                alt={config.profile.avatarAlt[locale]}
+                fetchPriority="high"
+              />
+            </div>
+          )}
         </header>
         <div className="category-badges reveal">
-          {config.profile.badges.map((b) => {
-            const Icon = icons[b.id];
-            return (
-              <span key={b.id} className={`category-badge badge-${b.id}`}>
-                <Icon size={19} strokeWidth={2.2} aria-hidden="true" />
-                {b.label[locale]}
-              </span>
-            );
-          })}
+          {config.profile.badges
+            .filter((b) => b.enabled)
+            .map((b) => {
+              const Icon = icons[b.icon];
+              return (
+                <span key={b.id} className={`category-badge badge-${b.icon}`}>
+                  <Icon size={19} strokeWidth={2.2} aria-hidden="true" />
+                  {b.label[locale]}
+                </span>
+              );
+            })}
         </div>
         <div id="links" className="links-content">
           {config.featured.enabled && (
-            <section className="featured-card reveal">
+            <section
+              className={`featured-card reveal featured-tone-${config.featured.tone}`}
+            >
               <button
                 className="card-trigger"
                 data-action="website"
-                aria-label={t.visit}
+                aria-label={config.featured.cta[locale]}
                 aria-haspopup="dialog"
                 onClick={() => openSheet("website")}
               />
@@ -250,30 +335,41 @@ export function ConnectPage({ config }: { config: SiteConfig }) {
                   <h2>{config.featured.title[locale]}</h2>
                   <p>{config.featured.subtitle[locale]}</p>
                   <span className="black-button">
-                    {t.visit}
+                    {config.featured.cta[locale]}
                     <ArrowRight size={21} />
                   </span>
                 </div>
               </div>
               <img
                 className="website-preview"
-                src="/assets/website-preview.svg"
+                src={config.featured.image || "/assets/website-preview.svg"}
+                style={{ objectPosition: config.featured.position }}
                 width={360}
                 height={270}
-                alt={t.preview}
+                alt={config.featured.alt[locale]}
               />
             </section>
           )}
           <div className="contact-grid reveal">
             {[...config.contacts]
-              .filter((c) => c.enabled)
+              .filter(
+                (c) =>
+                  c.enabled &&
+                  (c.type !== "whatsapp" || config.whatsapp.enabled),
+              )
               .sort((a, b) => a.order - b.order)
               .map((c) => (
                 <ContactCard
                   card={c}
                   key={c.id}
                   locale={locale}
-                  onAction={() => openSheet(c.id)}
+                  onAction={() => {
+                    if (!c.sheet && c.type === "link" && c.url) {
+                      trackEvent(`${c.id}_click`);
+                      if (c.opening === "same") location.assign(c.url);
+                      else window.open(c.url, "_blank", "noopener,noreferrer");
+                    } else openSheet(c.id);
+                  }}
                 />
               ))}
           </div>
@@ -281,6 +377,7 @@ export function ConnectPage({ config }: { config: SiteConfig }) {
             {config.sections.qr && (
               <QRCodeCard
                 url={config.canonicalUrl}
+                qr={config.qr}
                 t={t}
                 onOpen={() => openSheet("qr")}
               />
@@ -313,27 +410,40 @@ export function ConnectPage({ config }: { config: SiteConfig }) {
       <BottomSheet
         open={sheetOpen}
         onClose={close}
-        title={sheet === "email" ? t.email : activeTitle}
+        title={
+          activeCard?.type === "email"
+            ? t.email
+            : activeCard?.type === "whatsapp"
+              ? t.whatsapp
+              : activeTitle
+        }
         subtitle={activeSubtitle}
         icon={activeIcon}
         locale={locale}
         t={t}
         accent={activeTone}
       >
-        {sheet === "whatsapp" || sheet === "email" ? (
+        {activeCard?.type === "whatsapp" || activeCard?.type === "email" ? (
           <MessageComposer
             key={`${sheet}-${locale}`}
-            kind={sheet}
+            kind={activeCard!.type as "whatsapp" | "email"}
             config={config}
             locale={locale}
             t={t}
           />
         ) : sheet === "qr" ? (
-          <QRCodeSheetContent key={locale} url={config.canonicalUrl} t={t} />
+          <QRCodeSheetContent
+            key={locale}
+            url={config.canonicalUrl}
+            qr={config.qr}
+            t={t}
+          />
         ) : sheet === "save" ? (
           <SaveContactSheetContent contact={config.vcard} t={t} />
         ) : (
           <LinkSheetContent
+            opening={activeCard?.opening}
+            event={activeCard ? `${activeCard.id}_click` : "website_click"}
             url={
               sheet === "website"
                 ? config.featured.url
@@ -341,7 +451,7 @@ export function ConnectPage({ config }: { config: SiteConfig }) {
             }
             action={
               sheet === "website"
-                ? t.visit
+                ? config.featured.cta[locale]
                 : t.openOn.replace("{name}", activeTitle)
             }
             t={t}

@@ -231,3 +231,49 @@ The scrim fades over (200ms). The sheet enters from below using a spring (stiffn
 - **Don't** mirror brand logos when changing reading direction.
 - **Don't** force the bottom sheet to a fixed content height or attach dragging to its scrollable body.
 - **Don't** replace the soft tonal layers with heavy borders or sharp rectangular cards.
+
+
+## Admin workspace extension
+
+This supplement applies only to Connect Studio (`/admin`). The public frontmatter, public sections above, and `.impeccable/design.json` remain the authority for the public website. Admin values and component samples are recorded separately in [docs/admin-design-tokens.json](docs/admin-design-tokens.json), an independent documentation reference rather than a replacement for the public live-panel sidecar.
+
+### Overview
+
+Connect Studio is the Operate extension of the Pastel Contact Bento: cream panels, botanical ink, quiet sage selection, and compact forms. It uses the existing illustrated avatar; no new raster assets were generated. The workspace puts editing, draft status and deliberate publication together, while its iframe preview renders the actual public `ConnectPage` and contact sheets.
+
+### Colors
+
+Warm paper frames the sidebar, top bar and panels against a cooler pale canvas. Dark botanical actions identify Publish and primary editor actions; sage identifies active navigation and published status. Amber identifies unsaved or saved draft changes. Terracotta identifies errors and failed activity, with an alert icon rather than a success check. Supporting copy and fine dividers stay muted. Exact admin values and source locations live in the separate sidecar.
+
+### Typography
+
+The self-hosted Manrope/Noto Sans Arabic pairing continues at a denser scale: body (14px, line-height 1.5), page heading (30px/25px mobile, weight 800), panel heading (18px/17px mobile, weight 750), and form labels/inputs/buttons (12px). Supporting labels use (10–11px). Activity timestamps are (10px) on desktop and (11px) on mobile; mobile activity names become (12px). Arabic headings remove Latin negative tracking.
+
+### Layout
+
+The fixed sidebar is (236px); the top bar is (72px). Content has (36px) padding, a (1700px) maximum width, and (24px) workspace gaps. Form panels use (27px) padding; the editor column is at most (1080px). Preview occupies a (412px) column and moves above the editor at widths up to (1250px). At (1450px) and above, horizontal content padding grows to (45px).
+
+At widths up to (1000px), the sidebar narrows to (210px) and content padding becomes (28px 22px). Up to (760px), navigation becomes a (245px) dismissible overlay, the top bar becomes (64px), content padding becomes (25px 16px), and publication actions wrap. Up to (380px), paired fields and bilingual editors become one column. Logical spacing, end alignment and opposite drawer movement support RTL; preview language is independent of editor language.
+
+### Elevation & Depth
+
+Cream panels use a restrained ambient shadow, with fine rules separating navigation, publication status and lists. Buttons and links transition background/shadow over (160ms); the mobile drawer moves over (180ms). Loading placeholders pulse. Reduced-motion preferences remove admin animations and transitions.
+
+### Shapes
+
+Panel corners are (16px), reducing to (14px) on mobile. Fields and navigation items use (9px), buttons (10px), secondary containers (12px), and status pills (30px). These admin dimensions do not redefine public card geometry.
+
+### Components
+
+Primary and secondary buttons have a (40px) minimum height; ordinary icon buttons are (36px). Disabled controls use (0.45) opacity. Fields have a (43px) minimum height, thin border, and a visible green (2px) focus outline; buttons/links retain the shared blue keyboard outline. Textareas resize vertically.
+
+The publication strip distinguishes “Unsaved changes”, “Draft changes” and “Published content”, includes the last-publication timestamp or original-content state, and keeps Save draft beside Publish. Busy controls display “Working…”. Validation errors expose paths; success/error toasts and retryable resource states provide feedback. The overview shows real content counts and an explicit analytics empty state when disabled. Activity uses green checks for ordinary records and terracotta alerts for failed records; mobile timestamps wrap onto their own line.
+
+### Do's and Don'ts
+
+- **Do** preserve the compact administrative scale, visible keyboard focus, RTL alignment and separate editor/preview language choices.
+- **Do** preview edits through the shared public components before publication; preserve approved default public gradients and geometry until the corresponding theme customization is edited.
+- **Don't** substitute invented analytics or success indicators for empty/error states.
+- **Don't** apply admin radii, density or tokens to the public page.
+
+Implementation sources: `app/admin/admin.css`, `components/admin/`, and the public customization guards in `components/connect-page.tsx`/`app/globals.css`. Visual evidence: `.impeccable/review/desktop.png`, `.impeccable/review/mobile.png`, and `artifacts/admin/arabic-mobile.png`. Final finish-review approval covers the reviewed English overview; the Arabic activity screenshot supplies additional RTL evidence, not a review of every admin screen.

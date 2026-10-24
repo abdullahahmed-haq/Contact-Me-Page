@@ -1,81 +1,116 @@
-# Abdullah Ahmed — Personal Connect Hub
+# Abdullah Ahmed — Personal Connect Hub & Studio
 
-A responsive bilingual personal contact page, built with Next.js App Router, strict TypeScript, React, Motion, Radix primitives, Lucide, Simple Icons, Zod, and QRCode. English uses self-hosted Manrope; Arabic uses self-hosted Noto Sans Arabic. Custom CSS supplies the shared design tokens.
+A bilingual personal contact site and an owner-only CMS built with Next.js 16 App Router, React, TypeScript, PostgreSQL, Drizzle, Better Auth, Zod, Sharp, QRCode, Motion, Lucide and S3-compatible object storage. Public content comes from an atomic published database snapshot. Edits and previews remain private until published. The approved public layout, existing illustrations, contact sheets, and Arabic/English typography are reused.
 
-## Run
+This application now requires a **Node server**. It no longer exports a static `out/` website. The old static preview script is not a CMS deployment target.
+
+## Local setup
+
+Use Node 22.12+ and npm.
 
 ```sh
 npm ci
+cp .env.example .env.local
+npm run db:migrate
+```
+
+Set `OWNER_EMAIL` in `.env.local`. Provision your own password from your terminal without putting it in source control or a command argument:
+
+```sh
+read -r -s OWNER_PASSWORD
+export OWNER_PASSWORD
+npm run owner:create
+unset OWNER_PASSWORD
 npm run dev
 ```
 
-Open http://localhost:3000/connect/ (the root route serves the same page). Node.js 20.9+ is required. `npm run build` creates a static site in `out/`; serve that folder with a static host. `npm start` serves that production export with a dependency-free Node preview server; `next start` is not used for this static-export configuration.
+Type a unique password of 14–128 characters at the hidden prompt before pressing Enter. The command hashes it with Better Auth’s password implementation. There is no shipped owner password, default login, public registration, or production bypass. Provisioning refuses to overwrite an existing account or create another owner.
 
-## Configure
+Open http://localhost:3000/connect/ and http://localhost:3000/admin/. Development uses real PostgreSQL through filesystem-backed PGlite in ignored `.data/postgres`, and stores optimized images in `.data/media`. The development signing secret is generated in `.data/auth-secret` with owner-only filesystem permissions if not explicitly configured. Stop the development server before running commands against the same embedded database; PGlite permits one process per data directory. Managed PostgreSQL has no such local restriction.
 
-Edit `lib/config.ts`. `getSiteConfig()` is the validated data-access boundary; replace it with your server-backed repository when adding an admin system. Only pass public settings to client components. No API keys or backend secrets are required.
+`BETTER_AUTH_URL` must match the exact origin you open in the browser. If you use another port, change that value before starting. Use `http://localhost:3000`, consistently, for local setup.
 
-Configured from the owner’s supplied details:
+## Everyday editing
 
-- WhatsApp / phone: +201034243496
-- GitHub: https://github.com/abdullahahmed-haq
-- Instagram: https://www.instagram.com/abdobug_1/ (vCard profile; the six public card categories are preserved)
+1. **Sign in** at `/admin/login` using the provisioned owner email and password. The sidebar language button switches the entire workspace between English LTR and Arabic RTL.
+2. **Profile** edits names, greetings, subtitle, introduction, image, alt text, avatar background and ordered visible badges. English and Arabic are edited independently.
+3. **Contact links** edits destinations, labels, curated icons, colors, actions, visibility, opening behavior and optional link sheets. Drag the handle or use up/down buttons. New cards start disabled. WhatsApp/email actions use their dedicated contact settings; ordinary links use their HTTPS destination.
+4. **WhatsApp** changes the international number, composer limit, accent and bilingual sheet copy. **Quick messages** adds, edits, orders, disables and deletes suggestions. Clicking a public suggestion populates the actual composer; WhatsApp sends the message after handoff.
+5. **Featured website** edits its heading, subtitle, CTA, URL, preview image, focal position, accent and visibility.
+6. **Asset library** uploads validated raster images, previews/crops them to a square with adjustable focal point, searches uploads, edits alt text, copies URLs, and selects images for the avatar or website. Uploading a replacement creates a new asset so earlier revisions still work. Unused images can be deleted; images referenced by a draft, publication or revision cannot be deleted. Original project images can be restored from the relevant editor.
+7. **QR code** sets a real public HTTPS destination, chooses tested high-contrast colors, previews and downloads actual PNG/SVG codes. The background stays white and the quiet zone stays four modules. Until the URL is configured, the original honest empty state remains. Only referrals with `?source=qr` are distinguishable in analytics; they are not verified scans.
+8. **Digital contact** edits the vCard fields and profiles; download the draft `.vcf` to test it. Arabic is preserved in UTF-8. The public button downloads published contact details.
+9. **Appearance** changes controlled colors, spacing, radius, shadows, typography, sheet surface and motion duration. Text/surface contrast is validated. Reset applies defaults to the draft. **Languages & copy** contains all editable public text and shows missing translations.
+10. **Live preview** renders the real public components with unsaved edits, mobile/desktop sizing and either locale. Tap a card to preview its actual sheet. At narrow widths the preview appears above the editor; close it to return to editing. `/admin/preview` shows the saved draft and also requires authentication.
+11. **Save draft** persists edits without changing the public page. **Publish** first saves current edits and atomically switches the public snapshot. Drafts and publications survive reloads and server restarts. A stale browser receives a conflict instead of silently overwriting another session’s changes. Reload the page before retrying a conflicting save.
+12. **Published history** restores a prior live snapshot into the draft. Preview and publish it to roll back. **Discard draft changes** restores the current published content to the editor.
+13. **SEO & sharing** edits localized metadata, public canonical URL, social images, favicon and indexing. `?lang=ar` renders Arabic sharing metadata. Admin pages are always excluded from indexing.
+14. **Settings & security** changes public availability, default/available languages, public email and optional aggregate analytics. It also exports/imports validated content JSON, changes your password and lists/revokes active sessions. Imported content is a draft until saved and published. Password changes revoke other sessions.
+15. **Activity log** records publications, draft changes, restores, image operations and authentication events. **Analytics** displays actual aggregate events, a date filter and an honest empty state. It is disabled by default and respects Do Not Track.
 
-Website, portfolio, Telegram, email, LinkedIn and canonical public URL are intentionally empty. Missing links open their own themed sheet with an honest explanation and a disabled destination action. The email composer remains unavailable until a real address is configured. No destinations were fabricated.
+## Authentication and recovery
 
-Profile text, avatar, badges, featured link, cards, display order, enabled sections, theme values, vCard details and localized quick messages are typed settings. Quick-message `order` controls chip ordering. Public UI copy lives in `lib/i18n.ts`. Visual tokens are centralized in `app/globals.css`, with configuration overrides for the core theme.
+Better Auth uses database-backed expiring sessions in HttpOnly SameSite=Lax cookies; production cookies are Secure. A separate owner-membership table is checked on every CMS request. Public sign-up and unused auth routes are blocked. Both Better Auth and the CMS enforce same-origin mutations and persisted limits. Login has a strict 5-attempt/15-minute path bucket plus an account bucket; without a trusted proxy header it conservatively shares the path bucket across clients. Do not trust an IP header that the outside caller can set: your reverse proxy must overwrite the configured header.
 
-### Public URL and QR
+Change passwords through Settings. If you lose access, stop local PGlite users if applicable and run offline recovery from the trusted server:
 
-Set `NEXT_PUBLIC_CONNECT_URL` in `.env.local` to the final public HTTPS `/connect/` URL and rebuild, or set `canonicalUrl` in configuration. This is the only optional environment variable. Private preview URLs are not substitutes for a public canonical address. Until configured, the QR card explains why its code is unavailable. A configured QR has a four-module quiet zone, high contrast, and real PNG / SVG downloads. QR generation rejects localhost, common private IPs and insecure URLs.
+```sh
+read -r -s OWNER_PASSWORD
+export OWNER_PASSWORD
+npm run owner:reset
+unset OWNER_PASSWORD
+```
 
-### Language
+Use the existing owner email in `OWNER_EMAIL`. Recovery updates its password, revokes all database sessions and writes an audit event. It requires trusted database/host access, not an unauthenticated website endpoint. Email recovery and MFA are not configured. The interface does not claim otherwise.
 
-Use the three-dot menu to switch between English and العربية. The selection persists in localStorage. The document language, direction, copy and sheet layout update together. The website illustration and decorative shapes reflect with Arabic, including the save-contact card and the sheet’s flowing corner accent. Logos and QR images remain unmirrored.
+## Production configuration
 
-### Contact actions
+See [deployment and security operations](docs/DEPLOYMENT.md) for the complete checklist. Required external dependencies are:
 
-Every actionable card opens a reusable, content-height bottom sheet first, including the website, all six contacts, QR, and Add to Contacts. External destinations open only from the sheet action. The sheet icon, decoration, selected chips, enabled CTA and disabled CTA follow the source card’s palette: mint, green, blue, cream, lavender, pink or dark.
+- Managed **PostgreSQL**, such as Neon, with `DATABASE_URL` including the provider’s TLS parameters.
+- `BETTER_AUTH_URL` set to the public **HTTPS origin**, and a strong `BETTER_AUTH_SECRET` stored only in your deployment secret manager.
+- Persistent **Vercel Blob** (`BLOB_STORE_ID` with Vercel OIDC, or `BLOB_READ_WRITE_TOKEN`), or an **S3-compatible bucket** with standard AWS SDK credentials/role, `S3_BUCKET`, `S3_REGION`, optional `S3_ENDPOINT`, and a public HTTPS `S3_PUBLIC_URL` prefix. Local filesystem uploads and PGlite are deliberately rejected in production.
 
-The WhatsApp sheet uses the same shared component. It supports quick messages, selection feedback, editing, emoji insertion at the cursor, 500-character limit, accessible focus management, Escape / outside / close-button dismissal, handle-only downward dragging, scroll locking, short-screen internal scrolling and visual-viewport keyboard accommodation. The send action opens the configured WhatsApp conversation with URL-encoded text. Sending is completed in WhatsApp; the website never claims delivery. Email reuses the composer with a configured `mailto:` action.
+```sh
+npm ci
+npm run db:migrate
+# Provision the owner once, through the trusted terminal as described above.
+npm run build
+npm start
+```
 
-Add to Contacts first shows the configured details in a blue sheet; its Download vCard action downloads the real vCard with configured phone and social profiles. UTF-8 text, escaping, CRLF line endings and octet-aware line folding are supported.
+Run migrations once per release before switching traffic. Do not share `.data` between processes or use it on serverless/ephemeral production hosts. Database and storage credentials are never sent to the browser. The dashboard’s service-health screen reveals configuration status only. Content changes require no deployment: dynamic public routes and no-store APIs always use the current published snapshot.
 
-## Assets
+The production project is deployed on Vercel Hobby with an independent Neon Free database and Vercel Blob. See [the production record](docs/PRODUCTION.md) for the domain, verification and free-tier limits. AI image generation is available as a development tool, but the dashboard has no configured generation provider and exposes no fake generation action. Existing approved images were retained.
 
-- `public/assets/abdullah-illustrated-avatar.webp`: optimized generated avatar, 512×512. This is a fictional illustrative placeholder, not a verified likeness. The built-in Imagegen tool produced it; the exact prompt and source are recorded in the adjacent `.prompt.txt` file.
-- `public/assets/website-preview.svg`: original scalable illustrative website preview, not a screenshot of a live portfolio.
-- Hero accents and background shapes are original SVG / CSS geometry.
-- WhatsApp, Telegram and GitHub brand paths come from Simple Icons (CC0). LinkedIn uses its recognizable brand mark as an inline vector. General interface icons use Lucide (ISC). Brand names and marks belong to their owners.
-
-## Checks
+## Verification
 
 ```sh
 npm run typecheck
 npm test
+npm run test:integration
 npx playwright install chromium
-npm run dev                  # separate terminal, port 3000
-npm run test:e2e
+npm run test:e2e:isolated
 npm run build
+npm audit
 ```
 
-All 8 unit tests and 7 browser tests pass. The browser suite checks all nine card entry points and matching action colors in both locales, and also exercises a real touch drag in mobile Chromium emulation. Detailed results are in `artifacts/verification.md`.
+The isolated browser runner copies the application into a temporary workspace, provisions a temporary database, a random owner password and separate image storage, starts a local server on port 3110, runs browser tests, and removes the temporary workspace/data afterward. It saves a JSON result report and screenshots under `artifacts/admin` and `artifacts/cms-verification`. It does not edit your development owner or database. `E2E_PORT` changes its port. `npm run test:e2e` can still target an already running server with `PLAYWRIGHT_BASE_URL`; owner tests require credentials in `OWNER_EMAIL` and `OWNER_PASSWORD` and are skipped otherwise.
 
-Unit tests cover deep-link encoding / validation, safe configuration, vCard escaping / UTF-8 folding, QR target validation, and actual QR decode. Browser tests cover English / Arabic across 320, 360, 390, 430, 768, 1024 and 1440px, language persistence, overflow, sheet focus / dismissal, scrolling, composer controls, deep-link handoff, vCard download and reduced motion. Screenshots and sample downloads are in `artifacts/`.
+Unit tests cover URL/message safety, vCard Unicode escaping/folding, validated defaults and QR decoding. Database integration tests exercise actual Better Auth credentials/cookies, owner enforcement, expiry/logout, CSRF, stale-write conflicts, draft privacy, publication/revisions, upload inspection/reference protection, analytics and limits. Browser tests exercise the actual editors and public flows. Actual run results are recorded in [verification](docs/VERIFICATION.md).
 
-## Scope and limitations
+## Architecture
 
-No backend, admin dashboard, analytics, or real message delivery service is included. The data boundary is prepared for a future admin integration. Browser automation uses desktop Chromium with responsive viewports; physical iOS Safari / Android Chrome keyboard behavior still needs device testing. Supplied reference images guide layout and style; production omits their phone frame, status bar and availability dot. QR remains unavailable until the owner supplies a public canonical URL.
+- `lib/config.ts`: public, strict Zod content schema and approved first-run defaults; no server secrets. `getSiteConfig()` is a pure defaults helper for old unit tests; the live site uses `getPublished()`.
+- `lib/server/`: PostgreSQL/Drizzle database, Better Auth, authorization, atomic repository, bounded requests, image processing/storage. These modules are imported only by server routes, pages and CLI scripts.
+- `db/migrations/`: generated versioned SQL and Drizzle journal. `npm run db:generate` creates subsequent migrations; `db:migrate` applies them and seeds once without overwriting data.
+- `app/api/admin/[...path]`: independently protected typed content, publish, discard, restore, history, activity, analytics, status and asset operations. Content writes use one validated snapshot boundary instead of partially updating coupled fields.
+- `app/api/auth/[...all]`: restricted Better Auth endpoints. `app/api/public/connect` returns only published public configuration. `app/api/events` records allowed aggregate events. `app/media/[id]` serves only optimized local development WebP assets.
+- `components/admin/`: responsive workspace, bilingual form controls, real resource states, editors, uploads and shared preview.
+- `components/connect-page.tsx`: original public UI with published configuration and configurable copy. Bottom sheets, composer, QR and vCard utilities are reused.
+- `scripts/owner.ts`, `scripts/db.ts`, `scripts/e2e.mjs`: provisioning, migrations and isolated browser test runner.
+- `DESIGN.md`, `PRODUCT.md`, `docs/`: visual authority, product truth and operational documentation.
 
-## Source map
+The content document uses JSONB intentionally: this small single-owner page is published as a coherent unit. Users, sessions, accounts, membership, image metadata, revisions, audit events, rate-limit buckets and daily analytics use separate tables. Analytics keeps only UTC day, action and count, not visitor fingerprints. Request-rate counters are security metadata and are separate from analytics. Sessions omit IP and user-agent storage.
 
-- `app/`: root and `/connect` routes, document metadata, centralized CSS.
-- `components/`: profile / cards, language menu, reusable sheet, message composer, QR card, brand icons.
-- `lib/config.ts`: validated owner data and future-admin boundary.
-- `lib/i18n.ts`: English and Arabic public UI copy.
-- `lib/contact.ts`, `lib/qr.ts`: deep links, safe message limiting, vCard and QR utilities.
-- `public/assets/`: generated avatar, exact generation prompt, original website preview SVG.
-- `tests/`: unit / QR-decode tests and Playwright interaction suite.
-- `scripts/serve.mjs`: production export preview.
-- `PRODUCT.md`, `DESIGN.md`, `.impeccable/design.json`: product truth and documented design system.
-- `.env.example`, `.openai/hosting.json`, package / TypeScript / Next / Playwright files: environment, private Site identity and tooling.
+Existing supplied phone and GitHub/Instagram profiles are preserved. Website, portfolio, Telegram, email, LinkedIn and canonical public URL remain empty until the owner configures them. No personal destinations or usage statistics were fabricated. The illustrated avatar remains a fictional placeholder, with its original generation prompt and provenance beside the asset. Brand paths come from Simple Icons and the existing project vectors; UI icons use Lucide. SVG upload is restricted; the curated original website SVG remains available.

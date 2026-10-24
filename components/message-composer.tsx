@@ -1,5 +1,6 @@
 "use client";
 import { useRef, useState } from "react";
+import { trackEvent } from "@/lib/analytics";
 import { Send, Smile, ArrowUpRight } from "lucide-react";
 import type { Locale, SiteConfig } from "@/lib/config";
 import type { Dictionary } from "@/lib/i18n";
@@ -18,6 +19,7 @@ export function MessageComposer({
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
   const textarea = useRef<HTMLTextAreaElement>(null);
+  const maxLength = kind === "whatsapp" ? config.whatsapp.maxLength : 500;
   const available =
     kind === "whatsapp" ? !!config.whatsappNumber : !!config.email;
   function insertEmoji() {
@@ -26,6 +28,7 @@ export function MessageComposer({
     const end = el?.selectionEnd ?? message.length;
     const text = limitMessage(
       message.slice(0, start) + "👋" + message.slice(end),
+      maxLength,
     );
     setMessage(text);
     requestAnimationFrame(() => {
@@ -43,11 +46,12 @@ export function MessageComposer({
       textarea.current?.focus();
       return;
     }
-    if (!available) return;
+    if (!available || message.length > maxLength) return;
     const url =
       kind === "whatsapp"
-        ? buildWhatsAppUrl(config.whatsappNumber, message)
+        ? buildWhatsAppUrl(config.whatsappNumber, message, maxLength)
         : `mailto:${config.email}?body=${encodeURIComponent(message.trim())}`;
+    trackEvent(`${kind}_outbound`);
     window.open(url, "_blank", "noopener,noreferrer");
   }
   return (
@@ -59,7 +63,7 @@ export function MessageComposer({
         <textarea
           id="contact-message"
           ref={textarea}
-          maxLength={500}
+          maxLength={maxLength}
           placeholder={t.placeholder}
           value={message}
           aria-invalid={!!error}
@@ -80,10 +84,10 @@ export function MessageComposer({
           </button>
           <span
             id="composer-counter"
-            aria-label={`${message.length}/500 ${t.counter}`}
+            aria-label={`${message.length}/${maxLength} ${t.counter}`}
             dir="ltr"
           >
-            {message.length}/500
+            {message.length}/{maxLength}
           </span>
         </div>
       </div>
@@ -95,18 +99,20 @@ export function MessageComposer({
       <fieldset className="quick-messages">
         <legend>{t.quick}</legend>
         <div className="quick-chips">
-          {[...config.quickMessages]
+          {config.quickMessages
+            .filter((p) => p.enabled)
             .sort((a, b) => a.order - b.order)
             .map((p) => (
               <button
                 type="button"
                 key={p.id}
-                aria-pressed={message === p.text[locale]}
+                aria-pressed={message === p.emoji + p.text[locale]}
                 onClick={() => {
-                  setMessage(limitMessage(p.text[locale]));
+                  setMessage(limitMessage(p.emoji + p.text[locale], maxLength));
                   setError("");
                 }}
               >
+                {p.emoji}
                 {p.text[locale]}
               </button>
             ))}
@@ -120,7 +126,7 @@ export function MessageComposer({
       <button
         type="submit"
         className="send-button sheet-primary"
-        disabled={!available || !message.trim()}
+        disabled={!available || !message.trim() || message.length > maxLength}
       >
         <Send size={23} />
         {kind === "whatsapp" ? t.send : t.openEmail}

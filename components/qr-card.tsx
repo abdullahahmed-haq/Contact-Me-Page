@@ -1,11 +1,13 @@
 "use client";
 import { useEffect, useState } from "react";
+import { trackEvent } from "@/lib/analytics";
+import type { SiteConfig } from "@/lib/config";
 import { createQR } from "@/lib/qr";
 import { ArrowDownToLine, ScanLine, QrCode } from "lucide-react";
 import { downloadBlob, isPublicUrl } from "@/lib/contact";
 import type { Dictionary } from "@/lib/i18n";
 
-function useQRCode(url: string, t: Dictionary) {
+function useQRCode(url: string, t: Dictionary, qr?: SiteConfig["qr"]) {
   const [src, setSrc] = useState("");
   const [error, setError] = useState("");
   useEffect(() => {
@@ -13,7 +15,7 @@ function useQRCode(url: string, t: Dictionary) {
     setSrc("");
     setError("");
     if (isPublicUrl(url))
-      createQR(url)
+      createQR(url, "png", qr)
         .then((v) => {
           if (active) setSrc(v);
         })
@@ -23,7 +25,7 @@ function useQRCode(url: string, t: Dictionary) {
     return () => {
       active = false;
     };
-  }, [url, t.qrError]);
+  }, [url, t.qrError, qr]);
   return { src, error, setError };
 }
 
@@ -31,12 +33,14 @@ export function QRCodeCard({
   url,
   t,
   onOpen,
+  qr,
 }: {
   url: string;
+  qr?: SiteConfig["qr"];
   t: Dictionary;
   onOpen: () => void;
 }) {
-  const { src, error } = useQRCode(url, t);
+  const { src, error } = useQRCode(url, t, qr);
   return (
     <section className="qr-card">
       <button
@@ -66,13 +70,22 @@ export function QRCodeCard({
   );
 }
 
-export function QRCodeSheetContent({ url, t }: { url: string; t: Dictionary }) {
-  const { src, error, setError } = useQRCode(url, t);
+export function QRCodeSheetContent({
+  url,
+  t,
+  qr,
+}: {
+  url: string;
+  t: Dictionary;
+  qr?: SiteConfig["qr"];
+}) {
+  const { src, error, setError } = useQRCode(url, t, qr);
   async function download(format: "png" | "svg") {
     try {
+      trackEvent("qr_download");
       if (format === "svg")
         downloadBlob(
-          new Blob([await createQR(url, "svg")], { type: "image/svg+xml" }),
+          new Blob([await createQR(url, "svg", qr)], { type: "image/svg+xml" }),
           "abdullah-connect-qr.svg",
         );
       else

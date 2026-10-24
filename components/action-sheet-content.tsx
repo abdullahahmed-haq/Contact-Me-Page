@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { ArrowUpRight, Download } from "lucide-react";
+import { trackEvent } from "@/lib/analytics";
 import { buildVCard, downloadBlob } from "@/lib/contact";
 import type { SiteConfig } from "@/lib/config";
 import type { Dictionary } from "@/lib/i18n";
@@ -9,7 +10,11 @@ export function LinkSheetContent({
   url,
   action,
   t,
+  opening = "new",
+  event,
 }: {
+  opening?: "new" | "same";
+  event?: string;
   url: string;
   action: string;
   t: Dictionary;
@@ -29,7 +34,8 @@ export function LinkSheetContent({
         <a
           className="send-button sheet-primary"
           href={url}
-          target="_blank"
+          target={opening === "new" ? "_blank" : "_self"}
+          onClick={() => event && trackEvent(event)}
           rel="noopener noreferrer"
         >
           {action}
@@ -56,6 +62,7 @@ export function SaveContactSheetContent({
   const [error, setError] = useState("");
   function download() {
     try {
+      trackEvent("contact_download");
       downloadBlob(
         new Blob([buildVCard(contact)], { type: "text/vcard;charset=utf-8" }),
         "abdullah-ahmed.vcf",

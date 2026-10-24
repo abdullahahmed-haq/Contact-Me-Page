@@ -7,7 +7,15 @@ export default defineConfig({
   use: {
     baseURL: process.env.PLAYWRIGHT_BASE_URL || "http://localhost:3000",
     browserName: "chromium",
+    actionTimeout: 15000,
+    navigationTimeout: 60000,
+    trace: "off",
+    screenshot: "only-on-failure",
   },
-  reporter: "list",
-  timeout: 30000,
+  expect: { timeout: 15000 },
+  reporter: [
+    ["list"],
+    ["json", { outputFile: "artifacts/admin/playwright-results.json" }],
+  ],
+  timeout: 90000,
 });

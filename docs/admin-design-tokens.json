@@ -1,0 +1,343 @@
+{
+  "schemaVersion": 1,
+  "format": "Standalone admin design reference; not the Impeccable public live-panel sidecar schema",
+  "title": "Connect Studio admin design tokens",
+  "scope": {
+    "routes": "/admin and /admin/login",
+    "cssRoot": ".admin-app, .admin-login",
+    "publicAuthority": "DESIGN.md frontmatter and .impeccable/design.json",
+    "sourceOfTruth": "app/admin/admin.css; components/admin/",
+    "publicTokensModified": false
+  },
+  "tokens": {
+    "colors": {
+      "paper": {
+        "value": "#fffcf7",
+        "cssVariable": "--admin-paper",
+        "purpose": "Panels, sidebar, top bar and login canvas"
+      },
+      "canvas": {
+        "value": "#f8f9f4",
+        "cssVariable": null,
+        "purpose": "Workspace canvas"
+      },
+      "ink": {
+        "value": "#263228",
+        "cssVariable": "--admin-ink",
+        "purpose": "Primary text"
+      },
+      "muted": {
+        "value": "#677167",
+        "cssVariable": "--admin-muted",
+        "purpose": "Supporting text and timestamps"
+      },
+      "line": {
+        "value": "#e8e9df",
+        "cssVariable": "--admin-line",
+        "purpose": "Dividers and secondary button borders"
+      },
+      "accent": {
+        "value": "#deebd5",
+        "cssVariable": "--admin-accent",
+        "purpose": "Declared sage primitive; individual components use local sage tints"
+      },
+      "primary": {
+        "value": "#293b2b",
+        "cssVariable": null,
+        "purpose": "Primary button fill"
+      },
+      "primary-hover": {
+        "value": "#405b3c",
+        "cssVariable": null,
+        "purpose": "Primary button hover"
+      },
+      "control": {
+        "value": "#fffefa",
+        "cssVariable": null,
+        "purpose": "Secondary buttons and fields"
+      },
+      "control-hover": {
+        "value": "#edf2e7",
+        "cssVariable": null,
+        "purpose": "Button hover"
+      },
+      "field-border": {
+        "value": "#dfe4d6",
+        "cssVariable": null,
+        "purpose": "Field border"
+      },
+      "field-focus": {
+        "value": "#648d61",
+        "cssVariable": null,
+        "purpose": "Field focus outline"
+      },
+      "keyboard-focus": {
+        "value": "#3264af",
+        "cssVariable": "--focus",
+        "purpose": "Shared button/link focus from app/globals.css"
+      },
+      "nav-active": {
+        "value": "#e5eedc",
+        "cssVariable": null,
+        "purpose": "Active navigation fill"
+      },
+      "nav-active-ink": {
+        "value": "#324c2c",
+        "cssVariable": null,
+        "purpose": "Active navigation text"
+      },
+      "published": {
+        "value": "#e5eddf",
+        "cssVariable": null,
+        "purpose": "Published status fill"
+      },
+      "published-ink": {
+        "value": "#3e6536",
+        "cssVariable": null,
+        "purpose": "Published status text"
+      },
+      "draft": {
+        "value": "#f9edd0",
+        "cssVariable": null,
+        "purpose": "Unsaved and draft status fill"
+      },
+      "draft-ink": {
+        "value": "#795819",
+        "cssVariable": null,
+        "purpose": "Unsaved and draft status text"
+      },
+      "error": {
+        "value": "#fbe9e3",
+        "cssVariable": null,
+        "purpose": "Validation message fill"
+      },
+      "error-ink": {
+        "value": "#873d31",
+        "cssVariable": null,
+        "purpose": "Validation message text"
+      },
+      "activity-success": {
+        "value": "#edf2e6",
+        "cssVariable": null,
+        "purpose": "Ordinary activity icon fill"
+      },
+      "activity-success-ink": {
+        "value": "#638058",
+        "cssVariable": null,
+        "purpose": "Ordinary activity check"
+      },
+      "activity-failed": {
+        "value": "#f8e8e1",
+        "cssVariable": null,
+        "purpose": "Failed activity icon fill"
+      },
+      "activity-failed-ink": {
+        "value": "#9a4232",
+        "cssVariable": null,
+        "purpose": "Failed activity alert"
+      },
+      "welcome": {
+        "value": "#e6edda",
+        "cssVariable": null,
+        "purpose": "Overview greeting surface"
+      }
+    },
+    "typography": {
+      "latin": "\"Manrope Variable\", sans-serif",
+      "arabic": "\"Noto Sans Arabic Variable\", sans-serif",
+      "body": {
+        "fontSize": "14px",
+        "lineHeight": 1.5
+      },
+      "pageHeading": {
+        "fontSize": "30px",
+        "mobileFontSize": "25px",
+        "fontWeight": 800,
+        "lineHeight": 1.3,
+        "letterSpacing": "-0.035em",
+        "arabicLetterSpacing": "0"
+      },
+      "panelHeading": {
+        "fontSize": "18px",
+        "mobileFontSize": "17px",
+        "fontWeight": 750,
+        "letterSpacing": "-0.02em",
+        "arabicLetterSpacing": "0"
+      },
+      "control": {
+        "fontSize": "12px",
+        "buttonFontWeight": 700,
+        "buttonLineHeight": 1.3
+      },
+      "supporting": "10–11px",
+      "activityTime": {
+        "desktop": "10px",
+        "mobile": "11px"
+      },
+      "activityTitle": {
+        "desktop": "11px",
+        "mobile": "12px",
+        "fontWeight": 650
+      }
+    },
+    "rounded": {
+      "panel": "16px",
+      "panel-mobile": "14px",
+      "field": "9px",
+      "nav": "9px",
+      "button": "10px",
+      "container": "12px",
+      "status": "30px"
+    },
+    "spacing": {
+      "content": "36px",
+      "content-tablet": "28px 22px",
+      "content-mobile": "25px 16px",
+      "workspace-gap": "24px",
+      "panel": "27px",
+      "panel-mobile": "21px 18px",
+      "field-grid-gap": "18px",
+      "bilingual-gap": "16px",
+      "field-inset": "11px 12px",
+      "button-inset": "9px 14px"
+    },
+    "sizes": {
+      "sidebar": "236px",
+      "sidebar-tablet": "210px",
+      "sidebar-overlay": "245px",
+      "topbar": "72px",
+      "topbar-mobile": "64px",
+      "content-max": "1700px",
+      "editor-max": "1080px",
+      "preview-column": "412px",
+      "button-min-height": "40px",
+      "icon-button": "36px",
+      "field-min-height": "43px"
+    }
+  },
+  "extensions": {
+    "shadows": [
+      {
+        "name": "panel",
+        "value": "0 8px 26px -20px #34412b55",
+        "cssVariable": "--admin-shadow"
+      },
+      {
+        "name": "toast",
+        "value": "0 10px 30px -10px #1b291366"
+      }
+    ],
+    "motion": [
+      {
+        "name": "control",
+        "value": "background 160ms ease, box-shadow 160ms ease"
+      },
+      {
+        "name": "drawer",
+        "value": "transform 180ms ease"
+      },
+      {
+        "name": "skeleton",
+        "value": "admin-pulse 1.2s ease-in-out infinite alternate; opacity to 0.45"
+      }
+    ],
+    "reducedMotion": "Admin descendants disable animation and transition; scroll behavior becomes auto.",
+    "breakpoints": [
+      {
+        "query": "min-width: 1450px",
+        "behavior": "Content horizontal padding 45px."
+      },
+      {
+        "query": "max-width: 1250px",
+        "behavior": "Preview moves above editor; preview container max-width 650px."
+      },
+      {
+        "query": "max-width: 1000px",
+        "behavior": "Sidebar 210px; content 28px 22px; third overview summary hidden."
+      },
+      {
+        "query": "max-width: 760px",
+        "behavior": "Dismissible 245px overlay navigation; 64px top bar; publication actions wrap; activity timestamps on own line at 11px."
+      },
+      {
+        "query": "max-width: 380px",
+        "behavior": "Bilingual and paired fields stack; welcome avatar hidden; panel padding 18px 14px."
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary button",
+      "kind": "button",
+      "html": "<button class=\"ds-admin-button ds-admin-primary\">Publish</button>",
+      "css": ".ds-admin-button{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:40px;border:1px solid #e8e9df;border-radius:10px;padding:9px 14px;background:#fffefa;color:#263228;font:700 12px/1.3 \"Manrope Variable\",sans-serif;white-space:nowrap;transition:background 160ms ease,box-shadow 160ms ease}.ds-admin-button:hover{background:#edf2e7}.ds-admin-button:focus-visible{outline:3px solid #3264af;outline-offset:4px}.ds-admin-button:disabled{opacity:.45;cursor:not-allowed}@media(prefers-reduced-motion:reduce){.ds-admin-button{transition:none}}.ds-admin-primary{background:#293b2b;color:#fff;border-color:transparent}.ds-admin-primary:hover{background:#405b3c}"
+    },
+    {
+      "name": "Secondary button",
+      "kind": "button",
+      "html": "<button class=\"ds-admin-button\">Save draft</button>",
+      "css": ".ds-admin-button{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:40px;border:1px solid #e8e9df;border-radius:10px;padding:9px 14px;background:#fffefa;color:#263228;font:700 12px/1.3 \"Manrope Variable\",sans-serif;white-space:nowrap;transition:background 160ms ease,box-shadow 160ms ease}.ds-admin-button:hover{background:#edf2e7}.ds-admin-button:focus-visible{outline:3px solid #3264af;outline-offset:4px}.ds-admin-button:disabled{opacity:.45;cursor:not-allowed}@media(prefers-reduced-motion:reduce){.ds-admin-button{transition:none}}"
+    },
+    {
+      "name": "Quiet button",
+      "kind": "button",
+      "html": "<button class=\"ds-admin-button ds-admin-quiet\">View live site</button>",
+      "css": ".ds-admin-button{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:40px;border:1px solid #e8e9df;border-radius:10px;padding:9px 14px;background:#fffefa;color:#263228;font:700 12px/1.3 \"Manrope Variable\",sans-serif;white-space:nowrap;transition:background 160ms ease,box-shadow 160ms ease}.ds-admin-button:hover{background:#edf2e7}.ds-admin-button:focus-visible{outline:3px solid #3264af;outline-offset:4px}.ds-admin-button:disabled{opacity:.45;cursor:not-allowed}@media(prefers-reduced-motion:reduce){.ds-admin-button{transition:none}}.ds-admin-button.ds-admin-quiet{background:transparent;border-color:transparent}"
+    },
+    {
+      "name": "Text field",
+      "kind": "input",
+      "html": "<label class=\"ds-admin-field\"><span>Display name</span><input value=\"Abdullah Ahmed\" /></label>",
+      "css": ".ds-admin-field{display:flex;flex-direction:column;gap:7px;font:12px/1.5 \"Manrope Variable\",sans-serif;color:#42513e}.ds-admin-field>span{font-weight:700}.ds-admin-field input{box-sizing:border-box;min-height:43px;border:1px solid #dfe4d6;border-radius:9px;padding:11px 12px;font:inherit;color:#263228;background:#fffefa;caret-color:#41613c}.ds-admin-field input:focus-visible{outline:2px solid #648d61;outline-offset:2px}"
+    },
+    {
+      "name": "Active navigation",
+      "kind": "nav",
+      "html": "<nav><a class=\"ds-admin-nav\" href=\"#overview\" aria-current=\"page\">Overview</a></nav>",
+      "css": ".ds-admin-nav{display:flex;align-items:center;min-height:35px;padding:9px 12px;border-radius:9px;font:800 11px/1.5 \"Manrope Variable\",sans-serif;text-decoration:none;background:#e5eedc;color:#324c2c}.ds-admin-nav:hover{background:#e5eedc}.ds-admin-nav:focus-visible{outline:3px solid #3264af;outline-offset:4px}"
+    },
+    {
+      "name": "Publication statuses",
+      "kind": "chip",
+      "html": "<span class=\"ds-admin-status\"><i></i>Published content</span> <span class=\"ds-admin-status ds-admin-draft\"><i></i>Draft changes</span>",
+      "css": ".ds-admin-status{display:inline-flex;align-items:center;gap:6px;padding:6px 9px;border-radius:30px;white-space:nowrap;font:750 10px/1.5 \"Manrope Variable\",sans-serif;background:#e5eddf;color:#3e6536}.ds-admin-status i{width:5px;height:5px;border-radius:50%;background:currentColor}.ds-admin-draft{background:#f9edd0;color:#795819}"
+    },
+    {
+      "name": "Editor panel",
+      "kind": "card",
+      "html": "<section class=\"ds-admin-panel\"><h2>Profile</h2><p>Edit your public introduction.</p></section>",
+      "css": ".ds-admin-panel{background:var(--admin-paper,#fffcf7);color:var(--admin-ink,#263228);padding:27px;border-radius:16px;box-shadow:var(--admin-shadow,0 8px 26px -20px #34412b55);font-family:\"Manrope Variable\",sans-serif}.ds-admin-panel h2{margin:0;font-size:18px;font-weight:750;letter-spacing:-.02em}.ds-admin-panel p{margin-top:8px;font-size:12px;color:var(--admin-muted,#677167)}@media(max-width:760px){.ds-admin-panel{padding:21px 18px;border-radius:14px}.ds-admin-panel h2{font-size:17px}}"
+    }
+  ],
+  "behavior": {
+    "publication": [
+      "Unsaved changes",
+      "Draft changes",
+      "Published content"
+    ],
+    "draftAppearance": "Unsaved and saved draft changes share amber appearance but retain distinct text.",
+    "busy": "Working…; publishing/saving controls disabled while busy.",
+    "disabled": "opacity: 0.45; cursor: not-allowed",
+    "validation": "Terracotta message exposes validation paths.",
+    "activity": "Actions containing failed use CircleAlert and terracotta; ordinary records use Check and sage.",
+    "preview": "Same-origin iframe mounts the actual ConnectPage; mobile/desktop sizing and preview language controls. Editor and preview locale are independent.",
+    "customization": "Public radius, spacing, button radius and accent overrides activate when values differ from approved defaults.",
+    "rtl": "Noto Sans Arabic; logical spacing, aligned data, drawer enters from logical start."
+  },
+  "evidence": {
+    "screenshots": [
+      ".impeccable/review/desktop.png",
+      ".impeccable/review/mobile.png",
+      "artifacts/admin/arabic-mobile.png"
+    ],
+    "directionContract": "docs/ADMIN-DESIGN.md",
+    "product": "PRODUCT.md",
+    "reviewScope": "Final independent finish-review approval covers the English overview after correcting failed activity icons and mobile timestamps. Arabic activity screenshot supplies RTL evidence.",
+    "limitations": [
+      "This standalone file is not automatically loaded by the existing public design panel.",
+      "Component snippets document observed styling; they do not implement runtime validation, persistence or editor behavior.",
+      "No claim of visual review across every admin screen.",
+      "No new raster assets generated."
+    ]
+  }
+}

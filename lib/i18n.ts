@@ -100,4 +100,4 @@ export const messages = {
     downloadError: "تعذر التحميل. حاول مرة تانية.",
   },
 } as const;
-export type Dictionary = typeof messages.en | typeof messages.ar;
+export type Dictionary = Record<keyof typeof messages.en, string>;

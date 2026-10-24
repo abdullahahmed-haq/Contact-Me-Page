@@ -1,4 +1,5 @@
 node_modules/
+.vercel/
 .next/
 out/
 .env*.local
@@ -7,3 +8,14 @@ test-results/
 .openai/*.tar.gz
 .DS_Store
 *.tsbuildinfo
+
+.data/
+.env
+.env.production
+.impeccable/review/
+artifacts/admin/test-results/
+artifacts/admin/test-server.log
+artifacts/admin/
+artifacts/cms-verification/
+.env*
+!.env.example
