@@ -6,6 +6,7 @@ Created on 2026-10-24 at the owner's request, using free plans only.
 - Owner dashboard: https://connect.abdo-ahmed.online/admin/login/
 - Alternate public URL: https://abdo-connect.vercel.app/
 - Vercel project: `abdo-connect`, Hobby, Node 22, functions in `fra1`.
+- GitHub source: [abdullahahmed-haq/Contact-Me-Page](https://github.com/abdullahahmed-haq/Contact-Me-Page), connected to Vercel; production branch `main`.
 - Database: independent Neon `abdo-connect-db`, plan `free_v3`, Frankfurt; existing Supabase projects were not modified.
 - Images: public Vercel Blob store `abdo-connect-images`, Frankfurt. Only processed public images enter this store; database records and secrets stay on the server.
 - Verified application deployment: `dpl_B96TFkgstxr7QC7RSnYpXJVVsp4w`.
@@ -20,7 +21,7 @@ Dia also rendered the published site at the custom domain. The terminal retained
 
 Run `node scripts/production-smoke.mjs` after DNS propagation to check the actual custom-domain connection. Use an echo-disabled terminal for the password input; the script never logs credentials. Results are saved to `artifacts/admin/production-smoke-results.json`.
 
-Future code releases can use `npx vercel deploy --prod` from this linked checkout. Run migrations deliberately against the Production database before schema-dependent releases. Git-based automatic deployments have not been connected; published CMS content updates need no code release.
+Pushing code to `main` triggers Vercel's native GitHub deployment integration. Secrets stay in Vercel; runtime database files, local environment files and generated CMS verification artifacts are excluded from Git. Published CMS content updates need no code release. The CLI command `npx vercel deploy --prod` remains available for deliberate manual releases. Run migrations deliberately against the Production database before schema-dependent releases. Preview environments need their own database/storage configuration before use; production secrets are not copied to them automatically.
 
 ## Free-plan boundaries
 
