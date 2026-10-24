@@ -1,0 +1,522 @@
+[
+  {
+    "version": "before",
+    "locale": "en",
+    "width": 412,
+    "geometry": [
+      {
+        "class": "profile-hero reveal",
+        "rect": "{\"x\":18,\"y\":30,\"width\":376,\"height\":228,\"top\":30,\"right\":394,\"bottom\":258,\"left\":18}",
+        "animation": "0.5s cubic-bezier(0.16, 1, 0.3, 1) both reveal"
+      },
+      {
+        "class": "avatar",
+        "rect": "{\"x\":261,\"y\":81,\"width\":132,\"height\":132,\"top\":81,\"right\":393,\"bottom\":213,\"left\":261}",
+        "animation": "none"
+      },
+      {
+        "class": "featured-card reveal featured-tone-blue",
+        "rect": "{\"x\":18,\"y\":316,\"width\":376,\"height\":174.875,\"top\":316,\"right\":394,\"bottom\":490.875,\"left\":18}",
+        "animation": "0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.07s both reveal"
+      },
+      {
+        "class": "website-preview",
+        "rect": "{\"x\":192.453125,\"y\":344.96875,\"width\":210.546875,\"height\":157.90625,\"top\":344.96875,\"right\":403,\"bottom\":502.875,\"left\":192.453125}",
+        "animation": "none"
+      },
+      {
+        "class": "contact-grid reveal",
+        "rect": "{\"x\":18,\"y\":500.875,\"width\":376,\"height\":260,\"top\":500.875,\"right\":394,\"bottom\":760.875,\"left\":18}",
+        "animation": "0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both reveal"
+      },
+      {
+        "class": "closing-grid reveal",
+        "rect": "{\"x\":18,\"y\":770.875,\"width\":376,\"height\":170.59375,\"top\":770.875,\"right\":394,\"bottom\":941.46875,\"left\":18}",
+        "animation": "0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.13s both reveal"
+      },
+      {
+        "class": "qr-picture ",
+        "rect": "{\"x\":138.59375,\"y\":813.171875,\"width\":86,\"height\":86,\"top\":813.171875,\"right\":224.59375,\"bottom\":899.171875,\"left\":138.59375}",
+        "animation": "none"
+      }
+    ],
+    "avatar": "https://t5qu4bksdkvjljiq.public.blob.vercel-storage.com/connect/fa131e1a-62c7-49fc-8693-d3b87c3f3f69.webp",
+    "qrReady": true,
+    "meta": [
+      {
+        "parent": "BODY",
+        "content": "Student, AI automation and cybersecurity. Explore my work and let’s build something great together."
+      }
+    ],
+    "overflow": false,
+    "scripts": [
+      "/_next/static/chunks/webpack-b48c424c996ec255.js",
+      "/_next/static/chunks/bb41505d-5918f68cd4e5adfa.js",
+      "/_next/static/chunks/744-2e0a9c50a8e03083.js",
+      "/_next/static/chunks/main-app-2b3d497ec002f815.js",
+      "/_next/static/chunks/dcd6f690-cf940f691598be8c.js",
+      "/_next/static/chunks/779-bc7f727a57b676b6.js",
+      "/_next/static/chunks/239-edc093370d8cd045.js",
+      "/_next/static/chunks/645-52ec564425e55b46.js",
+      "/_next/static/chunks/app/page-6f47c2c12d09d9ff.js"
+    ],
+    "motionInInitialScripts": true,
+    "qrGeneratorInInitialScripts": true,
+    "errors": []
+  },
+  {
+    "version": "before",
+    "locale": "en",
+    "width": 1440,
+    "geometry": [
+      {
+        "class": "profile-hero reveal",
+        "rect": "{\"x\":320,\"y\":55,\"width\":800,\"height\":280,\"top\":55,\"right\":1120,\"bottom\":335,\"left\":320}",
+        "animation": "0.5s cubic-bezier(0.16, 1, 0.3, 1) both reveal"
+      },
+      {
+        "class": "avatar",
+        "rect": "{\"x\":880,\"y\":77,\"width\":220,\"height\":220,\"top\":77,\"right\":1100,\"bottom\":297,\"left\":880}",
+        "animation": "none"
+      },
+      {
+        "class": "featured-card reveal featured-tone-blue",
+        "rect": "{\"x\":320,\"y\":404,\"width\":800,\"height\":210,\"top\":404,\"right\":1120,\"bottom\":614,\"left\":320}",
+        "animation": "0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.07s both reveal"
+      },
+      {
+        "class": "website-preview",
+        "rect": "{\"x\":826,\"y\":403,\"width\":300,\"height\":225,\"top\":403,\"right\":1126,\"bottom\":628,\"left\":826}",
+        "animation": "none"
+      },
+      {
+        "class": "contact-grid reveal",
+        "rect": "{\"x\":320,\"y\":628,\"width\":800,\"height\":355,\"top\":628,\"right\":1120,\"bottom\":983,\"left\":320}",
+        "animation": "0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both reveal"
+      },
+      {
+        "class": "closing-grid reveal",
+        "rect": "{\"x\":320,\"y\":997,\"width\":800,\"height\":210,\"top\":997,\"right\":1120,\"bottom\":1207,\"left\":320}",
+        "animation": "0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.13s both reveal"
+      },
+      {
+        "class": "qr-picture ",
+        "rect": "{\"x\":599.5,\"y\":1025,\"width\":154,\"height\":154,\"top\":1025,\"right\":753.5,\"bottom\":1179,\"left\":599.5}",
+        "animation": "none"
+      }
+    ],
+    "avatar": "https://t5qu4bksdkvjljiq.public.blob.vercel-storage.com/connect/fa131e1a-62c7-49fc-8693-d3b87c3f3f69.webp",
+    "qrReady": true,
+    "meta": [
+      {
+        "parent": "HEAD",
+        "content": "Student, AI automation and cybersecurity. Explore my work and let’s build something great together."
+      }
+    ],
+    "overflow": false,
+    "scripts": [
+      "/_next/static/chunks/webpack-b48c424c996ec255.js",
+      "/_next/static/chunks/bb41505d-5918f68cd4e5adfa.js",
+      "/_next/static/chunks/744-2e0a9c50a8e03083.js",
+      "/_next/static/chunks/main-app-2b3d497ec002f815.js",
+      "/_next/static/chunks/dcd6f690-cf940f691598be8c.js",
+      "/_next/static/chunks/779-bc7f727a57b676b6.js",
+      "/_next/static/chunks/239-edc093370d8cd045.js",
+      "/_next/static/chunks/645-52ec564425e55b46.js",
+      "/_next/static/chunks/app/page-6f47c2c12d09d9ff.js"
+    ],
+    "motionInInitialScripts": true,
+    "qrGeneratorInInitialScripts": true,
+    "errors": []
+  },
+  {
+    "version": "before",
+    "locale": "ar",
+    "width": 412,
+    "geometry": [
+      {
+        "class": "profile-hero reveal",
+        "rect": "{\"x\":18,\"y\":30,\"width\":376,\"height\":228,\"top\":30,\"right\":394,\"bottom\":258,\"left\":18}",
+        "animation": "0.5s cubic-bezier(0.16, 1, 0.3, 1) both reveal"
+      },
+      {
+        "class": "avatar",
+        "rect": "{\"x\":19,\"y\":81,\"width\":132,\"height\":132,\"top\":81,\"right\":151,\"bottom\":213,\"left\":19}",
+        "animation": "none"
+      },
+      {
+        "class": "featured-card reveal featured-tone-blue",
+        "rect": "{\"x\":18,\"y\":319,\"width\":376,\"height\":174.875,\"top\":319,\"right\":394,\"bottom\":493.875,\"left\":18}",
+        "animation": "0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.07s both reveal"
+      },
+      {
+        "class": "website-preview",
+        "rect": "{\"x\":9,\"y\":347.96875,\"width\":210.546875,\"height\":157.90625,\"top\":347.96875,\"right\":219.546875,\"bottom\":505.875,\"left\":9}",
+        "animation": "none"
+      },
+      {
+        "class": "contact-grid reveal",
+        "rect": "{\"x\":18,\"y\":503.875,\"width\":376,\"height\":260,\"top\":503.875,\"right\":394,\"bottom\":763.875,\"left\":18}",
+        "animation": "0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both reveal"
+      },
+      {
+        "class": "closing-grid reveal",
+        "rect": "{\"x\":18,\"y\":773.875,\"width\":376,\"height\":168,\"top\":773.875,\"right\":394,\"bottom\":941.875,\"left\":18}",
+        "animation": "0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.13s both reveal"
+      },
+      {
+        "class": "qr-picture ",
+        "rect": "{\"x\":187.40625,\"y\":814.875,\"width\":86,\"height\":86,\"top\":814.875,\"right\":273.40625,\"bottom\":900.875,\"left\":187.40625}",
+        "animation": "none"
+      }
+    ],
+    "avatar": "https://t5qu4bksdkvjljiq.public.blob.vercel-storage.com/connect/fa131e1a-62c7-49fc-8693-d3b87c3f3f69.webp",
+    "qrReady": true,
+    "meta": [
+      {
+        "parent": "HEAD",
+        "content": "طالب ومهتم بالأتمتة بالذكاء الاصطناعي والأمن السيبراني. اكتشف أعمالي وخلينا نتواصل."
+      }
+    ],
+    "overflow": false,
+    "scripts": [
+      "/_next/static/chunks/webpack-b48c424c996ec255.js",
+      "/_next/static/chunks/bb41505d-5918f68cd4e5adfa.js",
+      "/_next/static/chunks/744-2e0a9c50a8e03083.js",
+      "/_next/static/chunks/main-app-2b3d497ec002f815.js",
+      "/_next/static/chunks/dcd6f690-cf940f691598be8c.js",
+      "/_next/static/chunks/779-bc7f727a57b676b6.js",
+      "/_next/static/chunks/239-edc093370d8cd045.js",
+      "/_next/static/chunks/645-52ec564425e55b46.js",
+      "/_next/static/chunks/app/page-6f47c2c12d09d9ff.js"
+    ],
+    "motionInInitialScripts": true,
+    "qrGeneratorInInitialScripts": true,
+    "errors": []
+  },
+  {
+    "version": "before",
+    "locale": "ar",
+    "width": 1440,
+    "geometry": [
+      {
+        "class": "profile-hero reveal",
+        "rect": "{\"x\":320,\"y\":55,\"width\":800,\"height\":280,\"top\":55,\"right\":1120,\"bottom\":335,\"left\":320}",
+        "animation": "0.5s cubic-bezier(0.16, 1, 0.3, 1) both reveal"
+      },
+      {
+        "class": "avatar",
+        "rect": "{\"x\":340,\"y\":77,\"width\":220,\"height\":220,\"top\":77,\"right\":560,\"bottom\":297,\"left\":340}",
+        "animation": "none"
+      },
+      {
+        "class": "featured-card reveal featured-tone-blue",
+        "rect": "{\"x\":320,\"y\":410,\"width\":800,\"height\":210,\"top\":410,\"right\":1120,\"bottom\":620,\"left\":320}",
+        "animation": "0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.07s both reveal"
+      },
+      {
+        "class": "website-preview",
+        "rect": "{\"x\":314,\"y\":409,\"width\":300,\"height\":225,\"top\":409,\"right\":614,\"bottom\":634,\"left\":314}",
+        "animation": "none"
+      },
+      {
+        "class": "contact-grid reveal",
+        "rect": "{\"x\":320,\"y\":634,\"width\":800,\"height\":355,\"top\":634,\"right\":1120,\"bottom\":989,\"left\":320}",
+        "animation": "0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both reveal"
+      },
+      {
+        "class": "closing-grid reveal",
+        "rect": "{\"x\":320,\"y\":1003,\"width\":800,\"height\":210,\"top\":1003,\"right\":1120,\"bottom\":1213,\"left\":320}",
+        "animation": "0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.13s both reveal"
+      },
+      {
+        "class": "qr-picture ",
+        "rect": "{\"x\":686.5,\"y\":1031,\"width\":154,\"height\":154,\"top\":1031,\"right\":840.5,\"bottom\":1185,\"left\":686.5}",
+        "animation": "none"
+      }
+    ],
+    "avatar": "https://t5qu4bksdkvjljiq.public.blob.vercel-storage.com/connect/fa131e1a-62c7-49fc-8693-d3b87c3f3f69.webp",
+    "qrReady": true,
+    "meta": [
+      {
+        "parent": "HEAD",
+        "content": "طالب ومهتم بالأتمتة بالذكاء الاصطناعي والأمن السيبراني. اكتشف أعمالي وخلينا نتواصل."
+      }
+    ],
+    "overflow": false,
+    "scripts": [
+      "/_next/static/chunks/webpack-b48c424c996ec255.js",
+      "/_next/static/chunks/bb41505d-5918f68cd4e5adfa.js",
+      "/_next/static/chunks/744-2e0a9c50a8e03083.js",
+      "/_next/static/chunks/main-app-2b3d497ec002f815.js",
+      "/_next/static/chunks/dcd6f690-cf940f691598be8c.js",
+      "/_next/static/chunks/779-bc7f727a57b676b6.js",
+      "/_next/static/chunks/239-edc093370d8cd045.js",
+      "/_next/static/chunks/645-52ec564425e55b46.js",
+      "/_next/static/chunks/app/page-6f47c2c12d09d9ff.js"
+    ],
+    "motionInInitialScripts": true,
+    "qrGeneratorInInitialScripts": true,
+    "errors": []
+  },
+  {
+    "version": "after",
+    "locale": "en",
+    "width": 412,
+    "geometry": [
+      {
+        "class": "profile-hero reveal",
+        "rect": "{\"x\":18,\"y\":30,\"width\":376,\"height\":228,\"top\":30,\"right\":394,\"bottom\":258,\"left\":18}",
+        "animation": "0.5s cubic-bezier(0.16, 1, 0.3, 1) both reveal"
+      },
+      {
+        "class": "avatar",
+        "rect": "{\"x\":261,\"y\":81,\"width\":132,\"height\":132,\"top\":81,\"right\":393,\"bottom\":213,\"left\":261}",
+        "animation": "none"
+      },
+      {
+        "class": "featured-card reveal featured-tone-blue",
+        "rect": "{\"x\":18,\"y\":316,\"width\":376,\"height\":174.875,\"top\":316,\"right\":394,\"bottom\":490.875,\"left\":18}",
+        "animation": "0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.07s both reveal"
+      },
+      {
+        "class": "website-preview",
+        "rect": "{\"x\":192.453125,\"y\":344.96875,\"width\":210.546875,\"height\":157.90625,\"top\":344.96875,\"right\":403,\"bottom\":502.875,\"left\":192.453125}",
+        "animation": "none"
+      },
+      {
+        "class": "contact-grid reveal",
+        "rect": "{\"x\":18,\"y\":500.875,\"width\":376,\"height\":260,\"top\":500.875,\"right\":394,\"bottom\":760.875,\"left\":18}",
+        "animation": "0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both reveal"
+      },
+      {
+        "class": "closing-grid reveal",
+        "rect": "{\"x\":18,\"y\":770.875,\"width\":376,\"height\":170.59375,\"top\":770.875,\"right\":394,\"bottom\":941.46875,\"left\":18}",
+        "animation": "0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.13s both reveal"
+      },
+      {
+        "class": "qr-picture ",
+        "rect": "{\"x\":138.59375,\"y\":813.171875,\"width\":86,\"height\":86,\"top\":813.171875,\"right\":224.59375,\"bottom\":899.171875,\"left\":138.59375}",
+        "animation": "none"
+      }
+    ],
+    "avatar": "http://127.0.0.1:3121/_next/image/?url=https%3A%2F%2Ft5qu4bksdkvjljiq.public.blob.vercel-storage.com%2Fconnect%2Ffa131e1a-62c7-49fc-8693-d3b87c3f3f69.webp&w=132&q=80",
+    "qrReady": true,
+    "meta": [
+      {
+        "parent": "HEAD",
+        "content": "Student, AI automation and cybersecurity. Explore my work and let’s build something great together."
+      }
+    ],
+    "overflow": false,
+    "scripts": [
+      "/_next/static/chunks/webpack-f21fe25e0c08b7ea.js",
+      "/_next/static/chunks/bb41505d-5918f68cd4e5adfa.js",
+      "/_next/static/chunks/744-2e0a9c50a8e03083.js",
+      "/_next/static/chunks/main-app-2b3d497ec002f815.js",
+      "/_next/static/chunks/dcd6f690-cf940f691598be8c.js",
+      "/_next/static/chunks/724-23572e2dc115016d.js",
+      "/_next/static/chunks/5-6037053bccb2516b.js",
+      "/_next/static/chunks/730-e428970bfe43e3ae.js",
+      "/_next/static/chunks/app/page-13c6383f120d025c.js"
+    ],
+    "motionInInitialScripts": false,
+    "qrGeneratorInInitialScripts": false,
+    "errors": []
+  },
+  {
+    "version": "after",
+    "locale": "en",
+    "width": 1440,
+    "geometry": [
+      {
+        "class": "profile-hero reveal",
+        "rect": "{\"x\":320,\"y\":55,\"width\":800,\"height\":280,\"top\":55,\"right\":1120,\"bottom\":335,\"left\":320}",
+        "animation": "0.5s cubic-bezier(0.16, 1, 0.3, 1) both reveal"
+      },
+      {
+        "class": "avatar",
+        "rect": "{\"x\":880,\"y\":77,\"width\":220,\"height\":220,\"top\":77,\"right\":1100,\"bottom\":297,\"left\":880}",
+        "animation": "none"
+      },
+      {
+        "class": "featured-card reveal featured-tone-blue",
+        "rect": "{\"x\":320,\"y\":404,\"width\":800,\"height\":210,\"top\":404,\"right\":1120,\"bottom\":614,\"left\":320}",
+        "animation": "0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.07s both reveal"
+      },
+      {
+        "class": "website-preview",
+        "rect": "{\"x\":826,\"y\":403,\"width\":300,\"height\":225,\"top\":403,\"right\":1126,\"bottom\":628,\"left\":826}",
+        "animation": "none"
+      },
+      {
+        "class": "contact-grid reveal",
+        "rect": "{\"x\":320,\"y\":628,\"width\":800,\"height\":355,\"top\":628,\"right\":1120,\"bottom\":983,\"left\":320}",
+        "animation": "0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both reveal"
+      },
+      {
+        "class": "closing-grid reveal",
+        "rect": "{\"x\":320,\"y\":997,\"width\":800,\"height\":210,\"top\":997,\"right\":1120,\"bottom\":1207,\"left\":320}",
+        "animation": "0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.13s both reveal"
+      },
+      {
+        "class": "qr-picture ",
+        "rect": "{\"x\":599.5,\"y\":1025,\"width\":154,\"height\":154,\"top\":1025,\"right\":753.5,\"bottom\":1179,\"left\":599.5}",
+        "animation": "none"
+      }
+    ],
+    "avatar": "http://127.0.0.1:3121/_next/image/?url=https%3A%2F%2Ft5qu4bksdkvjljiq.public.blob.vercel-storage.com%2Fconnect%2Ffa131e1a-62c7-49fc-8693-d3b87c3f3f69.webp&w=220&q=80",
+    "qrReady": true,
+    "meta": [
+      {
+        "parent": "HEAD",
+        "content": "Student, AI automation and cybersecurity. Explore my work and let’s build something great together."
+      }
+    ],
+    "overflow": false,
+    "scripts": [
+      "/_next/static/chunks/webpack-f21fe25e0c08b7ea.js",
+      "/_next/static/chunks/bb41505d-5918f68cd4e5adfa.js",
+      "/_next/static/chunks/744-2e0a9c50a8e03083.js",
+      "/_next/static/chunks/main-app-2b3d497ec002f815.js",
+      "/_next/static/chunks/dcd6f690-cf940f691598be8c.js",
+      "/_next/static/chunks/724-23572e2dc115016d.js",
+      "/_next/static/chunks/5-6037053bccb2516b.js",
+      "/_next/static/chunks/730-e428970bfe43e3ae.js",
+      "/_next/static/chunks/app/page-13c6383f120d025c.js"
+    ],
+    "motionInInitialScripts": false,
+    "qrGeneratorInInitialScripts": false,
+    "errors": []
+  },
+  {
+    "version": "after",
+    "locale": "ar",
+    "width": 412,
+    "geometry": [
+      {
+        "class": "profile-hero reveal",
+        "rect": "{\"x\":18,\"y\":30,\"width\":376,\"height\":228,\"top\":30,\"right\":394,\"bottom\":258,\"left\":18}",
+        "animation": "0.5s cubic-bezier(0.16, 1, 0.3, 1) both reveal"
+      },
+      {
+        "class": "avatar",
+        "rect": "{\"x\":19,\"y\":81,\"width\":132,\"height\":132,\"top\":81,\"right\":151,\"bottom\":213,\"left\":19}",
+        "animation": "none"
+      },
+      {
+        "class": "featured-card reveal featured-tone-blue",
+        "rect": "{\"x\":18,\"y\":319,\"width\":376,\"height\":174.875,\"top\":319,\"right\":394,\"bottom\":493.875,\"left\":18}",
+        "animation": "0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.07s both reveal"
+      },
+      {
+        "class": "website-preview",
+        "rect": "{\"x\":9,\"y\":347.96875,\"width\":210.546875,\"height\":157.90625,\"top\":347.96875,\"right\":219.546875,\"bottom\":505.875,\"left\":9}",
+        "animation": "none"
+      },
+      {
+        "class": "contact-grid reveal",
+        "rect": "{\"x\":18,\"y\":503.875,\"width\":376,\"height\":260,\"top\":503.875,\"right\":394,\"bottom\":763.875,\"left\":18}",
+        "animation": "0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both reveal"
+      },
+      {
+        "class": "closing-grid reveal",
+        "rect": "{\"x\":18,\"y\":773.875,\"width\":376,\"height\":168,\"top\":773.875,\"right\":394,\"bottom\":941.875,\"left\":18}",
+        "animation": "0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.13s both reveal"
+      },
+      {
+        "class": "qr-picture ",
+        "rect": "{\"x\":187.40625,\"y\":814.875,\"width\":86,\"height\":86,\"top\":814.875,\"right\":273.40625,\"bottom\":900.875,\"left\":187.40625}",
+        "animation": "none"
+      }
+    ],
+    "avatar": "http://127.0.0.1:3121/_next/image/?url=https%3A%2F%2Ft5qu4bksdkvjljiq.public.blob.vercel-storage.com%2Fconnect%2Ffa131e1a-62c7-49fc-8693-d3b87c3f3f69.webp&w=132&q=80",
+    "qrReady": true,
+    "meta": [
+      {
+        "parent": "HEAD",
+        "content": "طالب ومهتم بالأتمتة بالذكاء الاصطناعي والأمن السيبراني. اكتشف أعمالي وخلينا نتواصل."
+      }
+    ],
+    "overflow": false,
+    "scripts": [
+      "/_next/static/chunks/webpack-f21fe25e0c08b7ea.js",
+      "/_next/static/chunks/bb41505d-5918f68cd4e5adfa.js",
+      "/_next/static/chunks/744-2e0a9c50a8e03083.js",
+      "/_next/static/chunks/main-app-2b3d497ec002f815.js",
+      "/_next/static/chunks/dcd6f690-cf940f691598be8c.js",
+      "/_next/static/chunks/724-23572e2dc115016d.js",
+      "/_next/static/chunks/5-6037053bccb2516b.js",
+      "/_next/static/chunks/730-e428970bfe43e3ae.js",
+      "/_next/static/chunks/app/page-13c6383f120d025c.js"
+    ],
+    "motionInInitialScripts": false,
+    "qrGeneratorInInitialScripts": false,
+    "errors": []
+  },
+  {
+    "version": "after",
+    "locale": "ar",
+    "width": 1440,
+    "geometry": [
+      {
+        "class": "profile-hero reveal",
+        "rect": "{\"x\":320,\"y\":55,\"width\":800,\"height\":280,\"top\":55,\"right\":1120,\"bottom\":335,\"left\":320}",
+        "animation": "0.5s cubic-bezier(0.16, 1, 0.3, 1) both reveal"
+      },
+      {
+        "class": "avatar",
+        "rect": "{\"x\":340,\"y\":77,\"width\":220,\"height\":220,\"top\":77,\"right\":560,\"bottom\":297,\"left\":340}",
+        "animation": "none"
+      },
+      {
+        "class": "featured-card reveal featured-tone-blue",
+        "rect": "{\"x\":320,\"y\":410,\"width\":800,\"height\":210,\"top\":410,\"right\":1120,\"bottom\":620,\"left\":320}",
+        "animation": "0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.07s both reveal"
+      },
+      {
+        "class": "website-preview",
+        "rect": "{\"x\":314,\"y\":409,\"width\":300,\"height\":225,\"top\":409,\"right\":614,\"bottom\":634,\"left\":314}",
+        "animation": "none"
+      },
+      {
+        "class": "contact-grid reveal",
+        "rect": "{\"x\":320,\"y\":634,\"width\":800,\"height\":355,\"top\":634,\"right\":1120,\"bottom\":989,\"left\":320}",
+        "animation": "0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both reveal"
+      },
+      {
+        "class": "closing-grid reveal",
+        "rect": "{\"x\":320,\"y\":1003,\"width\":800,\"height\":210,\"top\":1003,\"right\":1120,\"bottom\":1213,\"left\":320}",
+        "animation": "0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.13s both reveal"
+      },
+      {
+        "class": "qr-picture ",
+        "rect": "{\"x\":686.5,\"y\":1031,\"width\":154,\"height\":154,\"top\":1031,\"right\":840.5,\"bottom\":1185,\"left\":686.5}",
+        "animation": "none"
+      }
+    ],
+    "avatar": "http://127.0.0.1:3121/_next/image/?url=https%3A%2F%2Ft5qu4bksdkvjljiq.public.blob.vercel-storage.com%2Fconnect%2Ffa131e1a-62c7-49fc-8693-d3b87c3f3f69.webp&w=220&q=80",
+    "qrReady": true,
+    "meta": [
+      {
+        "parent": "HEAD",
+        "content": "طالب ومهتم بالأتمتة بالذكاء الاصطناعي والأمن السيبراني. اكتشف أعمالي وخلينا نتواصل."
+      }
+    ],
+    "overflow": false,
+    "scripts": [
+      "/_next/static/chunks/webpack-f21fe25e0c08b7ea.js",
+      "/_next/static/chunks/bb41505d-5918f68cd4e5adfa.js",
+      "/_next/static/chunks/744-2e0a9c50a8e03083.js",
+      "/_next/static/chunks/main-app-2b3d497ec002f815.js",
+      "/_next/static/chunks/dcd6f690-cf940f691598be8c.js",
+      "/_next/static/chunks/724-23572e2dc115016d.js",
+      "/_next/static/chunks/5-6037053bccb2516b.js",
+      "/_next/static/chunks/730-e428970bfe43e3ae.js",
+      "/_next/static/chunks/app/page-13c6383f120d025c.js"
+    ],
+    "motionInInitialScripts": false,
+    "qrGeneratorInInitialScripts": false,
+    "errors": []
+  }
+]

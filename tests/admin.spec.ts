@@ -37,6 +37,27 @@ test("owner CMS: publish, preview, content CRUD, media, rollback, bilingual rout
     expect(r.ok(), await r.text()).toBeTruthy();
     return r.json();
   };
+  const saveDraft = async () => {
+    // A previous success toast can still be visible while the next save is pending.
+    const saved = page.waitForResponse(
+      (response) =>
+        new URL(response.url()).pathname.replace(/\/$/, "") ===
+          "/api/admin/content" &&
+        response.request().method() === "PUT" &&
+        response.status() !== 307 &&
+        response.status() !== 308,
+    );
+    await page.getByRole("button", { name: "Save draft", exact: true }).click();
+    const response = await saved;
+    expect(response.ok(), await response.text()).toBeTruthy();
+    await response.finished();
+    await expect(
+      page.getByRole("button", { name: "Publish", exact: true }),
+    ).toBeEnabled();
+    await expect(page.locator(".admin-toast[role=status]")).toContainText(
+      "Draft saved",
+    );
+  };
   await page.goto("/admin/profile/");
   await expect(page).toHaveURL(/\/admin\/login/);
   expect((await page.request.get("/api/admin/content/")).status()).toBe(401);
@@ -108,10 +129,7 @@ test("owner CMS: publish, preview, content CRUD, media, rollback, bilingual rout
       "CMS verified owner",
       { timeout: 15000 },
     );
-    await page.getByRole("button", { name: "Save draft", exact: true }).click();
-    await expect(page.locator(".admin-toast[role=status]")).toContainText(
-      "Draft saved",
-    );
+    await saveDraft();
     const publicPage = await context.newPage();
     await publicPage.goto("/connect/");
     await expect(publicPage.getByRole("heading", { level: 1 })).toHaveText(
@@ -146,10 +164,7 @@ test("owner CMS: publish, preview, content CRUD, media, rollback, bilingual rout
       .first()
       .click();
     await page.getByLabel("Enabled", { exact: true }).last().uncheck();
-    await page.getByRole("button", { name: "Save draft", exact: true }).click();
-    await expect(page.locator(".admin-toast[role=status]")).toContainText(
-      "Draft saved",
-    );
+    await saveDraft();
     let row = (await api("content")) as ContentRecord;
     expect(row.draft.contacts[0].id).toBe("whatsapp");
     expect(row.draft.contacts.at(-1)?.enabled).toBe(false);
@@ -162,10 +177,7 @@ test("owner CMS: publish, preview, content CRUD, media, rollback, bilingual rout
       .getByRole("group", { name: "Heading", exact: true })
       .getByRole("textbox", { name: "English" })
       .fill("Message the owner");
-    await page.getByRole("button", { name: "Save draft", exact: true }).click();
-    await expect(page.locator(".admin-toast[role=status]")).toContainText(
-      "Draft saved",
-    );
+    await saveDraft();
     await page
       .getByRole("link", { name: "Quick messages", exact: true })
       .click();
@@ -174,10 +186,7 @@ test("owner CMS: publish, preview, content CRUD, media, rollback, bilingual rout
       .first()
       .getByRole("textbox", { name: "English" })
       .fill("A saved quick message");
-    await page.getByRole("button", { name: "Save draft", exact: true }).click();
-    await expect(page.locator(".admin-toast[role=status]")).toContainText(
-      "Draft saved",
-    );
+    await saveDraft();
     page.once("dialog", (d) => d.accept());
     await page.getByRole("button", { name: "Publish", exact: true }).click();
     await expect(page.locator(".admin-toast[role=status]")).toContainText(
@@ -207,10 +216,7 @@ test("owner CMS: publish, preview, content CRUD, media, rollback, bilingual rout
     await page
       .getByRole("combobox", { name: "Card radius", exact: true })
       .selectOption("32px");
-    await page.getByRole("button", { name: "Save draft", exact: true }).click();
-    await expect(page.locator(".admin-toast[role=status]")).toContainText(
-      "Draft saved",
-    );
+    await saveDraft();
     await page
       .getByRole("link", { name: "Asset library", exact: true })
       .click();
@@ -228,10 +234,7 @@ test("owner CMS: publish, preview, content CRUD, media, rollback, bilingual rout
     await page
       .getByRole("button", { name: "Use as avatar", exact: true })
       .click();
-    await page.getByRole("button", { name: "Save draft", exact: true }).click();
-    await expect(page.locator(".admin-toast[role=status]")).toContainText(
-      "Draft saved",
-    );
+    await saveDraft();
     row = await api("content");
     expect(row.draft.profile.avatar).toMatch(/^\/media\//);
     expect((await page.request.get(row.draft.profile.avatar)).status()).toBe(
@@ -265,10 +268,7 @@ test("owner CMS: publish, preview, content CRUD, media, rollback, bilingual rout
     await page.getByRole("button", { name: "Download draft vCard" }).click();
     expect((await vcard).suggestedFilename()).toMatch(/\.vcf$/);
     // Save the URL edit before leaving the active editor; shared state survives sidebar navigation.
-    await page.getByRole("button", { name: "Save draft", exact: true }).click();
-    await expect(page.locator(".admin-toast[role=status]")).toContainText(
-      "Draft saved",
-    );
+    await saveDraft();
     page.once("dialog", (d) => d.accept());
     await page.getByRole("button", { name: "Publish", exact: true }).click();
     await expect(page.locator(".admin-toast[role=status]")).toContainText(

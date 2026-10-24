@@ -1,5 +1,6 @@
 import { eq, desc, gte, sql } from "drizzle-orm";
 import { randomUUID } from "node:crypto";
+import { cache } from "react";
 import { getDB } from "./db";
 import { site, revisions, audit, events, limits, assets } from "./schema";
 import { siteConfigSchema, type SiteConfig } from "../config";
@@ -9,9 +10,10 @@ export async function getContent() {
   if (!row) throw new Error("Run npm run db:migrate before starting the CMS");
   return row;
 }
-export async function getPublished() {
+// Share the page/metadata query within one render; every request still reads fresh content.
+export const getPublished = cache(async function getPublished() {
   return siteConfigSchema.parse((await getContent()).published);
-}
+});
 export async function logEvent(action: string, actor: string, detail = "") {
   await getDB()
     .insert(audit)

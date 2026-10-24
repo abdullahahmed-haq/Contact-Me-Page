@@ -1,0 +1,129 @@
+{
+  "verifiedAt": "2026-10-24T14:09:10.257Z",
+  "domain": "https://connect.abdo-ahmed.online",
+  "deploymentId": "dpl_6cjEg1Dye7e2pdJa4LoQ8vw2Vxrw",
+  "deploymentUrl": "https://abdo-connect-c1b462p5n-abdullahahmedhaq-9716s-projects.vercel.app",
+  "target": "production",
+  "contentUnchanged": true,
+  "checks": [
+    {
+      "name": "public content API",
+      "passed": true,
+      "detail": 200
+    },
+    {
+      "name": "published content unchanged",
+      "passed": true,
+      "detail": {
+        "before": "2332e2ce9dbba1f1dee9b720eb7d68e01092318c8c2357fd753ef79ca12419b7",
+        "after": "2332e2ce9dbba1f1dee9b720eb7d68e01092318c8c2357fd753ef79ca12419b7"
+      }
+    },
+    {
+      "name": "admin content remains protected",
+      "passed": true
+    },
+    {
+      "name": "admin login and noindex",
+      "passed": true
+    },
+    {
+      "name": "favicon available",
+      "passed": true
+    },
+    {
+      "name": "en public route",
+      "passed": true
+    },
+    {
+      "name": "en heading",
+      "passed": true
+    },
+    {
+      "name": "en document direction",
+      "passed": true
+    },
+    {
+      "name": "en no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "en responsive optimized avatar",
+      "passed": true,
+      "detail": "https://connect.abdo-ahmed.online/_next/image/?url=https%3A%2F%2Ft5qu4bksdkvjljiq.public.blob.vercel-storage.com%2Fconnect%2Ffa131e1a-62c7-49fc-8693-d3b87c3f3f69.webp&w=256&q=80"
+    },
+    {
+      "name": "en image optimizer returns 200",
+      "passed": true
+    },
+    {
+      "name": "en preview priority",
+      "passed": true
+    },
+    {
+      "name": "ar public route",
+      "passed": true
+    },
+    {
+      "name": "ar heading",
+      "passed": true
+    },
+    {
+      "name": "ar document direction",
+      "passed": true
+    },
+    {
+      "name": "ar no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "ar responsive optimized avatar",
+      "passed": true,
+      "detail": "https://connect.abdo-ahmed.online/_next/image/?url=https%3A%2F%2Ft5qu4bksdkvjljiq.public.blob.vercel-storage.com%2Fconnect%2Ffa131e1a-62c7-49fc-8693-d3b87c3f3f69.webp&w=256&q=80"
+    },
+    {
+      "name": "ar image optimizer returns 200",
+      "passed": true
+    },
+    {
+      "name": "ar preview priority",
+      "passed": true
+    },
+    {
+      "name": "new deferred bundles on the custom domain",
+      "passed": true,
+      "detail": {
+        "initialScripts": 9,
+        "motion": false,
+        "qrRenderer": false
+      }
+    },
+    {
+      "name": "server QR decodes to the published canonical URL",
+      "passed": true
+    },
+    {
+      "name": "deferred contact dialog opens",
+      "passed": true
+    },
+    {
+      "name": "focus restored after dialog closes",
+      "passed": true
+    },
+    {
+      "name": "PNG download under production CSP",
+      "passed": true,
+      "detail": "abdullah-connect-qr.png"
+    },
+    {
+      "name": "SVG download under production CSP",
+      "passed": true,
+      "detail": "abdullah-connect-qr.svg"
+    },
+    {
+      "name": "no browser runtime errors",
+      "passed": true,
+      "detail": []
+    }
+  ]
+}

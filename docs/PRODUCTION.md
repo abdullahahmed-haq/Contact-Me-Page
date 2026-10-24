@@ -9,7 +9,8 @@ Created on 2026-10-24 at the owner's request, using free plans only.
 - GitHub source: [abdullahahmed-haq/Contact-Me-Page](https://github.com/abdullahahmed-haq/Contact-Me-Page), connected to Vercel; production branch `main`.
 - Database: independent Neon `abdo-connect-db`, plan `free_v3`, Frankfurt; existing Supabase projects were not modified.
 - Images: public Vercel Blob store `abdo-connect-images`, Frankfurt. Only processed public images enter this store; database records and secrets stay on the server.
-- Verified application deployment: `dpl_B96TFkgstxr7QC7RSnYpXJVVsp4w`.
+- Current application deployment: `dpl_6cjEg1Dye7e2pdJa4LoQ8vw2Vxrw`.
+- Initial authenticated smoke-verified deployment: `dpl_B96TFkgstxr7QC7RSnYpXJVVsp4w`.
 
 Cloudflare DNS in the existing `Odd Andesaurus` account has a CNAME named `connect` pointing to `df85d956cb559482.vercel-dns-017.com`, DNS only, TTL Auto. Vercel confirmed the domain is configured correctly. The other domain records and nameservers were preserved.
 
@@ -22,6 +23,14 @@ Dia also rendered the published site at the custom domain. The terminal retained
 Run `node scripts/production-smoke.mjs` after DNS propagation to check the actual custom-domain connection. Use an echo-disabled terminal for the password input; the script never logs credentials. Results are saved to `artifacts/admin/production-smoke-results.json`.
 
 Pushing code to `main` triggers Vercel's native GitHub deployment integration. Secrets stay in Vercel; runtime database files, local environment files and generated CMS verification artifacts are excluded from Git. Published CMS content updates need no code release. The CLI command `npx vercel deploy --prod` remains available for deliberate manual releases. Run migrations deliberately against the Production database before schema-dependent releases. Preview environments need their own database/storage configuration before use; production secrets are not copied to them automatically.
+
+## Performance release — 24 October 2026
+
+The performance changes on `perf/mobile-loading` were deployed deliberately through the Vercel CLI to Production. Deployment `dpl_6cjEg1Dye7e2pdJa4LoQ8vw2Vxrw` reached `READY`; its immutable URL is <https://abdo-connect-c1b462p5n-abdullahahmedhaq-9716s-projects.vercel.app>. The public custom domain serves the new deferred bundles and responsive image optimization.
+
+Twenty-six post-release checks passed against <https://connect.abdo-ahmed.online/>: unchanged public-content fingerprint; public API; protected administration and noindex login; favicon; English/Arabic headings, direction, mobile layout, optimized-image delivery and preview priority; absence of Motion/QR rendering in initial scripts; QR decoding to the configured canonical URL; deferred contact dialog opening, focus restoration, PNG/SVG downloads under production CSP; and no browser runtime errors. Checks did not sign in, edit or publish CMS content, send messages, or change credentials. No schema migration was needed.
+
+See [the release verification](../artifacts/performance/production-release.json) and [the pre-release lab report](PERFORMANCE.md). The lab scores are not asserted as production performance measurements.
 
 ## Free-plan boundaries
 

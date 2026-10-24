@@ -20,6 +20,7 @@ export function BottomSheet({
   locale,
   t,
   accent = "green",
+  returnFocus,
 }: {
   open: boolean;
   onClose: () => void;
@@ -30,6 +31,7 @@ export function BottomSheet({
   locale: Locale;
   t: Dictionary;
   accent?: SheetTone;
+  returnFocus?: HTMLElement | null;
 }) {
   const contentRef = useRef<HTMLElement>(null);
   const controls = useDragControls();
@@ -41,7 +43,7 @@ export function BottomSheet({
   }>();
   useEffect(() => {
     if (!open) return;
-    restore.current = document.activeElement as HTMLElement;
+    restore.current = returnFocus || (document.activeElement as HTMLElement);
     const update = () => {
       const v = window.visualViewport;
       if (v)
@@ -57,7 +59,7 @@ export function BottomSheet({
       window.visualViewport?.removeEventListener("resize", update);
       window.visualViewport?.removeEventListener("scroll", update);
     };
-  }, [open]);
+  }, [open, returnFocus]);
   return (
     <Dialog.Root open={open} onOpenChange={(v) => !v && onClose()}>
       <AnimatePresence>

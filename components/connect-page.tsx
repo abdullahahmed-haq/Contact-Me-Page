@@ -1,13 +1,17 @@
 "use client";
-import { useEffect, useRef, useState, type CSSProperties } from "react";
+import {
+  useEffect,
+  useRef,
+  useState,
+  type CSSProperties,
+  type ComponentType,
+  type SyntheticEvent,
+} from "react";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
-import { MotionConfig } from "motion/react";
 import {
   ArrowRight,
   ChevronRight,
   MoreHorizontal,
-  Globe,
-  QrCode,
   GraduationCap,
   Sparkles,
   ShieldCheck,
@@ -20,18 +24,24 @@ import type {
   ContactConfig,
   ContactId,
   Locale,
-  SheetTone,
   SiteConfig,
 } from "@/lib/config";
 import { trackEvent } from "@/lib/analytics";
 import { BrandIcon } from "./icons";
-import { BottomSheet } from "./bottom-sheet";
-import { MessageComposer } from "./message-composer";
-import { QRCodeCard, QRCodeSheetContent } from "./qr-card";
-import {
-  LinkSheetContent,
-  SaveContactSheetContent,
-} from "./action-sheet-content";
+import { QRCodeCard } from "./qr-card";
+import { PublicImage } from "./public-image";
+import type { InitialQR } from "@/lib/qr-data";
+import type { ActionSheetProps } from "./action-sheet";
+
+type SheetComponent = ComponentType<ActionSheetProps>;
+let sheetModule: Promise<typeof import("./action-sheet")> | undefined;
+function loadSheet() {
+  return (sheetModule ??= import("./action-sheet").catch((error) => {
+    sheetModule = undefined;
+    throw error;
+  }));
+}
+
 function DecorativeShapes() {
   return (
     <svg
@@ -53,10 +63,12 @@ function ContactCard({
   card,
   locale,
   onAction,
+  busy,
 }: {
   card: ContactConfig;
   locale: Locale;
   onAction: () => void;
+  busy?: boolean;
 }) {
   const content = (
     <>
@@ -82,6 +94,7 @@ function ContactCard({
       className={`contact-card ${card.tone}`}
       onClick={onAction}
       aria-haspopup="dialog"
+      aria-busy={busy || undefined}
     >
       {content}
     </button>
@@ -91,10 +104,12 @@ export function ConnectPage({
   config,
   preview = false,
   initialLocale,
+  initialQR,
 }: {
   config: SiteConfig;
   preview?: boolean;
   initialLocale?: Locale;
+  initialQR?: InitialQR;
 }) {
   const viewed = useRef(false);
   const [ready, setReady] = useState(false);
@@ -105,11 +120,65 @@ export function ConnectPage({
     ContactId | "website" | "qr" | "save" | null
   >(null);
   const [sheetOpen, setSheetOpen] = useState(false);
-  const openSheet = (id: ContactId | "website" | "qr" | "save") => {
-    trackEvent(`${id === "website" ? "website_open" : id + "_open"}`);
-    setSheet(id);
-    setSheetOpen(true);
+  const [Sheet, setSheetComponent] = useState<SheetComponent | null>(null);
+  const [loadingSheet, setLoadingSheet] = useState(false);
+  const [sheetError, setSheetError] = useState(false);
+  const pendingOpen = useRef(false);
+  const openRequest = useRef(0);
+  const returnFocus = useRef<HTMLElement | null>(null);
+  const prewarmSheet = (event: SyntheticEvent<HTMLElement>) => {
+    if ((event.target as HTMLElement).closest?.('[aria-haspopup="dialog"]'))
+      void loadSheet().catch(() => {});
   };
+  const rememberTrigger = (event: SyntheticEvent<HTMLElement>) => {
+    if (pendingOpen.current || sheetOpen) return;
+    const trigger = (event.target as HTMLElement).closest<HTMLElement>(
+      '[aria-haspopup="dialog"]',
+    );
+    if (trigger) returnFocus.current = trigger;
+  };
+  const openSheet = async (id: ContactId | "website" | "qr" | "save") => {
+    if (pendingOpen.current || sheetOpen) return;
+    pendingOpen.current = true;
+    const request = ++openRequest.current;
+    setSheet(id);
+    setSheetError(false);
+    try {
+      if (!Sheet) {
+        setLoadingSheet(true);
+        const loaded = await loadSheet();
+        if (request !== openRequest.current) return;
+        setSheetComponent(() => loaded.ActionSheet);
+      }
+      setSheetOpen(true);
+      trackEvent(`${id === "website" ? "website_open" : id + "_open"}`);
+    } catch {
+      if (request === openRequest.current) setSheetError(true);
+    } finally {
+      if (request === openRequest.current) {
+        pendingOpen.current = false;
+        setLoadingSheet(false);
+      }
+    }
+  };
+  useEffect(() => {
+    if (!loadingSheet) return;
+    const cancel = (event: KeyboardEvent) => {
+      if (event.key !== "Escape") return;
+      ++openRequest.current;
+      pendingOpen.current = false;
+      setLoadingSheet(false);
+      returnFocus.current?.focus();
+    };
+    document.addEventListener("keydown", cancel);
+    return () => document.removeEventListener("keydown", cancel);
+  }, [loadingSheet]);
+  useEffect(
+    () => () => {
+      ++openRequest.current;
+    },
+    [],
+  );
   const t = config.copy[locale];
   useEffect(() => {
     setReady(true);
@@ -202,46 +271,13 @@ export function ConnectPage({
     automation: Sparkles,
     security: ShieldCheck,
   };
-  const activeCard = config.contacts.find((card) => card.id === sheet);
-  const activeTitle = activeCard
-    ? activeCard.title[locale]
-    : sheet === "qr"
-      ? t.scan
-      : sheet === "save"
-        ? t.save
-        : config.featured.title[locale];
-  const activeSubtitle =
-    activeCard?.type === "whatsapp"
-      ? t.whatsappSubtitle
-      : activeCard?.type === "email"
-        ? t.emailSubtitle
-        : activeCard
-          ? activeCard.subtitle[locale]
-          : sheet === "qr"
-            ? t.scanSub
-            : sheet === "save"
-              ? t.saveDescription
-              : config.featured.subtitle[locale];
-  const activeTone: SheetTone =
-    activeCard?.tone ?? (sheet === "qr" ? "dark" : "blue");
-  const activeIcon = activeCard ? (
-    activeCard.icon === "email" ? (
-      <Mail />
-    ) : (
-      <BrandIcon id={activeCard.icon} />
-    )
-  ) : sheet === "qr" ? (
-    <QrCode />
-  ) : sheet === "save" ? (
-    <UserRoundPlus />
-  ) : (
-    <Globe />
-  );
   return (
-    <MotionConfig
-      reducedMotion={config.theme.duration === "0ms" ? "always" : "user"}
-    >
+    <>
       <main
+        onPointerOverCapture={prewarmSheet}
+        onPointerDownCapture={prewarmSheet}
+        onFocusCapture={prewarmSheet}
+        onClickCapture={rememberTrigger}
         data-ready={ready}
         data-custom-radius={config.theme.radius !== "28px"}
         data-custom-spacing={config.theme.gap !== "14px"}
@@ -294,12 +330,14 @@ export function ConnectPage({
             <div className="avatar-wrap">
               <span className="avatar-blob" />
               <DecorativeShapes />
-              <img
+              <PublicImage
                 className="avatar"
                 src={config.profile.avatar}
                 width={230}
                 height={230}
                 alt={config.profile.avatarAlt[locale]}
+                sizes="(max-width: 359px) 112px, (max-width: 650px) 132px, 220px"
+                loading="eager"
                 fetchPriority="high"
               />
             </div>
@@ -327,6 +365,7 @@ export function ConnectPage({
                 className="card-trigger"
                 data-action="website"
                 aria-label={config.featured.cta[locale]}
+                aria-busy={(sheet === "website" && loadingSheet) || undefined}
                 aria-haspopup="dialog"
                 onClick={() => openSheet("website")}
               />
@@ -340,12 +379,15 @@ export function ConnectPage({
                   </span>
                 </div>
               </div>
-              <img
+              <PublicImage
                 className="website-preview"
                 src={config.featured.image || "/assets/website-preview.svg"}
                 style={{ objectPosition: config.featured.position }}
                 width={360}
                 height={270}
+                sizes="(max-width: 650px) 56vw, 300px"
+                loading="eager"
+                fetchPriority="high"
                 alt={config.featured.alt[locale]}
               />
             </section>
@@ -362,6 +404,7 @@ export function ConnectPage({
                 <ContactCard
                   card={c}
                   key={c.id}
+                  busy={sheet === c.id && loadingSheet}
                   locale={locale}
                   onAction={() => {
                     if (!c.sheet && c.type === "link" && c.url) {
@@ -378,6 +421,8 @@ export function ConnectPage({
               <QRCodeCard
                 url={config.canonicalUrl}
                 qr={config.qr}
+                initialQR={initialQR}
+                busy={sheet === "qr" && loadingSheet}
                 t={t}
                 onOpen={() => openSheet("qr")}
               />
@@ -388,6 +433,7 @@ export function ConnectPage({
                   className="card-trigger"
                   data-action="save"
                   aria-label={t.save}
+                  aria-busy={(sheet === "save" && loadingSheet) || undefined}
                   aria-haspopup="dialog"
                   onClick={() => openSheet("save")}
                 />
@@ -407,57 +453,31 @@ export function ConnectPage({
           </div>
         </div>
       </main>
-      <BottomSheet
-        open={sheetOpen}
-        onClose={close}
-        title={
-          activeCard?.type === "email"
-            ? t.email
-            : activeCard?.type === "whatsapp"
-              ? t.whatsapp
-              : activeTitle
-        }
-        subtitle={activeSubtitle}
-        icon={activeIcon}
-        locale={locale}
-        t={t}
-        accent={activeTone}
-      >
-        {activeCard?.type === "whatsapp" || activeCard?.type === "email" ? (
-          <MessageComposer
-            key={`${sheet}-${locale}`}
-            kind={activeCard!.type as "whatsapp" | "email"}
-            config={config}
-            locale={locale}
-            t={t}
-          />
-        ) : sheet === "qr" ? (
-          <QRCodeSheetContent
-            key={locale}
-            url={config.canonicalUrl}
-            qr={config.qr}
-            t={t}
-          />
-        ) : sheet === "save" ? (
-          <SaveContactSheetContent contact={config.vcard} t={t} />
-        ) : (
-          <LinkSheetContent
-            opening={activeCard?.opening}
-            event={activeCard ? `${activeCard.id}_click` : "website_click"}
-            url={
-              sheet === "website"
-                ? config.featured.url
-                : (activeCard?.url ?? "")
-            }
-            action={
-              sheet === "website"
-                ? config.featured.cta[locale]
-                : t.openOn.replace("{name}", activeTitle)
-            }
-            t={t}
-          />
-        )}
-      </BottomSheet>
-    </MotionConfig>
+      <p className="sr-only" role="status">
+        {loadingSheet
+          ? locale === "ar"
+            ? "جاري فتح النافذة…"
+            : "Opening dialog…"
+          : ""}
+      </p>
+      {sheetError && (
+        <p role="alert">
+          {locale === "ar"
+            ? "تعذر فتح النافذة. اضغط الزر مرة تانية للمحاولة."
+            : "Couldn’t open the dialog. Select the button again to retry."}
+        </p>
+      )}
+      {Sheet && (
+        <Sheet
+          config={config}
+          locale={locale}
+          sheet={sheet}
+          open={sheetOpen}
+          onClose={close}
+          returnFocus={returnFocus.current}
+          initialQR={initialQR}
+        />
+      )}
+    </>
   );
 }
